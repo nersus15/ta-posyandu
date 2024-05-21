@@ -1,0 +1,10 @@
+<!-- Ini untuk mencegah gambar diakses melalui url/path secara langsung, jadi harus melalui url user/photo -->
+<Files "*.jpg">  
+  Order Allow,Deny
+  Deny from all
+</Files>
+<Files "*.png">  
+    Order Allow,Deny
+    Deny from all
+</Files>
+Deny from all

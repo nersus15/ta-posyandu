@@ -1,0 +1,420 @@
+[21-May-2024 14:05:15 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "ENV" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php:4
+Stack trace:
+#0 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 4
+[21-May-2024 14:06:24 Europe/Berlin] PHP Notice:  Only variables should be assigned by reference in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 159
+[21-May-2024 14:06:24 Europe/Berlin] PHP Warning:  Undefined variable $resource in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/templates/dore.php on line 4
+[21-May-2024 14:06:24 Europe/Berlin] PHP Warning:  include(/Applications/XAMPP/xamppfiles/htdocs/posyandu/views/head/main.php): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 63
+[21-May-2024 14:06:24 Europe/Berlin] PHP Warning:  include(): Failed opening '/Applications/XAMPP/xamppfiles/htdocs/posyandu/views/head/main.php' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 63
+[21-May-2024 14:06:24 Europe/Berlin] PHP Warning:  Undefined variable $resource in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/templates/dore.php on line 61
+[21-May-2024 14:06:24 Europe/Berlin] PHP Warning:  Undefined variable $resource in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/templates/dore.php on line 66
+[21-May-2024 14:06:24 Europe/Berlin] PHP Warning:  include(/Applications/XAMPP/xamppfiles/htdocs/posyandu/views/footer/main.php): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 63
+[21-May-2024 14:06:24 Europe/Berlin] PHP Warning:  include(): Failed opening '/Applications/XAMPP/xamppfiles/htdocs/posyandu/views/footer/main.php' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 63
+[21-May-2024 14:07:23 Europe/Berlin] PHP Notice:  Only variables should be assigned by reference in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 159
+[21-May-2024 14:07:23 Europe/Berlin] PHP Warning:  Undefined variable $resource in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/templates/dore.php on line 4
+[21-May-2024 14:10:49 Europe/Berlin] PHP Notice:  Only variables should be assigned by reference in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 159
+[21-May-2024 14:10:49 Europe/Berlin] PHP Warning:  Undefined variable $resource in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/templates/dore.php on line 4
+[21-May-2024 14:10:56 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 57
+[21-May-2024 14:13:03 Europe/Berlin] PHP Warning:  Undefined variable $resource in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/templates/dore.php on line 4
+[21-May-2024 14:13:03 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 57
+[21-May-2024 14:17:48 Europe/Berlin] PHP Warning:  Undefined array key "menus" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 162
+[21-May-2024 14:17:48 Europe/Berlin] PHP Warning:  Undefined array key "link" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/components/sidebar.dore.php on line 12
+[21-May-2024 14:17:48 Europe/Berlin] PHP Warning:  Undefined array key "text" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/components/sidebar.dore.php on line 14
+[21-May-2024 14:50:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: File /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/component/datatables.responsive.php tidak ditemukan in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:95
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Data.php(6): Controller->addViews('component/datat...', Array, true)
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Data->bidan()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Data', 'bidan', Array)
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 95
+[21-May-2024 15:09:08 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Illegal offset type in isset or empty in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:253
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(221): Controller->_assembleResourcesGroups()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php(14): Controller->render()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Home->index()
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(30): __runController('Home', 'index')
+#4 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 253
+[21-May-2024 15:26:31 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 347
+[21-May-2024 15:26:58 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 347
+[21-May-2024 15:28:22 Europe/Berlin] PHP Warning:  Undefined property: Bidan::$datatables in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 345
+[21-May-2024 15:28:22 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 347
+[21-May-2024 15:28:23 Europe/Berlin] PHP Warning:  Undefined property: Bidan::$datatables in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 345
+[21-May-2024 15:28:23 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 347
+[21-May-2024 15:31:32 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 346
+[21-May-2024 15:31:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function setQuery() on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php:12
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Bidan->list()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Bidan', 'list', Array)
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 12
+[21-May-2024 15:32:06 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 346
+[21-May-2024 15:32:06 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function setQuery() on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php:12
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Bidan->list()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Bidan', 'list', Array)
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 12
+[21-May-2024 15:33:18 Europe/Berlin] PHP Warning:  Undefined property: Bidan::$datatablse in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 8
+[21-May-2024 15:33:18 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function setQuery() on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php:8
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Bidan->list()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Bidan', 'list', Array)
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 8
+[21-May-2024 15:33:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function setQuery() on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php:12
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Bidan->list()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Bidan', 'list', Array)
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 12
+[21-May-2024 15:33:37 Europe/Berlin] PHP Warning:  Undefined property: Bidan::$datatablse in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 11
+[21-May-2024 15:33:37 Europe/Berlin] PHP Warning:  Undefined property: Bidan::$datatablse in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 12
+[21-May-2024 15:33:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function setQuery() on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php:12
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Bidan->list()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Bidan', 'list', Array)
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 12
+[21-May-2024 15:34:18 Europe/Berlin] PHP Warning:  Undefined property: Bidan::$datatablse in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 11
+[21-May-2024 15:34:18 Europe/Berlin] PHP Warning:  Undefined property: Bidan::$datatablse in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 12
+[21-May-2024 15:34:18 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function setQuery() on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php:12
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Bidan->list()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Bidan', 'list', Array)
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 12
+[21-May-2024 15:34:37 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 346
+[21-May-2024 15:34:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function setQuery() on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php:13
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Bidan->list()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Bidan', 'list', Array)
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 13
+[21-May-2024 15:34:46 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 346
+[21-May-2024 15:34:46 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function setQuery() on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php:12
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Bidan->list()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Bidan', 'list', Array)
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 12
+[21-May-2024 15:35:40 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 346
+[21-May-2024 15:39:05 Europe/Berlin] PHP Deprecated:  Creation of dynamic property Bidan::$datatables is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 346
+[21-May-2024 15:39:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function setQuery() on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php:12
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(138): Bidan->list()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(94): __runController('Bidan', 'list', Array)
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 12
+[21-May-2024 15:47:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function _getInstance() in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php:13
+Stack trace:
+#0 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 13
+[21-May-2024 15:55:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function _getinstance() in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php:8
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(24): tes()
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 8
+[21-May-2024 15:57:04 Europe/Berlin] PHP Warning:  Attempt to read property "db" on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 9
+[21-May-2024 15:57:39 Europe/Berlin] PHP Warning:  Attempt to read property "db" on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 9
+[21-May-2024 15:58:02 Europe/Berlin] PHP Warning:  Attempt to read property "db" on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 9
+[21-May-2024 15:58:15 Europe/Berlin] PHP Warning:  Attempt to read property "db" on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 9
+[21-May-2024 16:02:33 Europe/Berlin] PHP Warning:  Attempt to read property "db" on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 9
+[21-May-2024 16:11:14 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function select() on string in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php:64
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(12): Datatables->setQuery(' SELECT * FROM ...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->list()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'list', Array)
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php on line 64
+[21-May-2024 16:12:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function select() on string in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php:64
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(12): Datatables->setQuery(' SELECT * FROM ...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->list()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'list', Array)
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php on line 64
+[21-May-2024 16:13:04 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php on line 65
+[21-May-2024 16:13:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method qbuilder::num_rows() in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php:97
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(12): Datatables->setQuery(Object(qbuilder))
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->list()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'list', Array)
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php on line 97
+[21-May-2024 16:13:26 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php on line 65
+[21-May-2024 16:13:26 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method qbuilder::num_rows() in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php:97
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(11): Datatables->setQuery(Object(qbuilder))
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->list()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'list', Array)
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php on line 97
+[21-May-2024 16:14:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method qbuilder::num_rows() in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php:97
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(19): Datatables->setQuery(Object(qbuilder))
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->list()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'list', Array)
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php on line 97
+[21-May-2024 16:16:42 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: PDO::prepare(): Argument #1 ($query) cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php:35
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php(35): PDO->prepare('')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/qbuilder.php(313): database->query('')
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php(97): qbuilder->num_rows()
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(19): Datatables->setQuery(Object(qbuilder))
+#4 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->list()
+#5 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'list', Array)
+#6 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php on line 35
+[21-May-2024 16:19:55 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method qbuilder::limit() in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php:184
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php(127): Datatables->setLimit('10', '0')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(21): Datatables->getData()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->list()
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'list', Array)
+#4 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php on line 184
+[21-May-2024 16:23:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method qbuilder::result() in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php:129
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(21): Datatables->getData()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->list()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'list', Array)
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/Datatables.php on line 129
+[21-May-2024 16:23:42 Europe/Berlin] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 262144 bytes) in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/qbuilder.php on line 381
+[21-May-2024 16:24:36 Europe/Berlin] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 262144 bytes) in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/qbuilder.php on line 381
+[21-May-2024 16:25:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php:49
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(21): response(Object(stdClass))
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->list()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'list', Array)
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 49
+[21-May-2024 16:29:48 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Illegal offset type in isset or empty in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:257
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(221): Controller->_assembleResourcesGroups()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php(14): Controller->render()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Home->index()
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(37): __runController('Home', 'index')
+#4 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 257
+[21-May-2024 16:38:50 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:33
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(33): Controller->validateInput('a', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(33): Controller->validateInput('adadasa', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(50): Controller->validateInput(Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->baru()
+#4 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'baru', Array)
+#5 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 33
+[21-May-2024 16:39:08 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:33
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(33): Controller->validateInput('a', Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(33): Controller->validateInput('adadasa', Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(50): Controller->validateInput(Array, Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(145): Bidan->baru()
+#4 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(101): __runController('Bidan', 'baru', Array)
+#5 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 33
+[21-May-2024 16:39:29 Europe/Berlin] PHP Warning:  Undefined array key "password" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 33
+[21-May-2024 16:39:35 Europe/Berlin] PHP Warning:  Undefined array key "password" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 33
+[21-May-2024 16:53:26 Europe/Berlin] PHP Warning:  Undefined array key "s" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[21-May-2024 16:58:25 Europe/Berlin] PHP Warning:  Attempt to read property "skripid" on null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Uihelper.php on line 63
+[21-May-2024 17:09:18 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:09:18 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:09:18 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:09:18 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:09:28 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:09:28 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:09:28 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:09:28 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:10:06 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:10:06 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:10:06 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:10:06 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:18 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:18 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:18 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:18 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:44 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:44 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:44 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:44 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:52 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:52 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:52 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:12:52 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:14:04 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:14:04 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:14:04 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:14:04 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:17:28 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:17:28 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:17:29 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:17:29 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:20:02 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:20:02 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:20:03 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:20:03 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:21:48 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:21:48 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:21:49 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:21:49 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:31:31 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:31:31 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:31:31 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:31:31 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:33:30 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:33:30 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:33:31 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:33:31 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:38:26 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:38:26 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:38:27 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:38:27 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:39:01 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:39:01 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:39:01 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:39:01 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:39:48 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:39:48 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:39:48 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:39:48 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:40:49 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:40:49 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:40:49 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:40:49 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:41:42 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:41:42 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:41:43 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:41:43 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:42:33 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:42:33 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:42:33 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:42:33 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:42:42 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:42:42 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:42:43 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:42:43 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:45:01 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:45:01 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:45:01 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:45:01 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:45:43 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column '_http_method' in 'field list' in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php:61
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php(61): PDOStatement->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/qbuilder.php(154): database->execute()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(51): qbuilder->insert(Array, 'users')
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(143): Bidan->baru()
+#4 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(99): __runController('Bidan', 'baru', Array)
+#5 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php on line 61
+[21-May-2024 17:50:09 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[01000]: Warning: 1265 Data truncated for column 'kelamin' at row 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php:61
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php(61): PDOStatement->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/qbuilder.php(154): database->execute()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(51): qbuilder->insert(Array, 'users')
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(146): Bidan->baru()
+#4 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(99): __runController('Bidan', 'baru', Array)
+#5 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php on line 61
+[21-May-2024 17:51:14 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:51:14 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:51:14 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:51:14 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:52:37 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:52:37 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:52:38 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:52:38 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:53:16 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:53:16 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:53:16 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:53:16 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:55:01 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:55:01 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:55:01 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:55:01 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:58:14 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:58:14 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:58:15 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:58:15 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:58:45 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:58:45 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:58:45 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:58:45 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:59:01 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:59:01 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:59:02 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 17:59:02 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:01:49 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:01:49 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:01:50 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:01:50 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:22:42 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:22:42 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:22:43 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:22:43 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:23:36 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:23:36 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:23:37 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:23:37 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:25:04 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:25:04 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:25:04 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:25:04 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:30:55 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'bidan1' for key 'PRIMARY' in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php:61
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php(61): PDOStatement->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/qbuilder.php(176): database->execute()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(62): qbuilder->update(Array, 'users')
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(146): Bidan->save()
+#4 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(99): __runController('Bidan', 'save', Array)
+#5 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php on line 61
+[21-May-2024 18:31:24 Europe/Berlin] PHP Warning:  Undefined array key "username" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php on line 64
+[21-May-2024 18:31:52 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:31:52 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:31:52 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:31:52 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:32:44 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:32:44 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:32:45 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:32:45 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:33:36 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:33:36 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:33:36 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:33:36 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:35:15 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:35:15 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:35:15 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:35:15 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:35:23 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':VARk1' at line 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php:61
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php(61): PDOStatement->execute()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/qbuilder.php(176): database->execute()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Bidan.php(63): qbuilder->update(Array, 'users')
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(146): Bidan->save()
+#4 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(99): __runController('Bidan', 'save', Array)
+#5 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php on line 61
+[21-May-2024 18:36:34 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:36:34 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:36:34 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:36:34 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:37:22 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:37:22 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:37:23 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:37:23 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:37:37 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:37:37 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:37:37 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:37:37 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:38:51 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:38:51 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:38:52 Europe/Berlin] PHP Warning:  Undefined array key 1 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:38:52 Europe/Berlin] PHP Deprecated:  urldecode(): Passing null to parameter #1 ($string) of type string is deprecated in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 38
+[21-May-2024 18:39:33 Europe/Berlin] PHP Warning:  Undefined array key "guest" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 200
+[21-May-2024 18:39:33 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 200
+[21-May-2024 18:39:33 Europe/Berlin] PHP Warning:  Undefined array key "link" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/components/sidebar.dore.php on line 12
+[21-May-2024 18:39:33 Europe/Berlin] PHP Warning:  Undefined array key "text" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/components/sidebar.dore.php on line 14

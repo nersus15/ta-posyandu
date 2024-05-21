@@ -1,0 +1,764 @@
+[17-May-2024 10:31:08 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required '/Applications/XAMPP/xamppfiles/htdocs/posyandu/config/functions/qbuilder.php' (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:16
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(47): Controller->__construct()
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 16
+[17-May-2024 10:33:22 Europe/Berlin] PHP Warning:  Undefined array key "themes" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 117
+[17-May-2024 10:33:54 Europe/Berlin] PHP Warning:  Undefined array key "themes" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 117
+[17-May-2024 10:34:05 Europe/Berlin] PHP Warning:  Undefined array key "themes" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 117
+[17-May-2024 10:34:08 Europe/Berlin] PHP Warning:  Undefined array key "themes" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 117
+[17-May-2024 10:34:19 Europe/Berlin] PHP Warning:  Undefined array key "themes" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 117
+[17-May-2024 10:35:13 Europe/Berlin] PHP Warning:  Undefined array key "script" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 149
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:32 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:02:52 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  include(/Applications/XAMPP/xamppfiles/htdocs/posyandu/viewshead/main.php): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 60
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  include(): Failed opening '/Applications/XAMPP/xamppfiles/htdocs/posyandu/viewshead/main.php' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 60
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  include(/Applications/XAMPP/xamppfiles/htdocs/posyandu/viewsforms/login2.php): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 60
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  include(): Failed opening '/Applications/XAMPP/xamppfiles/htdocs/posyandu/viewsforms/login2.php' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 60
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  include(/Applications/XAMPP/xamppfiles/htdocs/posyandu/viewsfooter/main.php): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 60
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  include(): Failed opening '/Applications/XAMPP/xamppfiles/htdocs/posyandu/viewsfooter/main.php' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/utils.php on line 60
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 155
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 157
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 165
+[17-May-2024 11:06:29 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 167
+[17-May-2024 11:26:44 Europe/Berlin] PHP Parse error:  syntax error, unexpected identifier "menu" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 213
+[17-May-2024 11:27:33 Europe/Berlin] PHP Fatal error:  Uncaught Error: File /Applications/XAMPP/xamppfiles/htdocs/posyandu/views/forms/login2.php tidak ditemukan in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:28
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(16): Controller->addViews('forms/login2')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(58): Auth->index()
+#2 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 28
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 208
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 210
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "type" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:28:02 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:28:02 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:218
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(162): Controller->__getResource('head')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(18): Controller->render()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(58): Auth->index()
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:29:35 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:29:35 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:29:35 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:218
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(162): Controller->__getResource('head')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(18): Controller->render()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(58): Auth->index()
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:30:18 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:30:18 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 220
+[17-May-2024 11:30:18 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:218
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(162): Controller->__getResource('head')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(18): Controller->render()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(58): Auth->index()
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 218
+[17-May-2024 11:34:26 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: in_array(): Argument #2 ($haystack) must be of type array, string given in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:195
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(195): in_array('js', 'js')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(152): Controller->_assembleResourcesGroups()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(19): Controller->render()
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(58): Auth->index()
+#4 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 195
+[17-May-2024 11:44:45 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 17
+[17-May-2024 11:44:45 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 17
+[17-May-2024 11:49:30 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:30 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:48 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:49:49 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:49:49 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:50:54 Europe/Berlin] PHP Warning:  Undefined variable $file in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 18
+[17-May-2024 11:50:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 31
+[17-May-2024 11:51:26 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:51:26 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:51:26 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:51:26 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:51:26 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:51:26 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:52:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:54:15 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:54:15 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:54:15 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:54:15 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:54:15 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:54:15 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:54:15 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:54:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:54:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:54:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:54:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:54:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:54:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:54:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:54:16 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:54:16 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:01 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:01 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:01 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:01 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:01 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:01 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:01 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:02 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:02 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:02 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:02 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:02 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:02 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:02 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:02 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:02 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:11 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:12 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:12 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:12 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:12 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:43 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:44 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:44 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:44 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:44 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:44 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:44 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:44 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:44 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:54 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:55:55 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:56:13 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:22 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:23 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:23 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:23 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:23 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:23 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:47 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:52 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:52 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 11:58:59 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 32
+[17-May-2024 11:58:59 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 34
+[17-May-2024 12:00:26 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:00:26 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:00:29 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:00:29 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:01:07 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:01:07 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets//themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:03:46 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:03:46 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:03:46 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:03:46 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:03:46 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:03:46 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:03:46 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:03:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:03:47 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:03:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:03:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:03:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:03:47 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:03:47 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 35
+[17-May-2024 12:03:47 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/login/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 12:06:49 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 40
+[17-May-2024 12:06:53 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 42
+[17-May-2024 12:06:53 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 42
+[17-May-2024 12:06:53 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 42
+[17-May-2024 12:06:53 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 40
+[17-May-2024 12:06:53 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 42
+[17-May-2024 12:06:53 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 40
+[17-May-2024 12:06:53 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 40
+[17-May-2024 12:06:54 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 42
+[17-May-2024 12:06:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 40
+[17-May-2024 12:06:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 40
+[17-May-2024 12:06:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 40
+[17-May-2024 12:06:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 40
+[17-May-2024 13:06:28 Europe/Berlin] PHP Warning:  include_once(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/pages/auth.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 64
+[17-May-2024 13:06:28 Europe/Berlin] PHP Warning:  include_once(): Failed opening '/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/pages/auth.js' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 64
+[17-May-2024 13:06:28 Europe/Berlin] PHP Warning:  Undefined array key "form" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 190
+[17-May-2024 13:06:28 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:190
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(190): array_filter(NULL, Object(Closure))
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(152): Controller->_assembleResourcesGroups()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(19): Controller->render()
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(86): Auth->index()
+#4 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 190
+[17-May-2024 13:06:29 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 13:07:05 Europe/Berlin] PHP Warning:  include_once(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/pages/auth.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 64
+[17-May-2024 13:07:05 Europe/Berlin] PHP Warning:  include_once(): Failed opening '/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/pages/auth.js' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 64
+[17-May-2024 13:07:05 Europe/Berlin] PHP Warning:  Undefined array key "form" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 190
+[17-May-2024 13:07:05 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:190
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(190): array_filter(NULL, Object(Closure))
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(152): Controller->_assembleResourcesGroups()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(19): Controller->render()
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(89): Auth->index()
+#4 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 190
+[17-May-2024 13:07:31 Europe/Berlin] PHP Warning:  include_once(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/pages/auth.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 64
+[17-May-2024 13:07:31 Europe/Berlin] PHP Warning:  include_once(): Failed opening '/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/pages/auth.js' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 64
+[17-May-2024 13:07:31 Europe/Berlin] PHP Warning:  Undefined array key "form" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 190
+[17-May-2024 13:07:31 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_filter(): Argument #1 ($array) must be of type array, null given in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:190
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(190): array_filter(NULL, Object(Closure))
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php(152): Controller->_assembleResourcesGroups()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(19): Controller->render()
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(86): Auth->index()
+#4 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 190
+[17-May-2024 13:09:21 Europe/Berlin] PHP Warning:  include_once(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/pages/auth.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 67
+[17-May-2024 13:09:21 Europe/Berlin] PHP Warning:  include_once(): Failed opening '/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/pages/auth.js' for inclusion (include_path='.:/Applications/XAMPP/xamppfiles/lib/php') in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 67
+[17-May-2024 13:10:30 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 39
+[17-May-2024 13:10:30 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 39
+[17-May-2024 13:10:30 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 39
+[17-May-2024 13:10:30 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 13:10:30 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 39
+[17-May-2024 13:10:30 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 13:10:30 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 13:10:31 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 13:10:31 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 39
+[17-May-2024 13:10:31 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 13:10:31 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 13:10:31 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 37
+[17-May-2024 13:13:39 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Home" not found in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php:24
+Stack trace:
+#0 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 24
+[17-May-2024 13:25:33 Europe/Berlin] PHP Warning:  Undefined variable $params in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 104
+[17-May-2024 13:25:33 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #2 ($args) must be of type array, null given in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php:104
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(19): __runController('Home', 'index')
+#1 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 104
+[17-May-2024 13:26:08 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 47
+[17-May-2024 13:26:08 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 47
+[17-May-2024 13:26:08 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 47
+[17-May-2024 13:26:08 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:08 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 47
+[17-May-2024 13:26:08 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:08 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:09 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:09 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 47
+[17-May-2024 13:26:09 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:09 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:09 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:26 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 47
+[17-May-2024 13:26:26 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:26 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 47
+[17-May-2024 13:26:26 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:26 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:26:26 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 45
+[17-May-2024 13:50:42 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:43 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:50 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:50 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:50:51 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:39 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:39 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:39 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:39 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:39 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:39 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:39 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:39 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:39 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:40 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:40 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:40 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:51:54 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 53
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 53
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 53
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 53
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 53
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 13:52:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 13:53:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:53:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:53:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:53:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:53:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:53:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:53:36 Europe/Berlin] PHP Warning:  Undefined variable $ctype in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 48
+[17-May-2024 13:53:43 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:53:43 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:53:43 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:53:43 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:54:25 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:54:25 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:54:25 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:54:25 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:56:56 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:57:06 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:58:31 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:58:31 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:58:31 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:58:47 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:58:47 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:58:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:59:00 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:59:00 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:59:00 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:59:02 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:59:02 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:59:02 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:59:17 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:59:17 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:59:17 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 13:59:47 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:59:47 Europe/Berlin] PHP Warning:  Undefined array key "pos" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 146
+[17-May-2024 13:59:47 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 50
+[17-May-2024 14:01:41 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Middleware" not found in /Applications/XAMPP/xamppfiles/htdocs/posyandu/middlewares/haruslogin.php:2
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(151): require_once()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(127): __runMiddleware(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(22): __runController('Home', 'index')
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/middlewares/haruslogin.php on line 2
+[17-May-2024 14:01:51 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class "Middleware" not found in /Applications/XAMPP/xamppfiles/htdocs/posyandu/middlewares/haruslogin.php:2
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(151): require_once()
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(127): __runMiddleware(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(22): __runController('Home', 'index')
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/middlewares/haruslogin.php on line 2
+[17-May-2024 14:02:52 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:02:52 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:02:52 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:02:53 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:03:34 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:03:34 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:03:34 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:03:34 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:03:42 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:03:42 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:03:42 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:03:42 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:01 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:02 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:02 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:02 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:03 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:03 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:03 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:03 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:09 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:09 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:09 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:10 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:11 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:11 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:11 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:12 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:20 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:20 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:20 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:04:20 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:07:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:07:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:07:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:07:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:08:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:08:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:08:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:08:36 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:12:16 Europe/Berlin] PHP Warning:  Undefined array key "REQUEST_HEADER" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 15
+[17-May-2024 14:12:16 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 15
+[17-May-2024 14:19:38 Europe/Berlin] PHP Warning:  Undefined array key "REQUEST_HEADER" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 15
+[17-May-2024 14:19:38 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 15
+[17-May-2024 14:19:40 Europe/Berlin] PHP Warning:  Undefined array key "REQUEST_HEADER" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 15
+[17-May-2024 14:19:40 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 15
+[17-May-2024 14:19:45 Europe/Berlin] PHP Warning:  Undefined array key 0 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php on line 4
+[17-May-2024 14:19:45 Europe/Berlin] PHP Warning:  Undefined array key 0 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php on line 4
+[17-May-2024 14:20:45 Europe/Berlin] PHP Warning:  Undefined array key 0 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php on line 4
+[17-May-2024 14:21:29 Europe/Berlin] PHP Warning:  Undefined array key 0 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php on line 4
+[17-May-2024 14:22:10 Europe/Berlin] PHP Warning:  Undefined array key 0 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php on line 4
+[17-May-2024 14:23:48 Europe/Berlin] PHP Warning:  Undefined array key 0 in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php on line 4
+[17-May-2024 14:25:17 Europe/Berlin] PHP Warning:  Undefined variable $darimana in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php on line 5
+[17-May-2024 14:25:32 Europe/Berlin] PHP Warning:  Undefined variable $darimana in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Home.php on line 5
+[17-May-2024 14:26:19 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:26:43 Europe/Berlin] PHP Warning:  Undefined array key "REQUEST_HEADER" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 15
+[17-May-2024 14:26:43 Europe/Berlin] PHP Warning:  Trying to access array offset on value of type null in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 15
+[17-May-2024 14:26:59 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:26:59 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:26:59 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:26:59 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:28:07 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:28:07 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:28:45 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:28:45 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:28:45 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:28:45 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:28:45 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:36:47 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:36:47 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/js/utils/navbar.action.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:36:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:36:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/vendor/bootstrap/js/popper.min.js.map): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:36:48 Europe/Berlin] PHP Warning:  file_get_contents(/Applications/XAMPP/xamppfiles/htdocs/posyandu/assets/themes/mievent/img/slider/0.jpg): Failed to open stream: No such file or directory in /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php on line 51
+[17-May-2024 14:36:50 Europe/Berlin] PHP Fatal error:  Uncaught ValueError: PDO::prepare(): Argument #1 ($query) cannot be empty in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php:35
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php(35): PDO->prepare('')
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/qbuilder.php(262): database->query('')
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(35): qbuilder->row()
+#3 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(131): Auth->login()
+#4 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(87): __runController('Auth', 'login', Array)
+#5 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/functions/database.php on line 35
+[17-May-2024 14:41:58 Europe/Berlin] PHP Warning:  Undefined array key "username" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 33
+[17-May-2024 14:41:58 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Username harus diisi! in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php:40
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php(33): Controller->validateInput(NULL, Array)
+#1 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(131): Auth->login()
+#2 /Applications/XAMPP/xamppfiles/htdocs/posyandu/index.php(87): __runController('Auth', 'login', Array)
+#3 {main}
+  thrown in /Applications/XAMPP/xamppfiles/htdocs/posyandu/core/Controller.php on line 40
+[17-May-2024 14:43:40 Europe/Berlin] PHP Warning:  Undefined array key "username" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 33
+[17-May-2024 14:44:05 Europe/Berlin] PHP Warning:  Undefined array key "username" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 33
+[17-May-2024 14:44:20 Europe/Berlin] PHP Warning:  Undefined array key "username" in /Applications/XAMPP/xamppfiles/htdocs/posyandu/controllers/Auth.php on line 33
