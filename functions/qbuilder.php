@@ -15,19 +15,20 @@ class qbuilder
     private $countjoin = 0;
     private $qeueu = array();
     private $new = true;
-    private $functions = array("select", "from", "join", "where", "orwhere", "group_by", 'order_by', "subquery", "limit");
+    private $functions = array("select", "from", "join", "where",  "wherein", "or_where", "like", "orlike", "group_by", 'order_by', "subquery", "limit");
     private $bind_scirpt = array();
     private $hasil = null;
+    private $callOrder = [];
     public function __construct()
     {
-        require_once 'database.php';
+        require_once ROOT . '/core/database.php';
         $this->db = new database;
     }
 
     function subquery()
     {
-
         if ($this->new) {
+            $this->callOrder[] = 'subquery';
             $this->qeueu['subquery'][] = array(
                 'temp' => array(
                    
@@ -41,6 +42,7 @@ class qbuilder
     function group_by($kolom)
     {
         if ($this->new) {
+            $this->callOrder[] = 'group_by';
             $this->qeueu['group_by'][] = array(
                 'temp' => array(
                     'kolom' => $kolom,
@@ -58,6 +60,7 @@ class qbuilder
     function order_by($kolom, $tipe = 'ASC')
     {
         if ($this->new) {
+            $this->callOrder[] = 'order_by';
             $this->qeueu['order_by'][] = array(
                 'temp' => array(
                     'kolom' => $kolom,
@@ -71,12 +74,40 @@ class qbuilder
 
     }
 
+    function startQueryGroup($prefix = ""){
+        if ($this->new) {
+            $this->callOrder[] = 'startQueryGroup';
+            $this->qeueu['startQueryGroup'][] = array(
+                'temp' => array(
+                    'prefix' => $prefix,
+                )
+            );
+        } else {
+            $this->query .= "$prefix (";
+        }
+
+        return $this;
+    }
+
+    function endQueryGroup($suffix = ""){
+        if ($this->new) {
+            $this->callOrder[] = 'endQueryGroup';
+            $this->qeueu['endQueryGroup'][] = array(
+                'temp' => array(
+                    'suffix' => $suffix,
+                )
+            );
+        }else{
+            $this->query .= ") $suffix";
+        }
+        return $this;
+    }
+
     function get_query()
     {
         $this->new = false;
         if (count($this->qeueu) > 0)
             $this->execute();
-
 
         if (count($this->qeueu) == 0) {
             $this->query .= "";
@@ -90,10 +121,18 @@ class qbuilder
             return $query;
         }
     }
+
+    function setQuery($query, $reset = false){
+        $this->query = $query;
+
+        
+        return $this;
+    }
     function join($tabel, $on, $tipe = "INNER")
     {
 
         if ($this->new) {
+            $this->callOrder[] = 'join';
             $this->qeueu['join'][] = array(
                 'temp' => array(
                     'tabel' => $tabel,
@@ -111,6 +150,7 @@ class qbuilder
     function select($selection)
     {
         if ($this->new) {
+            $this->callOrder[] = 'select';
             $this->qeueu['select'][] = array(
                 'temp' => $selection
             );
@@ -180,6 +220,20 @@ class qbuilder
         return $this;
     }
 
+    function delete($table){
+        $this->new = false;
+        if (count($this->qeueu) > 0)
+            $this->execute();
+
+        $query = 'DELETE FROM ' . $table;
+        $this->db->query($query . $this->query);
+        foreach ($this->bind_scirpt as $bind) {
+            $this->db->bind($bind['key'], $bind['value']);
+        }
+        $this->db->execute();
+        return $this;
+    }
+
     function insert_batch($inputs, $table)
     {
         $query = 'INSERT INTO ' . $table . '(';
@@ -220,6 +274,7 @@ class qbuilder
     function from($table)
     {
         if ($this->new) {
+            $this->callOrder[] = 'from';
             $this->qeueu['from'][] = array(
                 'temp' => $table
             );
@@ -231,6 +286,7 @@ class qbuilder
     function where($kolom, $nilai, $operator = "=")
     {
         if ($this->new) {
+            $this->callOrder[] = 'where';
             $this->qeueu['where'][] = array(
                 'temp' => array(
                     'kolom' => $kolom,
@@ -255,10 +311,126 @@ class qbuilder
         }
         return $this;
     }
+
+    function like($kolom, $nilai, $type = 'both'){
+        if ($this->new) {
+            $this->callOrder[] = 'like';
+            $this->qeueu['like'][] = array(
+                'temp' => array(
+                    'kolom' => $kolom,
+                    'nilai' => $nilai,
+                    'type' => $type
+                )
+            );
+        } else {
+            $key_binding = 'VAR' . random(1) . random(1, 'int');
+            $likStatement = " LIKE :" . $key_binding;
+
+            switch($type){
+                case 'bfore':
+                    $nilai = "%$nilai";
+                    break;
+                case 'after':
+                    $nilai = "$nilai%";
+                    break;
+                case 'both':
+                    $nilai = "%$nilai%";
+                    break;
+            }
+
+            if (stristr($this->query, "where"))
+                $this->query .= " and " . $kolom . $likStatement;
+            else
+                $this->query .= " where " . $kolom . $likStatement;
+
+            $this->bind_scirpt[] = array(
+                "key" => $key_binding,
+                "value" => $nilai,
+            );
+            $this->countWhere++;
+        }
+        return $this;
+    }
+
+    function orlike($kolom, $nilai, $type = 'both'){
+        if ($this->new) {
+            $this->callOrder[] = 'orlike';
+            $this->qeueu['orlike'][] = array(
+                'temp' => array(
+                    'kolom' => $kolom,
+                    'nilai' => $nilai,
+                    'type' => $type
+                )
+            );
+        } else {
+            $key_binding = 'VAR' . random(1) . random(1, 'int');
+            $likStatement = " LIKE :" . $key_binding;
+
+            switch($type){
+                case 'bfore':
+                    $nilai = "%$nilai";
+                    break;
+                case 'after':
+                    $nilai = "$nilai%";
+                    break;
+                case 'both':
+                    $nilai = "%$nilai%";
+                    break;
+            }
+            
+            if (stristr($this->query, "where"))
+                $this->query .= " OR " . $kolom . $likStatement;
+
+            $this->bind_scirpt[] = array(
+                "key" => $key_binding,
+                "value" => $nilai,
+            );
+            $this->countWhere++;
+        }
+        return $this;
+    }
+
+    function wherein($kolom, $nilai, $not = false)
+    {
+        if ($this->new) {
+            $this->callOrder[] = 'wherein';
+            $this->qeueu['wherein'][] = array(
+                'temp' => array(
+                    'kolom' => $kolom,
+                    'nilai' => $nilai,
+                    'not' => $not
+                )
+            );
+        } else {
+
+            $inStatement = '';
+            foreach($nilai as $v){
+                $key = 'VAR' . random(1) . random(1, 'int');
+                $inStatement .= ($inStatement ? ',:': ':') . $key;
+                $this->bind_scirpt[] = array(
+                    'key' => $key,
+                    'value' => $v
+                );
+            }
+        
+            $inStatement = "($inStatement)";
+
+            $operator = $not ? "NOT IN" : "IN";
+
+            if (stristr($this->query, "where"))
+                $this->query .= " and " . $kolom . " $operator $inStatement";
+            else
+                $this->query .= " where " . $kolom . " $operator $inStatement";
+
+            $this->countWhere++;
+        }
+        return $this;
+    }
     function or_where($kolom, $nilai, $operator = "=")
     {
         if ($this->new) {
-            $this->qeueu['orwhere'][] = array(
+            $this->callOrder[] = 'or_where';
+            $this->qeueu['or_where'][] = array(
                 'temp' => array(
                     'kolom' => $kolom,
                     'nilai' => $nilai,
@@ -279,6 +451,7 @@ class qbuilder
 
     function limit($limit = null){
         if ($this->new) {
+            $this->callOrder[] = 'limit';
             $this->qeueu['limit'][] = array(
                 'temp' => array(
                     'limit' => $limit
@@ -372,8 +545,17 @@ class qbuilder
         if ($f == "where")
             $this->where($t['kolom'], $t['nilai'], $t['operator']);
 
-        if ($f == "orwhere")
+        if ($f == "wherein")
+            $this->wherein($t['kolom'], $t['nilai'], $t['not']);
+
+        if ($f == "or_where")
             $this->or_where($t['kolom'], $t['nilai'], $t['operator']);
+
+        if($f == 'like')
+            $this->like($t['kolom'], $t['nilai'], $t['type']);
+
+        if($f == 'orlike')
+            $this->orlike($t['kolom'], $t['nilai'], $t['type']);
 
         if ($f == "group_by")
             $this->group_by($t['kolom']);
@@ -384,6 +566,11 @@ class qbuilder
         if ($f == 'subquery')
             $this->subquery();
 
+        if($f == 'startQueryGroup')
+            $this->startQueryGroup();
+        if($f == 'endQueryGroup')
+            $this->endQueryGroup();
+            
         if($f == 'liit')
             $this->limit();
 
@@ -391,11 +578,19 @@ class qbuilder
     }
     function execute()
     {
+        $unorder = ['startQueryGroup', 'endQueryGroup', ];
+        $indexOfUnOrderd = [];
+
+
+        // $indexOfUnOrderd = array_filter($this->callOrder, function($v) use($unorder) { return in_array($v, $unorder);});
+       
         foreach ($this->functions as $f) {
             foreach ($this->qeueu as $k => $v) {
                 if ($k == $f) {
-                    foreach ($v as $key => $value)
+                    foreach ($v as $key => $value){
                         $this->call_function($f, $value['temp'], $key);
+                    }
+                    
                 }
                 if (empty($this->qeueu[$f]))
                     unset($this->qeueu[$f]);

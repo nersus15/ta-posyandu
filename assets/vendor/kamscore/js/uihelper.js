@@ -439,6 +439,14 @@ uihelper = function () {
             alert("Opt harus di isi!");
             return;
         }
+
+        if(!opt.size) opt.size = '';
+        var modalStyles = '';
+        if(!['modal-lg', 'modal-sm', 'modal-md', 'modal-xl'].includes(opt.size)){
+            var modalStyles = 'style="width:'+ opt.size +'"';
+            opt.size = '';
+        }
+
         if (!opt.modalTitle)
             opt.modalTitle = "";
 
@@ -463,7 +471,7 @@ uihelper = function () {
 
         var modalTemplate = opt.modalPos == 'def' ?
             '<div style="overflow-y: scroll" class="modal fade" id="' + modalId + '" tabindex="-1" role="dialog">' +
-            '<div class="modal-dialog ' + opt.size + ' dialog-scrollable" role="document">' +
+            '<div class="modal-dialog ' + opt.size + ' dialog-scrollable" role="document" '+  modalStyles +'>' +
             '<div class="modal-content">' +
             '<div class="modal-header d-block">' +
             '<div class = "d-flex">' +
@@ -568,6 +576,10 @@ uihelper = function () {
                     }
                     window.formOpt = options
                     var instance_validator =  $("#" + formid).validate({
+                        errorPlacement: function(label, element) {
+                            label.addClass('text-danger');
+                            label.insertAfter(element);
+                        },
                         rules: rules,
                         submitHandler: function (form) {
                             $('#' + formid + ' #alert_danger, #alert_success').html('').hide();
@@ -864,6 +876,10 @@ uihelper = function () {
         }
         var form =  $("#" + formid).validate({
             rules: rules,
+            errorPlacement: function(label, element) {
+                label.addClass('text-danger');
+                label.insertAfter(element);
+            },
             submitHandler: function (form) {
                 $('#' + formid + ' #alert_danger, #alert_success').html('').hide();
                 $(form).ajaxSubmit(options);
@@ -937,6 +953,10 @@ uihelper = function () {
                 }
                 var instance_validator = $("#" + formid).validate({
                     rules: rules,
+                    errorPlacement: function(label, element) {
+                        label.addClass('text-danger');
+                        label.insertAfter(element);
+                    },
                     submitHandler: function (form) {
                         $('#' + formid + ' #alert_danger, #alert_success').html('').hide();
                         $(form).ajaxSubmit(options);
@@ -1169,6 +1189,291 @@ uihelper = function () {
             delay: 3000,
             bg: 'bg-primary'
         });
+    }
+
+    $.fn.form = function (element, config) {
+        /** Calendar */
+        if ($().fullCalendar) {
+            var testEvent = new Date(new Date().setHours(new Date().getHours()));
+            var day = testEvent.getDate();
+            var month = testEvent.getMonth() + 1;
+            $(".calendar").fullCalendar({
+                themeSystem: "bootstrap4",
+                height: "auto",
+                buttonText: {
+                    today: "Today",
+                    month: "Month",
+                    week: "Week",
+                    day: "Day",
+                    list: "List"
+                },
+                bootstrapFontAwesome: {
+                    prev: " simple-icon-arrow-left",
+                    next: " simple-icon-arrow-right",
+                    prevYear: "simple-icon-control-start",
+                    nextYear: "simple-icon-control-end"
+                },
+                events: [
+                    {
+                        title: "Account",
+                        start: "2018-05-18"
+                    },
+                    {
+                        title: "Delivery",
+                        start: "2018-09-22",
+                        end: "2018-09-24"
+                    },
+                    {
+                        title: "Conference",
+                        start: "2018-06-07",
+                        end: "2018-06-09"
+                    },
+                    {
+                        title: "Delivery",
+                        start: "2018-11-03",
+                        end: "2018-11-06"
+                    },
+                    {
+                        title: "Meeting",
+                        start: "2018-10-07",
+                        end: "2018-10-09"
+                    },
+                    {
+                        title: "Taxes",
+                        start: "2018-08-07",
+                        end: "2018-08-09"
+                    }
+                ]
+            });
+        }
+    
+        /* 03.16. Tooltip */
+        if ($().tooltip) {
+            $('[data-toggle="tooltip"]').tooltip();
+        }
+    
+        /* 03.17. Popover */
+        if ($().popover) {
+            $('[data-toggle="popover"]').popover({ trigger: "focus" });
+        }
+    
+        /* 03.18. Select 2 */
+        if ($().select2) {
+            $(".select2-single, .select2-multiple").select2({
+                theme: "bootstrap",
+                placeholder: "",
+                maximumSelectionSize: 6,
+                containerCssClass: ":all:"
+            });
+        }
+    
+        /* 03.19. Datepicker */
+        if ($().datepicker) {
+            $("input.datepicker").datepicker({
+                autoclose: true,
+                templates: {
+                    leftArrow: '<i class="simple-icon-arrow-left"></i>',
+                    rightArrow: '<i class="simple-icon-arrow-right"></i>'
+                }
+            });
+    
+            $(".input-daterange").datepicker({
+                autoclose: true,
+                templates: {
+                    leftArrow: '<i class="simple-icon-arrow-left"></i>',
+                    rightArrow: '<i class="simple-icon-arrow-right"></i>'
+                }
+            });
+    
+            $(".input-group.date").datepicker({
+                autoclose: true,
+                templates: {
+                    leftArrow: '<i class="simple-icon-arrow-left"></i>',
+                    rightArrow: '<i class="simple-icon-arrow-right"></i>'
+                }
+            });
+    
+            $(".date-inline").datepicker({
+                autoclose: true,
+                templates: {
+                    leftArrow: '<i class="simple-icon-arrow-left"></i>',
+                    rightArrow: '<i class="simple-icon-arrow-right"></i>'
+                }
+            });
+        }
+    
+        /* 03.20. Dropzone */
+        if ($().dropzone && !$(".dropzone").hasClass("disabled")) {
+        }
+    
+        /* 03.21. Cropperjs */
+        var Cropper = window.Cropper;
+        if (typeof Cropper !== "undefined") {
+            function each(arr, callback) {
+                var length = arr.length;
+                var i;
+    
+                for (i = 0; i < length; i++) {
+                    callback.call(arr, arr[i], i, arr);
+                }
+    
+                return arr;
+            }
+            var previews = document.querySelectorAll(".cropper-preview");
+            var options = {
+                aspectRatio: 4 / 3,
+                preview: ".img-preview",
+                ready: function () {
+                    var clone = this.cloneNode();
+    
+                    clone.className = "";
+                    clone.style.cssText =
+                        "display: block;" +
+                        "width: 100%;" +
+                        "min-width: 0;" +
+                        "min-height: 0;" +
+                        "max-width: none;" +
+                        "max-height: none;";
+                    each(previews, function (elem) {
+                        elem.appendChild(clone.cloneNode());
+                    });
+                },
+                crop: function (e) {
+                    var data = e.detail;
+                    var cropper = this.cropper;
+                    var imageData = cropper.getImageData();
+                    var previewAspectRatio = data.width / data.height;
+    
+                    each(previews, function (elem) {
+                        var previewImage = elem.getElementsByTagName("img").item(0);
+                        var previewWidth = elem.offsetWidth;
+                        var previewHeight = previewWidth / previewAspectRatio;
+                        var imageScaledRatio = data.width / previewWidth;
+                        elem.style.height = previewHeight + "px";
+                        if (previewImage) {
+                            previewImage.style.width =
+                                imageData.naturalWidth / imageScaledRatio + "px";
+                            previewImage.style.height =
+                                imageData.naturalHeight / imageScaledRatio + "px";
+                            previewImage.style.marginLeft = -data.x / imageScaledRatio + "px";
+                            previewImage.style.marginTop = -data.y / imageScaledRatio + "px";
+                        }
+                    });
+                },
+                zoom: function (e) { }
+            };
+    
+            if ($("#inputImage").length > 0) {
+                var inputImage = $("#inputImage")[0];
+                var image = $("#cropperImage")[0];
+    
+                var cropper;
+                inputImage.onchange = function () {
+                    var files = this.files;
+                    var file;
+    
+                    if (files && files.length) {
+                        file = files[0];
+                        $("#cropperContainer").css("display", "block");
+    
+                        if (/^image\/\w+/.test(file.type)) {
+                            uploadedImageType = file.type;
+                            uploadedImageName = file.name;
+    
+                            image.src = uploadedImageURL = URL.createObjectURL(file);
+                            if (cropper) {
+                                cropper.destroy();
+                            }
+                            cropper = new Cropper(image, options);
+                            inputImage.value = null;
+                        } else {
+                            window.alert("Please choose an image file.");
+                        }
+                    }
+                };
+            }
+        }
+    
+        /* 03.22. Range Slider */
+        if (typeof noUiSlider !== "undefined") {
+            if ($("#dashboardPriceRange").length > 0) {
+                noUiSlider.create($("#dashboardPriceRange")[0], {
+                    start: [800, 2100],
+                    connect: true,
+                    tooltips: true,
+                    range: {
+                        min: 200,
+                        max: 2800
+                    },
+                    step: 10,
+                    format: {
+                        to: function (value) {
+                            return "$" + $.fn.addCommas(Math.floor(value));
+                        },
+                        from: function (value) {
+                            return value;
+                        }
+                    }
+                });
+            }
+    
+            if ($("#doubleSlider").length > 0) {
+                noUiSlider.create($("#doubleSlider")[0], {
+                    start: [800, 1200],
+                    connect: true,
+                    tooltips: true,
+                    range: {
+                        min: 500,
+                        max: 1500
+                    },
+                    step: 10,
+                    format: {
+                        to: function (value) {
+                            return "$" + $.fn.addCommas(Math.round(value));
+                        },
+                        from: function (value) {
+                            return value;
+                        }
+                    }
+                });
+            }
+    
+            if ($("#singleSlider").length > 0) {
+                noUiSlider.create($("#singleSlider")[0], {
+                    start: 0,
+                    connect: true,
+                    tooltips: true,
+                    range: {
+                        min: 0,
+                        max: 150
+                    },
+                    step: 1,
+                    format: {
+                        to: function (value) {
+                            return $.fn.addCommas(Math.round(value));
+                        },
+                        from: function (value) {
+                            return value;
+                        }
+                    }
+                });
+            }
+        }
+        /* 03.27. Tags Input */
+        if ($().tagsinput) {
+            $(".tags").tagsinput({
+                cancelConfirmKeysOnEmpty: true,
+                confirmKeys: [13]
+            });
+    
+            $("body").on("keypress", ".bootstrap-tagsinput input", function (e) {
+                if (e.which == 13) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            });
+        }
+    
     }
     return this;
 }();

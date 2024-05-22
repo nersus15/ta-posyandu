@@ -12,6 +12,8 @@ $(document).ready(function(){
         email: $('#email'),
         alamat: $('#alamat'),
         password: $('#password'),
+        kelaminp: $('#kelamin-p'),
+        kelaminl: $('#kelamin-l'),
     };
 
     _persiapan_data().then(data => {
@@ -44,6 +46,10 @@ $(document).ready(function(){
             components.email.val(edited_data.email);
             components.no_hp.val(edited_data.hp);
             components.alamat.val(edited_data.alamat);
+            if(edited_data.kelamin == 'P')
+                components.kelaminp.prop('checked', true);
+            else if(edited_data.kelamin == 'L')
+                components.kelaminl.prop('checked', true);
 
             components.password.prev('label').text("Password (Isi untuk mengupdate password)");
             components.password.val('').data('rule-required', false).prop('data-rule-required', false);

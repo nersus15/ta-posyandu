@@ -48,23 +48,23 @@ String.prototype.rupiahFormat = function () {
 }
 
 String.prototype.isEmail = function (text) {
-  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-  return regex.test(text);
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(text);
 }
 function isFunction(variable) {
- return variable && {}.toString.call(variable) === '[object Function]';
+    return variable && {}.toString.call(variable) === '[object Function]';
 }
 
-function isKosong(variable){
+function isKosong(variable) {
     return (variable == undefined || variable == null || variable == '')
 }
 
-String.prototype.reverse= function(str){
+String.prototype.reverse = function (str) {
     return __reverseStrig(str);
 }
 
-function __reverseStrig(str){
-    return (str === '') ? '' :  __reverseStrig(str.substr(1)) + str.charAt(0);
+function __reverseStrig(str) {
+    return (str === '') ? '' : __reverseStrig(str.substr(1)) + str.charAt(0);
 }
 // String.prototype.sandi = function(tipe = 'AN'){
 //     $result = null;
@@ -168,3 +168,5 @@ function __reverseStrig(str){
 //         }
 //         return $result;
 // }
+
+// Ovverite Dore Script

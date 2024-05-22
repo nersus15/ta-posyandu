@@ -22,19 +22,33 @@ class Uihelper extends Controller{
         if(isset($_GET['sv']))
             $data['sv'] = json_decode($_GET['sv']);
 
-        if (!file_exists(ROOT . 'views/' . $form . '.php'))
+        if (!file_exists(ROOT . '/views/' . $form . '.php'))
             response(['message' => 'Form ' . $form . ' Tidak ditemukan'], 404);
         else {
-            $html =  $this->addViews($form, $data, true);
-            
+            $ambil_data = function($key, $default = null, $return = false) use($data) {
+                $cached = (array) $data['ed'];
+                $value = $default;
+                
+                if(isset($cached[$key]))
+                    $value = $cached[$key];
+
+                if($return) return $value;
+
+                echo $value;
+            };
+
+            $html =  $this->addViews($form, array_merge((array) $data['sv'], ['data' => (array) $data['ed'], 'ambil_data' => $ambil_data]), true);
+            $_script = '';
             if(!empty($skrip)){
                 $skrip = load_script($skrip, [
                     'form_cache' => json_encode($data['ed']),
                     'form_data' => json_encode($data['sv'])
-                ], true);    
+                ], true); 
+                $_script = "<script " . (isset($data['sv']->skripid) ? 'id="' . $data['sv']->skripid . '"' : '') . ">" . $skrip . '</script>';  
             }
+
             response([
-                'html' => $html . "<script id='" .$data['sv']->skripid. "'>" . $skrip . '</script>'
+                'html' => $html . $_script
             ]);
         }
     }
@@ -59,12 +73,13 @@ class Uihelper extends Controller{
                 $data['ed'] = json_decode($_GET['ed']);
             if(isset($_GET['sv']))
                 $data['sv'] = json_decode($_GET['sv']);
-
+            $_script = load_script($skrip, [
+                'form_cache' => json_encode($data['ed']),
+                'form_data' => json_encode($data['sv'])
+            ], true);
+            
             response([
-                'skrip' => "<script id='". $data['sv']->skripid ."'>" . load_script($skrip,[
-                    'form_cache' => json_encode($data['ed']),
-                    'form_data' => json_encode($data['sv'])
-                ], true) . "</script>"
+                'skrip' => '<script '. (isset($data['sv']->skripid) ? 'id="'. $data['sv']->skripid .'"'  : ''). '>' . $_script . "</script>"
             ]);
         }
     }

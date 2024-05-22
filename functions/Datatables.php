@@ -72,7 +72,6 @@ class Datatables {
         }
         $option = $this->search_option;
         $keyword = $this->keyword;
-
         if(empty($option)){
             $option = array(
                 'spesifik' => false,
@@ -81,17 +80,22 @@ class Datatables {
         }
         if(!empty($keyword)){
             $i = 0;
+            $query->startQueryGroup('AND');
+            
             foreach($searchable as $v){
                 if($option['spesifik']){
-                    if($i = 0) $query->where($v, $keyword, FALSE);
-                    else $query->or_where($v, $keyword, FALSE);
+                    if($i == 0) $query->where($v, $keyword);
+                    else $query->or_where($v, $keyword);
                 }else{
-                    if($i = 0) $query->like($v, $keyword, $option['liketipe'], FALSE);
-                    else $query->or_like($v, $keyword, $option['liketipe'], FALSE);
+                    if($i == 0) $query->like($v, $keyword, $option['liketipe']);
+                    else $query->orlike($v, $keyword, $option['liketipe']);
                 }
                 $i++;
             }
+            $query->endQueryGroup();
         }        
+        var_dump($query->get_query());die;
+
         $this->query = $query;
         $filterred_data_q = clone $query;
         $this->filterred_data = $filterred_data_q->num_rows();
@@ -121,15 +125,13 @@ class Datatables {
      * @param String $tipe Array or Object
      */
     function getData( string $tipe = 'object', $enableCache = false){
-        if($enableCache)
-            $this->query->cache_on();
         if(isset($_GET['start']) && isset($_GET['length'])){
             $this->setLimit($_GET['length'], $_GET['start']);
         }
-        $this->data = $this->query->results($tipe);
-        if($enableCache)
-            $this->query->cache_off();
 
+        var_dump($this->query->get_query());die;
+        $this->data = $this->query->results($tipe);
+       
         $data = $this->_get_data();
         if(!empty($this->resultHandler)){
             $callback = $this->resultHandler;
@@ -138,6 +140,7 @@ class Datatables {
         $this->all_data = count($data);
         if(!empty($this->keyword))
             $this->filterred_data = count($data);
+
         // if(isset($_GET['start']) && isset($_GET['length'])){
         //     $start = $_GET['start'];
         //     $length = $_GET['length'];

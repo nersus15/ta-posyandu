@@ -4,13 +4,14 @@ require_once 'vendor/autoload.php';
 use MatthiasMullie\Minify\JS;
 
 
-function tes()
-{
-    /** @var Controller */
-    $controller = &get_instance();
-    var_dump($controller->db);
-    die;
-}
+/** CONSTANT */
+define('MYSQL_TIMESTAMP_FORMAT', 'Y-m-d H:i:s');
+define('MYSQL_DATE_FORMAT', 'Y-m-d');
+
+
+
+
+
 function redirect($path = null)
 {
     header('Location:' .  base_url($path));
@@ -23,27 +24,32 @@ function staticUrl($path = null)
 function parseUrl($segment = true)
 {
     $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    
+
+    $url = str_replace(BASEURL, '', $url);
+    // readQueryParams($url);
+
+    if ($segment)
+        return empty($url) ? $url : explode('/', $url);
+    else
+        return $url;
+}
+
+function readQueryParams(&$url){
     $offsetQueryParams = strpos($url, '?');
-    if($offsetQueryParams !== false){
+    if($offsetQueryParams !== false && strpos($url, '=') != false){
         $tmp = $url;
         $url = substr($url, 0, $offsetQueryParams);
 
         // ASSIGN QUERY PARAMS TO $_GET VARIABLE
         $qParamsString = substr($tmp, $offsetQueryParams + 1);
+        $qParamsString = urldecode($qParamsString);
         unset($tmp);
         $_qparams = explode('&', $qParamsString);
         foreach($_qparams as $key_value){
             $__ = explode('=', $key_value);
-            $_GET[$__[0]] = urldecode($__[1]);
+            $_GET[$__[0]] = $__[1];
         }
     }
-
-    $url = str_replace(BASEURL, '', $url);
-    if ($segment)
-        return empty($url) ? $url : explode('/', $url);
-    else
-        return $url;
 }
 
 function sessiondata($index = 'login', $kolom = null)
@@ -316,4 +322,10 @@ function sentToController($var = []){
     }else{
         $_SERVER['REQUEST_HEADER'] = ['data' => $var];
     }
+}
+
+function waktu($waktu = null, $format = MYSQL_TIMESTAMP_FORMAT)
+{
+    $waktu = empty($waktu) ? time() : $waktu;
+    return date($format, $waktu);
 }

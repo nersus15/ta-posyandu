@@ -1,6 +1,7 @@
 $(document).ready(function(){
     var form = <?= json_encode($form) ?>;
     var dtid = "<?= $dtid?>";
+    var size = "<?= isset($size) ? $size : '' ?>"
 
     var defaultCnfigToast = {
         title: 'Submit Feedback',
@@ -46,6 +47,7 @@ $(document).ready(function(){
             clickToClose: false,
             type: form.path ? 'form-custom' : 'form',
             ajax: true,
+            size: size,
             rules: [
                 {
                     name: 'noSpace',
@@ -109,26 +111,27 @@ $(document).ready(function(){
                 }
                 if(!form.path){
                     skripid = moment().format('YYYYMMDDHHss');
-                    if(form.skripVar)
+                    if(form.skripVar){
                         form.skripVar['skripid'] = skripid;
-                }
-                
-                if(form.skripVar)
-                    url += "&sv=" + JSON.stringify(form.skripVar);
-
-                var formEl = fetch(url, {method: 'GET', })
-                .then(res => {
-                    if (res.status != 200)
-                        return;
-                    else
-                        return res.json()
-                }).then(res => {
-                    if (!res)
-                        return;
-                    else {
-                        $("#" + modalid).after(res.skrip);
+                        url += "&sv=" + JSON.stringify(form.skripVar);
                     }
-                });
+                    
+                    fetch(url, {method: 'GET', })
+                    .then(res => {
+                        if (res.status != 200)
+                            return;
+                        else
+                            return res.json()
+                    }).then(res => {
+                        if (!res)
+                            return;
+                        else {
+                            $("#" + modalid).after(res.skrip);
+                        }
+                    });
+                }else{
+                    $('#' + form.formid).form();
+                }
             },
             saatTutup: () => {
                 console.log(skripid);
@@ -147,12 +150,19 @@ $(document).ready(function(){
             },
         }
     };
+
     if(addButton.length > 0){
         addButton.click(function(){
             form.skripVar.mode = 'baru';
             form.skripVar.formid = modalConfig.opt.formOpt.formId;
             if(form.path){
                 var url = path + 'uihelper/form/?f=' + form.path 
+                
+                skripid = moment().format('YYYYMMDDHHss');
+                if(form.skripVar && !form.skripVar['skripid'])
+                    form.skripVar['skripid'] = skripid;
+
+                url += '&sv=' + JSON.stringify(form.skripVar);
 
                 var formEl = fetch(url, {
                     method: 'GET',
@@ -198,6 +208,12 @@ $(document).ready(function(){
             form.skripVar['mode'] = 'edit';
             
             if(form.path){
+                skripid = moment().format('YYYYMMDDHHss');
+                if(form.skripVar && !form.skripVar['skripid'])
+                    form.skripVar['skripid'] = skripid;
+
+                url += '&sv=' + JSON.stringify(form.skripVar);
+
                 var formEl = fetch(url, {
                     method: 'GET',
                 }).then(res => {
@@ -239,7 +255,6 @@ $(document).ready(function(){
                ids.push(rowData[i].id);
                names.push(rowData[i].nama);
             }
-
             var sure = confirm("Yakin Ingin Menghapus data " + ids.join(', ') + "(" + names.join(', ') + ")")
             if(!sure) return;
 
@@ -292,9 +307,11 @@ $(document).ready(function(){
                     else {
                         if(typeof(res) == 'string')
                             res = JSON.parse(res);
-
+        
                         if (res.message)
                             defaultCnfigToast.message = res.message;
+                        else if(res.responseJSON.message)
+                            defaultCnfigToast.message = res.responseJSON.message;
                         else
                             defaultCnfigToast.message = "Delete Gagal";
 

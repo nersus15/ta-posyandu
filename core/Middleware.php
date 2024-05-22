@@ -2,8 +2,7 @@
 abstract class Middleware{
 
     private static $instance;
-    
-    abstract function run();
+    abstract function run(array $args);
     function stop(){
         exit;
     }

@@ -61,7 +61,10 @@ class Controller
 			}elseif($r['rule'] == 'regex'){
 				if(empty($nilai) || !preg_match($r['pattern'], $input))
 					return $message;
-			}
+			}elseif($r['rule'] == 'number'){
+                if(!is_numeric($nilai))
+                    return $message;
+            }
 		}
 
 		return true;
@@ -250,7 +253,7 @@ class Controller
             </div>';
 
 
-        $footer = $this->__getResource('body:end') . '<script> if($.dore) $("body").dore(); '  . ' </script></body> </html>';
+        $footer = $this->__getResource('body:end') . '<script> $(document).ready(function(){if($.dore) $("body").dore();}); '  . ' </script></body> </html>';
         echo $head;
         foreach ($this->views as $view) {
             echo $view;

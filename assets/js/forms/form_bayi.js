@@ -6,12 +6,6 @@ $(document).ready(function(){
         form: $("#" + formid),
         method: $("#method"),
         id: $('#id'),
-        username: $('#username'),
-        nama_lengkap: $('#nama_lengkap'),
-        no_hp: $('#no_hp'),
-        email: $('#email'),
-        alamat: $('#alamat'),
-        password: $('#password'),
     };
 
     _persiapan_data().then(data => {
@@ -31,7 +25,19 @@ $(document).ready(function(){
 
 
     function _add_event_listener(data){
-
+        $("input[name='ingat_ttl']").change(function() {
+            var ingat = $(this).attr('id');
+            if (ingat == 'ingat') {
+                $("#ttl").parent().show();
+                $("#umur").parent().hide();
+                $("#umur").data('rule-required', false);
+            } else if (ingat == 'tidak_ingat') {
+                $("#ttl").parent().hide();
+                $("#umur").parent().show();
+                $("#ttl").data('rule-required', false);
+    
+            }
+        });
     }
 
 
@@ -39,17 +45,9 @@ $(document).ready(function(){
         if(form_data.mode == 'edit' && edited_data){
             components.method.val('update');
             components.id.val(edited_data.id);
-            components.username.val(edited_data.id).attr('readonly', true);
-            components.nama_lengkap.val(edited_data.nama);
-            components.email.val(edited_data.email);
-            components.no_hp.val(edited_data.hp);
-            components.alamat.val(edited_data.alamat);
 
-            components.password.prev('label').text("Password (Isi untuk mengupdate password)");
-            components.password.val('').data('rule-required', false).prop('data-rule-required', false);
         }else if(form_data.mode == 'baru'){
             components.method.val('POST');
-            components.password.prev('label').text("Password");
         }
     }
 

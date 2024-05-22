@@ -1,11 +1,10 @@
 <?php
 error_reporting(E_ALL);
-ini_set("error_log", "./logs/" . date('y-m-d'));
+ini_set("error_log", "./logs/log-" . date('y-m-d') . '.php');
 
 include_once './config/config.php';
 include_once './config/middleware.php';
 require_once './core/Controller.php';
-
 function &get_instance()
 {
     return Controller::_getInstance();
@@ -167,8 +166,10 @@ function __runMiddleware($conf, $event = 'before'){
                 if(file_exists(ROOT . '/middlewares/' . $mid['handler'] . '.php')){
                     require_once ROOT . '/middlewares/' . $mid['handler'] . '.php';
                     $midleware = new $mid['handler']();
+                    $params = isset($mid['params']) ? $mid['params'] : [];
+                    
                     if($midleware instanceof Middleware){
-                        $midleware->run();
+                        $midleware->run($params);
                     }
                 }
             }

@@ -5,6 +5,18 @@ html {
   body {
     overflow-x: hidden !important;
   }
+
+  @media (min-width: 576px) {
+    .modal-sm {
+      max-width: 300px !important;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .modal-lg {
+      max-width: 800px !important;
+    }
+  }
   
   /* Hide everything under body tag */
   body.show-spinner > *{
@@ -75,5 +87,10 @@ html {
     }
   }
   
+  .symbol-required::after{
+    content: '*';
+    color: red;
+    font-size: 24px;
+  }
   
   

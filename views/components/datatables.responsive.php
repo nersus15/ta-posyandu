@@ -13,8 +13,10 @@
 
     if(!isset($perpage) && isset($pages) && !empty($pages)) $perpage = 10;
 
-    if(!isset($form)) $form = array('formid'=>'form-'. $dtid, 'posturl' => '', 'path' => '', 'skrip' => '', 'formGenerate' => '');
-    else$form = array_merge(array('formid'=>'form-'. $dtid, 'posturl' => '', 'path' => '', 'skrip' => '', 'formGenerate' => '', 'nama' => '', 'skripVar' => (object)[]), $form);
+    if(!isset($form)) 
+        $form = array('formid'=>'form-'. $dtid, 'posturl' => '', 'path' => '', 'skrip' => '', 'formGenerate' => '');
+    else
+        $form = array_merge(array('formid'=>'form-'. $dtid, 'posturl' => '', 'path' => '', 'skrip' => '', 'formGenerate' => '', 'nama' => '', 'skripVar' => (object)[]), $form);
 ?>
 <style>
     tr.selected{
@@ -80,10 +82,17 @@
     </div>
 </div>
 <script id="toolbar-default-skrip">
-    <?php load_script('utils/dt_default_skrip.js', array(
-        'form' => $form,
-        'dtid' => $dtid
-    ))?>
+    <?php 
+        if(!isset($modal)){
+            $modal = [];
+        }
+        $defData = array(
+            'form' => $form,
+            'dtid' => $dtid,
+        );
+        $data = array_merge($defData, $modal);
+        load_script('utils/dt_default_skrip.js', $data)
+    ?>
 </script>
 <script id="toolbar-user-skrip">
 <?php
