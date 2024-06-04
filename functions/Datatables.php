@@ -38,6 +38,7 @@ class Datatables {
     
     function setQuery($query){        
         $searchable = [];
+        
 
         // If selection not set by addSelect
         if(empty($this->selection)){
@@ -62,6 +63,7 @@ class Datatables {
             $this->selection = '*';
 
         $query->select($this->selection);
+        // var_dump($query);die;
         foreach($this->header as $key => $value){
             if(!isset($value['searchable']) || $value['searchable'] == false) continue;
 
@@ -80,7 +82,7 @@ class Datatables {
         }
         if(!empty($keyword)){
             $i = 0;
-            $query->startQueryGroup('AND');
+            $query->startQueryGroup();
             
             foreach($searchable as $v){
                 if($option['spesifik']){
@@ -88,14 +90,13 @@ class Datatables {
                     else $query->or_where($v, $keyword);
                 }else{
                     if($i == 0) $query->like($v, $keyword, $option['liketipe']);
-                    else $query->orlike($v, $keyword, $option['liketipe']);
+                    else $query->or_like($v, $keyword, $option['liketipe']);
                 }
                 $i++;
             }
             $query->endQueryGroup();
-        }        
-        var_dump($query->get_query());die;
-
+        }
+        // var_dump($query->get_query());die;
         $this->query = $query;
         $filterred_data_q = clone $query;
         $this->filterred_data = $filterred_data_q->num_rows();
@@ -128,9 +129,15 @@ class Datatables {
         if(isset($_GET['start']) && isset($_GET['length'])){
             $this->setLimit($_GET['length'], $_GET['start']);
         }
+        
+        try {
+            $this->data = $this->query->results($tipe);
+        } catch (\Throwable $th) {
+            //throw $th;
 
-        var_dump($this->query->get_query());die;
-        $this->data = $this->query->results($tipe);
+            print($th->getMessage());
+            exit;
+        }
        
         $data = $this->_get_data();
         if(!empty($this->resultHandler)){

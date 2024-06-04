@@ -1,618 +1,615 @@
 <?php
+
 /**
  * This File was created by kamscode - @nersus15
- * Download From https://github.com/nersus15/mnTemplate/blob/master/apps/helpers/qbuilder.php
+ * Download From https://github.com/nersus15/qbuilder
  * Also Try Using mnTemplate (PHP template with MVC architecture Base On MVC Web Programmer UNPAS)
  */
-use function PHPSTORM_META\type;
 
 class qbuilder
 {
+
     private $db;
     private $query = "";
-    private $countWhere = 0;
-    private $countselect = 0;
-    private $countjoin = 0;
-    private $qeueu = array();
-    private $new = true;
-    private $functions = array("select", "from", "join", "where",  "wherein", "or_where", "like", "orlike", "group_by", 'order_by', "subquery", "limit");
     private $bind_scirpt = array();
-    private $hasil = null;
-    private $callOrder = [];
+
+    protected $_like_escape_str = " ESCAPE '%s' ";
+    protected $_like_escape_chr = '!';
+
+    private $inputs = [];
+    private $selects = [];
+    private $whereClause = [];
+    private $groupBy = [];
+    private $orderBy = [];
+    private $limitNumber = null;
+    private $joinClause = [];
+    private $table = '';
+    private $startQueryGroupSign = [];
+    private $endQueryGroupSign = [];
+
     public function __construct()
     {
         require_once ROOT . '/core/database.php';
         $this->db = new database;
     }
 
-    function subquery()
+    function select(string $column)
     {
-        if ($this->new) {
-            $this->callOrder[] = 'subquery';
-            $this->qeueu['subquery'][] = array(
-                'temp' => array(
-                   
-                )
-            );
-        } else {
-            return $this->query;
-        }
+        $this->selects[] = $column;
+
         return $this;
     }
-    function group_by($kolom)
+
+    function from(string $table)
     {
-        if ($this->new) {
-            $this->callOrder[] = 'group_by';
-            $this->qeueu['group_by'][] = array(
-                'temp' => array(
-                    'kolom' => $kolom,
-                )
-            );
-        } else {
-            $this->query .= ' GROUP BY ' . $kolom;
+        $this->table = $table;
+        return $this;
+    }
+
+    function where(string $column, string $value = null)
+    {
+        $keybinder = $this->_addToBinder($value)[0];
+        $whereClause = [
+            'key' => $column,
+            'value' => $keybinder,
+            'rel' => 'AND'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+
+    function or_where(string $column, string $value = null)
+    {
+        $keybinder = $this->_addToBinder($value)[0];
+        $whereClause = [
+            'key' => $column,
+            'value' => $keybinder,
+            'rel' => 'OR'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+
+    function like(string $column, string $value, string $position = 'both')
+    {
+        switch ($position) {
+            case 'bfore':
+                $value = "%$value";
+                break;
+            case 'after':
+                $value = "$value%";
+                break;
+            case 'both':
+                $value = "%$value%";
+                break;
         }
+
+        $keybinder = $this->_addToBinder($value)[0];
+        $whereClause = [
+            'key' => $column . ' LIKE',
+            'value' => $keybinder,
+            'rel' => 'AND'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+    function not_like(string $column, string $value, string $position = 'both')
+    {
+        switch ($position) {
+            case 'bfore':
+                $value = "%$value";
+                break;
+            case 'after':
+                $value = "$value%";
+                break;
+            case 'both':
+                $value = "%$value%";
+                break;
+        }
+
+        $keybinder = $this->_addToBinder($value)[0];
+        $whereClause = [
+            'key' => $column . ' NOT LIKE',
+            'value' => $keybinder,
+            'rel' => 'AND'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+
+    function or_like(string $column, string $value, string $position = 'both')
+    {
+        switch ($position) {
+            case 'bfore':
+                $value = "%$value";
+                break;
+            case 'after':
+                $value = "$value%";
+                break;
+            case 'both':
+                $value = "%$value%";
+                break;
+        }
+
+        $keybinder = $this->_addToBinder($value)[0];
+        $whereClause = [
+            'key' => $column . ' LIKE',
+            'value' => $keybinder,
+            'rel' => 'OR'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+
+    function or_not_like(string $column, string $value, string $position = 'both')
+    {
+        switch ($position) {
+            case 'bfore':
+                $value = "%$value";
+                break;
+            case 'after':
+                $value = "$value%";
+                break;
+            case 'both':
+                $value = "%$value%";
+                break;
+        }
+
+        $keybinder = $this->_addToBinder($value)[0];
+        $whereClause = [
+            'key' => $column . ' NOT LIKE',
+            'value' => $keybinder,
+            'rel' => 'OR'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+
+    function where_in(string $column, array $values)
+    {
+        $keybinder = $this->_addToBinder($values);
+
+        $inStatement = '';
+        foreach ($keybinder as $key) {
+            $inStatement .= ($inStatement ? ',' : '') . $key;
+        }
+        $whereClause = [
+            'key' => $column . ' IN',
+            'value' => "($inStatement)",
+            'rel' => 'AND'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+
+    function or_where_in(string $column, array $values)
+    {
+        $keybinder = $this->_addToBinder($values);
+
+        $inStatement = '';
+        foreach ($keybinder as $key) {
+            $inStatement .= ($inStatement ? ',' : '') . $key;
+        }
+        $whereClause = [
+            'key' => $column . ' IN',
+            'value' => "($inStatement)",
+            'rel' => 'OR'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+
+    function where_not_in(string $column, array $values)
+    {
+        $keybinder = $this->_addToBinder($values);
+
+        $inStatement = '';
+        foreach ($keybinder as $key) {
+            $inStatement .= ($inStatement ? ',' : '') . $key;
+        }
+        $whereClause = [
+            'key' => $column . ' NOT IN',
+            'value' => "($inStatement)",
+            'rel' => 'AND'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+
+    function or_where_not_in(string $column, array $values)
+    {
+        $keybinder = $this->_addToBinder($values);
+
+        $inStatement = '';
+        foreach ($keybinder as $key) {
+            $inStatement .= ($inStatement ? ',' : '') . $key;
+        }
+        $whereClause = [
+            'key' => $column . ' NOT IN',
+            'value' => "($inStatement)",
+            'rel' => 'OR'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
+        return $this;
+    }
+
+    function between(string $column, int $start, int $end)
+    {
+        $keybinder = $this->_addToBinder([$start, $end]);
+
+
+        $whereClause = [
+            'key' => $column . ' BETWEEN',
+            'value' => $keybinder[0] . ' AND ' . $keybinder[1],
+            'rel' => 'AND'
+        ];
+
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
+
+        $this->whereClause[] = $whereClause;
         return $this;
     }
 
     /**
-     * @param $tipe enum['ASC'|'DESC']
+     * @param $type String INNER | LEFT | RIGHT
+     * @return qbuilder Instance
      */
-    function order_by($kolom, $tipe = 'ASC')
+    function join(string $tabel, string $on, string $type = 'INNER')
     {
-        if ($this->new) {
-            $this->callOrder[] = 'order_by';
-            $this->qeueu['order_by'][] = array(
-                'temp' => array(
-                    'kolom' => $kolom,
-                    'tipe' => $tipe
-                )
-            );
-        } else {
-            $this->query .= ' ORDER BY ' . $kolom . ' ' . $tipe;
-        }
-        return $this;
+        $this->joinClause[] = [
+            'table' => $tabel,
+            'on' => $on,
+            'type' => $type
+        ];
 
-    }
-
-    function startQueryGroup($prefix = ""){
-        if ($this->new) {
-            $this->callOrder[] = 'startQueryGroup';
-            $this->qeueu['startQueryGroup'][] = array(
-                'temp' => array(
-                    'prefix' => $prefix,
-                )
-            );
-        } else {
-            $this->query .= "$prefix (";
-        }
-
+        $this->_checkGrouping($whereClause, 'start');
+        $this->_checkGrouping($whereClause, 'end');
         return $this;
     }
 
-    function endQueryGroup($suffix = ""){
-        if ($this->new) {
-            $this->callOrder[] = 'endQueryGroup';
-            $this->qeueu['endQueryGroup'][] = array(
-                'temp' => array(
-                    'suffix' => $suffix,
-                )
-            );
-        }else{
-            $this->query .= ") $suffix";
+    function group_by(...$columns)
+    {
+        $this->groupBy = $columns;
+        return $this;
+    }
+
+    function order_by(...$columns)
+    {
+        $this->orderBy = $columns;
+        return $this;
+    }
+
+    function limit(int $number = null)
+    {
+        $this->limitNumber = $number;
+        return $this;
+    }
+
+    function insert(array $input, string $table)
+    {
+        $this->table = $table;
+        foreach ($input as $k => $v) {
+            $this->inputs[$k] = $this->_addToBinder($v)[0];
         }
+
+        $this->_compileQuery('insert');
+        $this->_runQuery('insert');
+    }
+
+    function update(array $input, string $table)
+    {
+        $this->table = $table;
+        foreach ($input as $k => $v) {
+            $this->inputs[$k] = $this->_addToBinder($v)[0];
+        }
+
+        $this->_compileQuery('update');
+        $this->_runQuery('update');
+    }
+
+    function delete(string $tabel)
+    {
+        $this->table = $tabel;
+
+        $this->_compileQuery('delete');
+        $this->_runQuery('delete');
+    }
+
+    function row()
+    {
+        $this->_compileQuery('row');
+        $this->_runQuery('row');
+
+        return $this->db->single();
+    }
+
+    function row_object()
+    {
+        $this->_compileQuery('row_object');
+        $this->_runQuery('row_object');
+
+        return $this->db->single_object();
+    }
+
+    function results()
+    {
+        $this->_compileQuery('results');
+        $this->_runQuery('results');
+
+        return $this->db->resultSet();
+    }
+
+    function result_object()
+    {
+        $this->_compileQuery('result_object');
+        $this->_runQuery('result_object');
+
+        return $this->db->result_object();
+    }
+
+    function num_rows()
+    {
+        $this->_compileQuery('num_rows');
+
+        $this->db->query($this->query);
+        if (!empty($this->bind_scirpt)) {
+            foreach ($this->bind_scirpt as $key => $value) {
+                $this->db->bind($key, $value);
+            }
+        }
+
+        $this->reset();
+        return $this->db->rowCount();
+    }
+
+
+    function startQueryGroup($prefix = '')
+    {
+        $this->startQueryGroupSign[] = '(';
+
+        return $this;
+    }
+
+    function endQueryGroup()
+    {
+        $this->endQueryGroupSign[] = ')';
         return $this;
     }
 
     function get_query()
     {
-        $this->new = false;
-        if (count($this->qeueu) > 0)
-            $this->execute();
+        return $this->_compileQuery('get_query', true);
+    }
 
-        if (count($this->qeueu) == 0) {
-            $this->query .= "";
-            $this->db->query($this->query);
-            foreach ($this->bind_scirpt as $bind) {
-                $this->db->bind($bind['key'], $bind['value']);
+
+    function reset()
+    {
+        $this->inputs = [];
+        $this->selects = [];
+        $this->whereClause = [];
+        $this->groupBy = [];
+        $this->orderBy = [];
+        $this->limitNumber = null;
+        $this->joinClause = [];
+        $this->table = '';
+        $this->startQueryGroupSign = [];
+        $this->endQueryGroupSign = [];
+        $this->query = '';
+        $this->bind_scirpt = [];
+    }
+
+    private function _has_operator($str)
+    {
+        return (bool) preg_match('/(<|>|!|=|\sIS NULL|\sIS NOT NULL|\sEXISTS|\sBETWEEN|\sLIKE|\sIN\s*\(|\s)/i', trim($str));
+    }
+    private function _get_operator($str)
+    {
+        static $_operators;
+
+        if (empty($_operators)) {
+            $_les = ($this->_like_escape_str !== '')
+                ? '\s+' . preg_quote(trim(sprintf($this->_like_escape_str, $this->_like_escape_chr)), '/')
+                : '';
+            $_operators = array(
+                '\s*(?:<|>|!)?=\s*',             // =, <=, >=, !=
+                '\s*<>?\s*',                     // <, <>
+                '\s*>\s*',                       // >
+                '\s+IS NULL',                    // IS NULL
+                '\s+IS NOT NULL',                // IS NOT NULL
+                '\s+EXISTS\s*\(.*\)',        // EXISTS(sql)
+                '\s+NOT EXISTS\s*\(.*\)',    // NOT EXISTS(sql)
+                '\s+BETWEEN\s+',                 // BETWEEN value AND value
+                '\s+IN\s*\(.*\)',            // IN(list)
+                '\s+NOT IN\s*\(.*\)',        // NOT IN (list)
+                '\s+LIKE\s+\S.*(' . $_les . ')?',    // LIKE 'expr'[ ESCAPE '%s']
+                '\s+NOT LIKE\s+\S.*(' . $_les . ')?' // NOT LIKE 'expr'[ ESCAPE '%s']
+            );
+        }
+
+        return preg_match('/' . implode('|', $_operators) . '/i', $str, $match)
+            ? $match[0] : FALSE;
+    }
+
+    private function _addToBinder($values)
+    {
+        if (!is_array($values))
+            $values = [$values];
+
+        $keys = [];
+        foreach ($values as $value) {
+            $key = strtolower(':' . 'VAR' . random(3) . random(1, 'int'));
+            $keys[] = $key;
+
+            $this->bind_scirpt[$key] = $value;
+        }
+        return $keys;
+    }
+
+    private function _runQuery($caller = 'insert')
+    {
+        $this->db->query($this->query);
+
+        if (!empty($this->bind_scirpt)) {
+            foreach ($this->bind_scirpt as $key => $value) {
+                $this->db->bind($key, $value);
             }
-            $query = $this->query;
-            $this->reset();
+        }
 
-            return $query;
+        if (in_array($caller, ['insert', 'insert_batch', 'update', 'delete'])) {
+            $this->db->execute();
+        }
+
+        $this->reset();
+    }
+
+    private function _checkGrouping(&$var, $state = 'start')
+    {
+        if ($state == 'start' && !empty($this->startQueryGroupSign)) {
+            $left = count($this->startQueryGroupSign);
+            $var['openGroupSign'] = '(';
+            unset($this->startQueryGroupSign[$left - 1]);
+        } elseif ($state == 'end' && !empty($this->endQueryGroupSign)) {
+            $left = count($this->endQueryGroupSign);
+            $var['closeGroupSign'] = ')';
+            unset($this->endQueryGroupSign[$left - 1]);
         }
     }
 
-    function setQuery($query, $reset = false){
-        $this->query = $query;
-
-        
-        return $this;
-    }
-    function join($tabel, $on, $tipe = "INNER")
+    private function _compileQuery($caller = null, $return = false)
     {
-
-        if ($this->new) {
-            $this->callOrder[] = 'join';
-            $this->qeueu['join'][] = array(
-                'temp' => array(
-                    'tabel' => $tabel,
-                    'on' => $on,
-                    'tipe' => $tipe,
-                )
-            );
+        $query = "";
+        $table = $this->table;
+        $whereSyntax = '';
+        $joinSyntax = '';
+        $insertSyntax = ['', ''];
+        $updateSyntax = '';
+        $deleteSyntax = '';
+        if (in_array($caller, ['row', 'results', 'result_object', 'row', 'row_object'])) {
+            $selects = empty($this->selects) ? '*' : join(', ', $this->selects);
+            $query = "SELECT $selects FROM $table";
+        } elseif ($caller == 'update') {
+            $query = "UPDATE $table";
+        } elseif ($caller == 'delete') {
+            $query = "DELETE FROM $table ";
+        } elseif ($caller == 'insert') {
+            $query = "INSERT INTO $table";
         } else {
-            // if($this->countjoin >0)
-            $this->query .= ' ' . $tipe . " JOIN " . $tabel . " ON " . $on;
-        }
-        return $this;
-    }
-
-    function select($selection)
-    {
-        if ($this->new) {
-            $this->callOrder[] = 'select';
-            $this->qeueu['select'][] = array(
-                'temp' => $selection
-            );
-        } else {
-            if ($this->countselect > 0)
-                $this->query .=  ", " . $selection;
-            else
-                $this->query .=  " SELECT " . $selection;
-
-            $this->countselect++;
-        }
-        return $this;
-    }
-    function insert($input, $table)
-    {
-        $query = 'INSERT INTO ' . $table . '(';
-        $jml = count($input);
-        $bts = $jml - 1;
-        $i = 0;
-        foreach ($input as $k => $v) {
-            if ($i != $bts)
-                $query .= '`' . $k . '`, ';
-            elseif ($i == $bts)
-                $query .= '`' . $k . '`) VALUES (';
-
-            $i++;
+            if (!empty($this->selects)) {
+                $selects =  join(', ', $this->selects);
+                $query = "SELECT $selects FROM $table";
+            }
         }
 
-        $i = 0;
-        foreach ($input as $k => $v) {
-            if ($i != $bts)
-                $query .= '"' . $v . '", ';
-            elseif ($i == $bts)
-                $query .= '"' . $v . '")';
+        if (!empty($this->whereClause)) {
+            $n = count($this->whereClause);
+            $i = 1;
+            foreach ($this->whereClause as $v) {
+                $key = $v['key'];
+                $value = $v['value'];
+                $rel = $v['rel'];
+                $openGroupSign = isset($v['openGroupSign']) ? $v['openGroupSign'] : '';
+                $closeGroupSign = isset($v['closeGroupSign']) ? $v['closeGroupSign'] : '';
 
-            $i++;
-        }
+                // Makse Sure thereis no one close group sign in the last where clauses
+                if ($i == $n) {
+                    if (!empty($this->endQueryGroupSign)) {
+                        $closeGroupSign = join('', $this->endQueryGroupSign);
+                    }
+                }
 
-        // var_dump($query);die;
-        $this->db->query($query);
-        $this->db->execute();
-        return $this;
-    }
-
-    function update($input, $table){
-        $this->new = false;
-        if (count($this->qeueu) > 0)
-            $this->execute();
-
-        $query = 'UPDATE ' . $table . ' SET ';
-        $jml = count($input);
-        $bts = $jml - 1;
-        $i = 0;
-        foreach ($input as $k => $v) {
-            if ($i != $bts)
-                $query .= '`' . $k . '` = "' . $v . '", ';
-            elseif ($i == $bts)
-                $query .= '`' . $k . '` = "' . $v .'" ' ;
-
-            $i++;
-        }
-        $this->db->query($query . $this->query);
-        foreach ($this->bind_scirpt as $bind) {
-            $this->db->bind($bind['key'], $bind['value']);
-        }
-        $this->db->execute();
-        return $this;
-    }
-
-    function delete($table){
-        $this->new = false;
-        if (count($this->qeueu) > 0)
-            $this->execute();
-
-        $query = 'DELETE FROM ' . $table;
-        $this->db->query($query . $this->query);
-        foreach ($this->bind_scirpt as $bind) {
-            $this->db->bind($bind['key'], $bind['value']);
-        }
-        $this->db->execute();
-        return $this;
-    }
-
-    function insert_batch($inputs, $table)
-    {
-        $query = 'INSERT INTO ' . $table . '(';
-        $juml_batch = count($inputs);
-        $bts_batch = $juml_batch - 1;
-        $jml = count($inputs[0]);
-        $bts = $jml - 1;
-        $j = 0;
-        $i = 0;
-        foreach ($inputs[0] as $k => $v) {
-            if ($i != $bts)
-                $query .= '`' . $k . '`, ';
-            elseif ($i == $bts)
-                $query .= '`' . $k . '`) VALUES (';
-
-            $i++;
-        }
-
-        foreach ($inputs as $input) {
-            $i = 0;
-            foreach ($input as $k => $v) {
-                if ($i != $bts)
-                    $query .= '"' . $v . '", ';
-                elseif ($i == $bts)
-                    $query .= '"' . $v . '")';
+                $operator = '';
+                if (is_null($value)) {
+                    if (!$this->_has_operator($key))
+                        $operator = ' IS NULL ';
+                } else {
+                    if (!$this->_has_operator($key))
+                        $operator = ' = ';
+                    else{
+                        $operator = $this->_get_operator($key);
+                        $key = str_replace($operator, '', $key);
+                    }
+                }
+                $whereSyntax .= ($whereSyntax ? $rel : ' WHERE') . " $openGroupSign $key $operator $value $closeGroupSign";
 
                 $i++;
             }
-
-            $query .= $j != $bts_batch ? ', (' : null;
-            $j++;
         }
-        $this->db->query($query);
-        $this->db->execute();
-        // var_dump($query);
-        return $this;
-    }
-    function from($table)
-    {
-        if ($this->new) {
-            $this->callOrder[] = 'from';
-            $this->qeueu['from'][] = array(
-                'temp' => $table
-            );
-        } else {
-            $this->query .= " FROM " . $table;
-        }
-        return $this;
-    }
-    function where($kolom, $nilai, $operator = "=")
-    {
-        if ($this->new) {
-            $this->callOrder[] = 'where';
-            $this->qeueu['where'][] = array(
-                'temp' => array(
-                    'kolom' => $kolom,
-                    'nilai' => $nilai,
-                    'operator' => $operator
-                )
-            );
-        } else {
-            $key_binding = 'VAR' . random(1) . random(1, 'int');
-            if (is_string($nilai))
-                $nilai = "$nilai";
-            if (stristr($this->query, "where"))
-                $this->query .= " and " . $kolom . " " . $operator . " :" . $key_binding;
-            else
-                $this->query .= " where " . $kolom . " " . $operator . " :" . $key_binding;
+        if (!empty($this->joinClause)) {
+            foreach ($this->joinClause as $join) {
+                $table = $join['table'];
+                $on = $join['on'];
+                $type = $join['type'];
 
-            $this->bind_scirpt[] = array(
-                "key" => $key_binding,
-                "value" => $nilai,
-            );
-            $this->countWhere++;
-        }
-        return $this;
-    }
-
-    function like($kolom, $nilai, $type = 'both'){
-        if ($this->new) {
-            $this->callOrder[] = 'like';
-            $this->qeueu['like'][] = array(
-                'temp' => array(
-                    'kolom' => $kolom,
-                    'nilai' => $nilai,
-                    'type' => $type
-                )
-            );
-        } else {
-            $key_binding = 'VAR' . random(1) . random(1, 'int');
-            $likStatement = " LIKE :" . $key_binding;
-
-            switch($type){
-                case 'bfore':
-                    $nilai = "%$nilai";
-                    break;
-                case 'after':
-                    $nilai = "$nilai%";
-                    break;
-                case 'both':
-                    $nilai = "%$nilai%";
-                    break;
-            }
-
-            if (stristr($this->query, "where"))
-                $this->query .= " and " . $kolom . $likStatement;
-            else
-                $this->query .= " where " . $kolom . $likStatement;
-
-            $this->bind_scirpt[] = array(
-                "key" => $key_binding,
-                "value" => $nilai,
-            );
-            $this->countWhere++;
-        }
-        return $this;
-    }
-
-    function orlike($kolom, $nilai, $type = 'both'){
-        if ($this->new) {
-            $this->callOrder[] = 'orlike';
-            $this->qeueu['orlike'][] = array(
-                'temp' => array(
-                    'kolom' => $kolom,
-                    'nilai' => $nilai,
-                    'type' => $type
-                )
-            );
-        } else {
-            $key_binding = 'VAR' . random(1) . random(1, 'int');
-            $likStatement = " LIKE :" . $key_binding;
-
-            switch($type){
-                case 'bfore':
-                    $nilai = "%$nilai";
-                    break;
-                case 'after':
-                    $nilai = "$nilai%";
-                    break;
-                case 'both':
-                    $nilai = "%$nilai%";
-                    break;
-            }
-            
-            if (stristr($this->query, "where"))
-                $this->query .= " OR " . $kolom . $likStatement;
-
-            $this->bind_scirpt[] = array(
-                "key" => $key_binding,
-                "value" => $nilai,
-            );
-            $this->countWhere++;
-        }
-        return $this;
-    }
-
-    function wherein($kolom, $nilai, $not = false)
-    {
-        if ($this->new) {
-            $this->callOrder[] = 'wherein';
-            $this->qeueu['wherein'][] = array(
-                'temp' => array(
-                    'kolom' => $kolom,
-                    'nilai' => $nilai,
-                    'not' => $not
-                )
-            );
-        } else {
-
-            $inStatement = '';
-            foreach($nilai as $v){
-                $key = 'VAR' . random(1) . random(1, 'int');
-                $inStatement .= ($inStatement ? ',:': ':') . $key;
-                $this->bind_scirpt[] = array(
-                    'key' => $key,
-                    'value' => $v
-                );
-            }
-        
-            $inStatement = "($inStatement)";
-
-            $operator = $not ? "NOT IN" : "IN";
-
-            if (stristr($this->query, "where"))
-                $this->query .= " and " . $kolom . " $operator $inStatement";
-            else
-                $this->query .= " where " . $kolom . " $operator $inStatement";
-
-            $this->countWhere++;
-        }
-        return $this;
-    }
-    function or_where($kolom, $nilai, $operator = "=")
-    {
-        if ($this->new) {
-            $this->callOrder[] = 'or_where';
-            $this->qeueu['or_where'][] = array(
-                'temp' => array(
-                    'kolom' => $kolom,
-                    'nilai' => $nilai,
-                    'operator' => $operator
-                )
-            );
-        } else {
-            $key_binding = 'VAR' . random(1) . random(1, 'int');
-            $this->query .= " OR " . $kolom . " " . $operator . " :" . $key_binding;
-            $this->bind_scirpt[] = array(
-                "key" => $key_binding,
-                "value" => $nilai,
-            );
-            $this->countWhere++;
-        }
-        return $this;
-    }
-
-    function limit($limit = null){
-        if ($this->new) {
-            $this->callOrder[] = 'limit';
-            $this->qeueu['limit'][] = array(
-                'temp' => array(
-                    'limit' => $limit
-                )
-            );
-        } else {
-            if(!empty($limit)){
-                $this->query .= ' LIMIT ' . $limit;
+                $joinSyntax .= " $type JOIN $table ON $on ";
             }
         }
-        return $this;
-    }
-    function row()
-    {
-        $this->new = false;
-        if (count($this->qeueu) > 0)
-            $this->execute();
 
-        if (count($this->qeueu) == 0) {
-            $this->query .= "";
-            $this->db->query($this->query);
-            foreach ($this->bind_scirpt as $bind) {
-                $this->db->bind($bind['key'], $bind['value']);
-            }
-            $this->reset();
-            return $this->db->single();
-        }
-        return $this;
-
-    }
-    function results()
-    {
-
-        $this->new = false;
-        if (count($this->qeueu) > 0)
-            $this->execute();
-        if (count($this->qeueu) == 0) {
-            $this->query .= "";
-            $this->db->query($this->query);
-            foreach ($this->bind_scirpt as $bind) {
-                $this->db->bind($bind['key'], $bind['value']);
-            }
-            $this->reset();
-            return $this->db->resultSet();
-        }
-        
-    }
-    function result_object()
-    {
-        $this->new = false;
-        if (count($this->qeueu) > 0)
-            $this->execute();
-
-        if (count($this->qeueu) == 0) {
-            $this->query .= "";
-            $this->db->query($this->query);
-            foreach ($this->bind_scirpt as $bind) {
-                $this->db->bind($bind['key'], $bind['value']);
-            }
-            $this->reset();
-            return $this->db->result_object();
-        }
-    }
-
-    function num_rows(){
-        $this->new = false;
-        if (count($this->qeueu) > 0)
-            $this->execute();
-
-        if (count($this->qeueu) == 0) {
-            $this->query .= "";
-            $this->db->query($this->query);
-            foreach ($this->bind_scirpt as $bind) {
-                $this->db->bind($bind['key'], $bind['value']);
-            }
-            $this->reset();
-            return $this->db->rowCount();
-        }
-    }
-    function call_function($f, $t, $index)
-    {
-        if ($f == "select")
-            $this->select($t);
-
-        if ($f == 'from')
-            $this->from($t);
-
-        if ($f == 'join')
-            $this->join($t['tabel'], $t['on'], $t['tipe']);
-
-        if ($f == "where")
-            $this->where($t['kolom'], $t['nilai'], $t['operator']);
-
-        if ($f == "wherein")
-            $this->wherein($t['kolom'], $t['nilai'], $t['not']);
-
-        if ($f == "or_where")
-            $this->or_where($t['kolom'], $t['nilai'], $t['operator']);
-
-        if($f == 'like')
-            $this->like($t['kolom'], $t['nilai'], $t['type']);
-
-        if($f == 'orlike')
-            $this->orlike($t['kolom'], $t['nilai'], $t['type']);
-
-        if ($f == "group_by")
-            $this->group_by($t['kolom']);
-
-        if ($f == "order_by")
-            $this->order_by($t['kolom'], $t['tipe']);
-
-        if ($f == 'subquery')
-            $this->subquery();
-
-        if($f == 'startQueryGroup')
-            $this->startQueryGroup();
-        if($f == 'endQueryGroup')
-            $this->endQueryGroup();
-            
-        if($f == 'liit')
-            $this->limit();
-
-        unset($this->qeueu[$f][$index]);
-    }
-    function execute()
-    {
-        $unorder = ['startQueryGroup', 'endQueryGroup', ];
-        $indexOfUnOrderd = [];
+        $groupBy = join(',', $this->groupBy);
+        $orderBy = join(', ', $this->orderBy);
 
 
-        // $indexOfUnOrderd = array_filter($this->callOrder, function($v) use($unorder) { return in_array($v, $unorder);});
-       
-        foreach ($this->functions as $f) {
-            foreach ($this->qeueu as $k => $v) {
-                if ($k == $f) {
-                    foreach ($v as $key => $value){
-                        $this->call_function($f, $value['temp'], $key);
-                    }
-                    
+        if (in_array($caller, ['insert', 'update', 'delete'])) {
+            if ($caller == 'insert' && !empty($this->inputs)) {
+                $insertSyntax[0] = join('`,`', array_keys($this->inputs));
+                $insertSyntax[1] = join(',', array_values($this->inputs));
+
+                $insertSyntax = ' (`' . $insertSyntax[0] . '`) VALUES (' . $insertSyntax[1] . ')';
+
+                $query .= $insertSyntax;
+            } elseif ($caller == 'update' && !empty($this->inputs)) {
+                foreach ($this->inputs as $key => $value) {
+                    $updateSyntax .= ($updateSyntax ? ', ' : ' SET ') . $key . '=' . $value;
                 }
-                if (empty($this->qeueu[$f]))
-                    unset($this->qeueu[$f]);
+                $query .= $updateSyntax . $whereSyntax;
+            } elseif ($caller == 'delete') {
+                $query .= $deleteSyntax . $whereSyntax;
             }
+        } else {
+            // Assemble The Query
+            $query .= $joinSyntax . $whereSyntax . " $groupBy" . " $orderBy " . (!empty($this->limitNumber) ? 'LIMIT ' . $this->limitNumber : '');
         }
+        if ($return) return $query;
 
-        if (count($this->qeueu) > 0)
-            $this->execute();
-    }
-    function get()
-    {
-        $this->reset();
-        return $this;
-    }
-    function reset()
-    {
-        $this->query = "";
-        $this->countWhere = 0;
-        $this->countselect = 0;
-        $this->qeueu = array();
-        $this->new = true;
-        $this->bind_scirpt = array();
-        $this->hasil = null;
+        $this->query = $query;
     }
 }

@@ -1,8 +1,8 @@
 $(document).ready(function(){
     var form = <?= json_encode($form) ?>;
     var dtid = "<?= $dtid?>";
-    var size = "<?= isset($size) ? $size : '' ?>"
-
+    var modal = <?= json_encode(isset($modal) ? $modal : []) ?>;
+    console.log(form);
     var defaultCnfigToast = {
         title: 'Submit Feedback',
         message: 'Submit Successfull',
@@ -40,6 +40,7 @@ $(document).ready(function(){
         else if($(document).scrollTop() < 300)
             toolbarButton.removeClass('sticky-toolbar');
     });
+
     var modalConfig = {
         modalId: modalid,
         wrapper: "body",
@@ -47,7 +48,7 @@ $(document).ready(function(){
             clickToClose: false,
             type: form.path ? 'form-custom' : 'form',
             ajax: true,
-            size: size,
+            size: modal.size,
             rules: [
                 {
                     name: 'noSpace',
@@ -66,14 +67,12 @@ $(document).ready(function(){
 
                 defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss');
                 defaultCnfigToast.message = res.message;
-                console.log(res);
                 setTimeout(function(){
                     $("#" + modalid).modal('hide');
                 }, 1000);
                 makeToast(defaultCnfigToast);
-                setTimeout(function(){
-                   window.location.reload();
-                }, 2000);
+                var dt = getInstance('dataTables', dtid);
+                dt.ajax.reload();
 
             },
             submitError: function(res){
@@ -98,40 +97,46 @@ $(document).ready(function(){
             saatBuka: (innerOpt) => {
                 var datatable = getInstance('dataTables', dtid);
                 if(!datatable) return;
+                formSkrip = form.skrip ? 's=' + form.skrip : '';
+                var url = path + 'uihelper/skrip?' + formSkrip;
+                skripid = moment().format('YYYYMMDDHHss');
 
-                var url = path + 'uihelper/skrip?s=' + form.skrip;
+                if(form.skripVar){
+                    form.skripVar.formid = form.formid
+                    form.skripVar['skripid'] = skripid;
+                }else{
+                    form.skripVar = {
+                        'skripid': skripid,
+                        'formid': form.formid
+                    }
+                }
+            
                 if(innerOpt.mode == 'edit'){
+                    form.skripVar.mode = 'edit';
                     var rowData = datatable.rows({selected:true}).data();
                     var editedData =rowData[0];
                     if(editedData)
                         url += "&ed=" + JSON.stringify(editedData);
 
                 }else{
-                    
+                    form.skripVar.mode = 'baru';
                 }
-                if(!form.path){
-                    skripid = moment().format('YYYYMMDDHHss');
-                    if(form.skripVar){
-                        form.skripVar['skripid'] = skripid;
-                        url += "&sv=" + JSON.stringify(form.skripVar);
+
+                url += "&sv=" + JSON.stringify(form.skripVar);
+                fetch(url, {method: 'GET', })
+                .then(res => {
+                    if (res.status != 200)
+                        return;
+                    else
+                        return res.json()
+                }).then(res => {
+                    if (!res)
+                        return;
+                    else {
+                        $("#" + modalid).after(res.skrip);
                     }
-                    
-                    fetch(url, {method: 'GET', })
-                    .then(res => {
-                        if (res.status != 200)
-                            return;
-                        else
-                            return res.json()
-                    }).then(res => {
-                        if (!res)
-                            return;
-                        else {
-                            $("#" + modalid).after(res.skrip);
-                        }
-                    });
-                }else{
-                    $('#' + form.formid).form();
-                }
+                });
+                $('#' + form.formid).form();
             },
             saatTutup: () => {
                 console.log(skripid);
@@ -152,19 +157,11 @@ $(document).ready(function(){
     };
 
     if(addButton.length > 0){
-        addButton.click(function(){
-            form.skripVar.mode = 'baru';
-            form.skripVar.formid = modalConfig.opt.formOpt.formId;
-            if(form.path){
-                var url = path + 'uihelper/form/?f=' + form.path 
-                
-                skripid = moment().format('YYYYMMDDHHss');
-                if(form.skripVar && !form.skripVar['skripid'])
-                    form.skripVar['skripid'] = skripid;
-
-                url += '&sv=' + JSON.stringify(form.skripVar);
-
-                var formEl = fetch(url, {
+        addButton.click(function(){            
+           modalConfig.opt.mode = 'baru';
+           if(form.path){
+                var url = path + 'uihelper/form/?f=' + form.path  + '&sv=' + JSON.stringify({formid: form.formid})
+                fetch(url, {
                     method: 'GET',
                 }).then(res => {
                     if (res.status != 200)
@@ -204,17 +201,10 @@ $(document).ready(function(){
                 return;
             }
             var editedData =rowData[0];
-            var url = path + 'uihelper/form/?f=' + form.path + '&s=' + form.skrip + "&ed=" + JSON.stringify(editedData);
-            form.skripVar['mode'] = 'edit';
-            
+            var url = path + 'uihelper/form/?f=' + form.path + "&ed=" + JSON.stringify(editedData) + '&sv=' + JSON.stringify({formid: form.formid});
+
             if(form.path){
-                skripid = moment().format('YYYYMMDDHHss');
-                if(form.skripVar && !form.skripVar['skripid'])
-                    form.skripVar['skripid'] = skripid;
-
-                url += '&sv=' + JSON.stringify(form.skripVar);
-
-                var formEl = fetch(url, {
+                fetch(url, {
                     method: 'GET',
                 }).then(res => {
                     if (res.status != 200)
@@ -275,7 +265,9 @@ $(document).ready(function(){
                         defaultCnfigToast.message = "Delete Gagal";
 
                     defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss')
+                    defaultCnfigToast.wrapper = 'body';
                     makeToast(defaultCnfigToast);
+                    defaultCnfigToast.wrapper = 'form';
                     var dt = getInstance('dataTables', dtid);
                     dt.ajax.reload();
                 }
@@ -296,7 +288,9 @@ $(document).ready(function(){
                         defaultCnfigToast.message = "Delete Berhasil";
 
                     defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss')
+                    defaultCnfigToast.wrapper = 'body';
                     makeToast(defaultCnfigToast);
+                    defaultCnfigToast.wrapper = 'form';
                     var dt = getInstance('dataTables', dtid);
                     dt.ajax.reload();
                 }
@@ -316,7 +310,10 @@ $(document).ready(function(){
                             defaultCnfigToast.message = "Delete Gagal";
 
                         defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss')
+                        defaultCnfigToast.wrapper = 'body';
                         makeToast(defaultCnfigToast);
+                        defaultCnfigToast.wrapper = 'form';
+
                         var dt = getInstance('dataTables', dtid);
                         dt.ajax.reload();
                     }

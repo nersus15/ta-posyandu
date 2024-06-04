@@ -27,6 +27,10 @@ function parseUrl($segment = true)
 
     $url = str_replace(BASEURL, '', $url);
     // readQueryParams($url);
+    $offsetQueryParams = strpos($url, '?');
+    if($offsetQueryParams !== false && strpos($url, '=') != false){
+        $url = substr($url, 0, $offsetQueryParams);
+    }
 
     if ($segment)
         return empty($url) ? $url : explode('/', $url);
@@ -57,12 +61,28 @@ function sessiondata($index = 'login', $kolom = null)
     $data = isset($_SESSION[$index]) ?  $_SESSION[$index] : [];
     return empty($kolom) ? $data : (isset($data[$kolom]) ? $data[$kolom] : null);
 }
+function namaBulan($key, $reverse = false){
+    $mapBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    $returnValue = null;
+    if($reverse){
+        foreach($mapBulan as $k => $bulan){
+            if(strtolower($key) == strtolower($bulan)){
+                $returnValue = $k + 1;
+                break;
+            }
+        }
+    }else{
+        $key = intval($key) - 1;
+        $returnValue = isset($mapBulan[$key]) ? $mapBulan[$key] : null;
+    }
 
+    return $returnValue;
+}
 function response($message = '', $code = 200, $type = 'succes', $format = 'json')
 {
     http_response_code($code);
     $responsse = array();
-    if ($code != 200)
+    if (!in_array($code, [200, 201]))
         $type = 'Error';
 
     if (is_object($message))

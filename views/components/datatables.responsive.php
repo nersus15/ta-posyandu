@@ -82,16 +82,20 @@
     </div>
 </div>
 <script id="toolbar-default-skrip">
-    <?php 
+    <?php
         if(!isset($modal)){
             $modal = [];
+        }
+        if(!isset($form['skripVar'])){
+            $form['skripVar'] = [];
         }
         $defData = array(
             'form' => $form,
             'dtid' => $dtid,
+            'modal' => $modal
         );
-        $data = array_merge($defData, $modal);
-        load_script('utils/dt_default_skrip.js', $data)
+        // $data = array_merge($defData, $modal);
+        load_script('utils/dt_default_skrip.js', $defData)
     ?>
 </script>
 <script id="toolbar-user-skrip">
