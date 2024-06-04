@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2024 at 05:25 AM
+-- Generation Time: Jun 04, 2024 at 01:27 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,7 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- OK
 -- Table structure for table `bayi`
 --
 
@@ -49,7 +48,8 @@ CREATE TABLE `bayi` (
 --
 
 INSERT INTO `bayi` (`id`, `nama`, `pencatat`, `umur`, `kelamin`, `bbl`, `akb`, `tanggal_lahir`, `ttl_estimasi`, `alamat`, `ayah`, `ibu`, `createdAt`) VALUES
-('27TyoLDC', 'Anak 1', 'kader', 23, 'L', 240, 12, '2024-05-01', 1, 'Konoha', 'Minato', 'Kushina', '2024-05-24 15:34:42'),
+('27TyoLDC', 'Anak 1', 'kader', 34, 'L', 240, 121, '2024-05-01', 0, 'Konoha', 'Minato', 'Kushina', '2024-05-24 15:34:42'),
+('EIUu7l9V', 'Anak 2', 'kader', 358, 'L', 240, 121, '2023-06-12', 0, 'Kepo', 'Minato', 'Kushina', '2024-06-04 14:47:33'),
 ('hVsBEyeG', '', 'kader', 11, 'P', 200, 12, '2024-05-13', 0, 'testes', 'adad', 'Ibu Aja', '2024-05-24 15:44:45'),
 ('NirbbfLJ', 'Anak 2', 'bidan2', 25, 'L', 240, 23, '2024-04-27', 1, 'Sukarara', 'Minato', 'Kushina', '2024-05-23 04:44:11'),
 ('NirbbfLK', 'Anak 1', 'bidan1', 25, 'L', 240, 23, '2024-04-27', 1, 'Sukarara', 'Minato', 'Kushina', '2024-05-23 04:44:11');
@@ -85,7 +85,7 @@ CREATE TABLE `bumil` (
 --
 
 INSERT INTO `bumil` (`id`, `nomor`, `rt`, `nama`, `nama_suami`, `tanggal_lahir`, `ttl_estimasi`, `domisili`, `alamat`, `pendidikan`, `pekerjaan`, `agama`, `kartu_kesehatan`, `golongan_darah`, `hp`, `pencatat`, `createdAt`) VALUES
-('ekdPTCu4', NULL, NULL, 'Kushina', 'Minato', '2024-04-27', '', 'Konohagakure', 'Uzugakure', '-', 'Shinobi', 'islam', '', '-', '083142808426', 'kader', '2024-05-24 14:22:13');
+('ekdPTCu4', '345353221', NULL, 'Kushina', 'Minato', '1999-04-27', '0', 'Konohagakure', 'Uzugakure', '-', 'Shinobi', 'islam', 'jamsostek', '-', '083142808426', 'kader', '2024-05-24 14:22:13');
 
 -- --------------------------------------------------------
 
@@ -135,7 +135,7 @@ CREATE TABLE `kunjungan_bumil` (
   `hidup` int(3) NOT NULL DEFAULT 0,
   `hpht` date DEFAULT NULL,
   `hpl` date DEFAULT NULL,
-  `persalinan_sebemulnya` date DEFAULT NULL,
+  `persalinan_sebelumnya` date DEFAULT NULL,
   `bb` int(11) DEFAULT NULL,
   `tb` int(11) DEFAULT NULL,
   `buku_kia` enum('','1','0') NOT NULL DEFAULT '',
@@ -161,9 +161,9 @@ CREATE TABLE `kunjungan_bumil` (
 -- Dumping data for table `kunjungan_bumil`
 --
 
-INSERT INTO `kunjungan_bumil` (`id`, `ibu`, `faskes`, `tgl_periksa`, `createdAt`, `pencatat`, `nama_pemeriksa`, `posyandu`, `dukun`, `gravida`, `paritas`, `abortus`, `hidup`, `hpht`, `hpl`, `persalinan_sebemulnya`, `bb`, `tb`, `buku_kia`, `riwayat_komplikasi`, `penyakit`, `persalinan_tgl`, `persalinan_penolong`, `persalinan_pendamping`, `persalinan_tempat`, `persalinan_transportasi`, `persalinan_pendonor`, `persalinan_kunjungan_rumah`, `persalinan_kondisi_rumah`, `persalinan_persedian`, `lila`, `fundus`, `hb`, `usia_kehamilan`, `bj`) VALUES
-(1, 'ekdPTCu4', NULL, '2024-05-23', '2024-05-25', 'kader', 'fathurrahman', NULL, NULL, 1, 0, 0, 0, NULL, NULL, NULL, 65, 123, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12, 0, 0, 131, ''),
-(2, 'ekdPTCu4', NULL, '2024-05-23', '2024-05-25', 'kader', 'fathurrahman', NULL, NULL, 1, 0, 0, 0, NULL, NULL, NULL, 65, 123, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 12, 0, 0, 131, '');
+INSERT INTO `kunjungan_bumil` (`id`, `ibu`, `faskes`, `tgl_periksa`, `createdAt`, `pencatat`, `nama_pemeriksa`, `posyandu`, `dukun`, `gravida`, `paritas`, `abortus`, `hidup`, `hpht`, `hpl`, `persalinan_sebelumnya`, `bb`, `tb`, `buku_kia`, `riwayat_komplikasi`, `penyakit`, `persalinan_tgl`, `persalinan_penolong`, `persalinan_pendamping`, `persalinan_tempat`, `persalinan_transportasi`, `persalinan_pendonor`, `persalinan_kunjungan_rumah`, `persalinan_kondisi_rumah`, `persalinan_persedian`, `lila`, `fundus`, `hb`, `usia_kehamilan`, `bj`) VALUES
+(1, 'ekdPTCu4', NULL, '2024-05-23', '2024-05-25', 'kader', 'fathurrahman', '', '', 1, 0, 0, 0, '0000-00-00', '2024-06-14', '0000-00-00', 65, 123, '1', '', '', '0000-00-00', '7', '6', '1', '1', '5', '', '', '', 12, 30, 110, 70, 'Kambing'),
+(6, 'ekdPTCu4', NULL, '2024-06-03', '2024-06-04', 'bidan1', 'Kepo Deh', 'Lepakk', 'Tidak deee', 2, 1, 0, 1, '2024-06-21', '2024-06-19', '2003-04-23', 12, 123, '1', 'adada', 'adadad', '2024-06-04', '3', '2', '4', '3', '2', 'adada', 'addaaa', 'adadada', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -187,7 +187,8 @@ CREATE TABLE `lansia` (
 --
 
 INSERT INTO `lansia` (`id`, `pencatat`, `createdAt`, `nama`, `alamat`, `tanggal_lahir`, `estimasi_ttl`, `nik`) VALUES
-('60onecxG', 'kader', '2024-05-24 14:48:43', 'Nenek Chio', 'Sunagakure', '1947-07-08', 1, '5203196408990012');
+('60onecxG', 'kader', '2024-05-24 14:48:43', 'Nenek Chio', 'Sunagakure', '1947-07-08', 1, '5203196408990012'),
+('WPFP19Cx', 'kader', '2024-06-04 16:25:34', 'Kushina', 'adadada', '1974-01-15', 0, '5203196408990012');
 
 -- --------------------------------------------------------
 
@@ -202,7 +203,7 @@ CREATE TABLE `periksa_lansia` (
   `lansia` varchar(8) NOT NULL,
   `tgl_periksa` date NOT NULL,
   `berat` int(11) NOT NULL,
-  `createdAt` datetime NOT NULL
+  `createdAt` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -212,8 +213,8 @@ CREATE TABLE `periksa_lansia` (
 INSERT INTO `periksa_lansia` (`id`, `pencatat`, `pemeriksa`, `lansia`, `tgl_periksa`, `berat`, `createdAt`) VALUES
 (1, 'kader', 'Saya', '60onecxG', '2024-05-23', 60, '0000-00-00 00:00:00'),
 (3, 'kader', 'Saya', '60onecxG', '2024-01-15', 60, '0000-00-00 00:00:00'),
-(4, 'kader', 'fathurrahman', '60onecxG', '2024-02-01', 40, '0000-00-00 00:00:00'),
-(5, 'kader', 'fathurrahman', '60onecxG', '2023-11-01', 20, '0000-00-00 00:00:00');
+(5, 'kader', 'fathurrahman', '60onecxG', '2023-11-01', 20, '0000-00-00 00:00:00'),
+(6, 'kader', 'fathurrahman', 'WPFP19Cx', '2024-06-01', 56, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -299,19 +300,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `kunjungan_anak`
 --
 ALTER TABLE `kunjungan_anak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `kunjungan_bumil`
 --
 ALTER TABLE `kunjungan_bumil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `periksa_lansia`
 --
 ALTER TABLE `periksa_lansia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
