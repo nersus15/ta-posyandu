@@ -24,6 +24,7 @@ $(document).ready(function(){
     var addButton = panel.find('.tool-add');
     var editButton = panel.find('.tool-edit');
     var deleteButton = panel.find('.tool-delete');
+    var links = panel.find('.tool-link');
     var modalid = "modal-" + dtid;
     var skripid = '';
 
@@ -319,5 +320,14 @@ $(document).ready(function(){
             });            
 
         });
+    }
+
+    if(links.length > 0){
+        links.click(function(e){
+            e.preventDefault();
+            var url = $(this).attr('href');
+            console.log(url);
+            window.open(url, '_blank');
+        })
     }
 });

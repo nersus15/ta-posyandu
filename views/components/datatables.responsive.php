@@ -89,10 +89,15 @@
         if(!isset($form['skripVar'])){
             $form['skripVar'] = [];
         }
+        if(!isset($toolbarVar)){
+            $toolbarVar = [];
+        }
+
         $defData = array(
             'form' => $form,
             'dtid' => $dtid,
-            'modal' => $modal
+            'modal' => $modal,
+            'toolbar' => $toolbarVar
         );
         // $data = array_merge($defData, $modal);
         load_script('utils/dt_default_skrip.js', $defData)
@@ -101,7 +106,23 @@
 <script id="toolbar-user-skrip">
 <?php
     if(isset($toolbarSkrip) && !empty($toolbarSkrip)){
-        load_script($toolbarSkrip, $form + array('dtid' => $dtid));
+        if(!isset($modal)){
+            $modal = [];
+        }
+        if(!isset($form['skripVar'])){
+            $form['skripVar'] = [];
+        }
+        if(!isset($toolbarVar)){
+            $toolbarVar = [];
+        }
+        $defData = array(
+            'form' => $form,
+            'dtid' => $dtid,
+            'modal' => $modal,
+            'toolbar' => $toolbarVar
+        );
+
+        load_script($toolbarSkrip, $defData);
     }
 ?>
 </script>

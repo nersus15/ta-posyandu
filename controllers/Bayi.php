@@ -95,7 +95,7 @@ class Bayi extends Controller{
         ];
         $input = $_POST;
 
-        $input['ttl_estimasi'] = 0;
+        $input['ttl_estimasi'] = '0';
 
         if ($input['ingat_ttl'] == 0) {
             $hariIni = time();
@@ -255,7 +255,7 @@ class Bayi extends Controller{
 
         if(empty($input['nama_pemeriksa']))
             $input['nama_pemeriksa'] = sessiondata('login', 'nama_lengkap');
-        
+
         if($isEdit){
             $id = $input['id'];
             $this->db->where('id', $id)->update($input, 'kunjungan_anak');

@@ -88,7 +88,7 @@ class Bumil extends Controller{
         ];
         $input = $_POST;
 
-        $input['ttl_estimasi'] = 0;
+        $input['ttl_estimasi'] = '0';
 
         if ($input['ingat_ttl'] == 0) {
             $hariIni = time();
@@ -134,7 +134,7 @@ class Bumil extends Controller{
 
     private function _getlist($idbumil){
         $tmp = $this->db->select('YEAR(tgl_periksa) tahun, MONTH(tgl_periksa) bulan, kunjungan_bumil.*')
-            ->where('ibu', $idbumil)    
+            ->where('ibu', $idbumil)
             ->from('kunjungan_bumil')
             ->results();
 
@@ -221,14 +221,14 @@ class Bumil extends Controller{
 
     function deletepemeriksaan(){
         $id = $_POST['id'];
-        $idanak = $_POST['idanak'];
+        $idbumil = $_POST['idbumil'];
         if(!httpmethod('delete')) response("Invalid HTTP Method", 403);
         if(empty($id)) response("Request Invalid", 403);
 
         try {
-            $this->db->where('id', $id)->delete('kunjungan_anak');
+            $this->db->where('id', $id)->delete('kunjungan_bumil');
 
-            $pemeriksaan = $this->_getlist($idanak);
+            $pemeriksaan = $this->_getlist($idbumil);
             response(["data" => $pemeriksaan, "message" => "Berhasil menghapus data pemeriksaan Anak"]);
         } catch (\Throwable $th) {
             response(['message' => 'Gagal menghapus data', 'reason' => $th->getMessage()], 500);

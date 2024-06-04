@@ -48,7 +48,7 @@ class Lansia extends Controller{
         ];
         $input = $_POST;
 
-        $input['estimasi_ttl'] = 0;
+        $input['estimasi_ttl'] = '0';
 
         if ($input['ingat_ttl'] == 0) {
             $hariIni = time();

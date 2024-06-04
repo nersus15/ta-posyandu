@@ -84,16 +84,20 @@ class Kader extends Controller{
     }
 
     function bumil(){
-        $tabelBidan = $this->addViews('components/datatables.responsive', array(
+        $tabel = $this->addViews('components/datatables.responsive', array(
             'dtTitle' => 'Data Ibu Hamil',
-            'dtid' => 'dt-bidan',
+            'dtid' => 'dt-bumil',
             'head' => array(
-                '', 'Username', 'Nama', 'Alamat', 'Nomor Hp', 'Email'
+                '', 'Nama', 'Nama Suami', 'Tanggal Lahir', 'Alamat Domisili', 'Alamat', 'Pendidikan', 'Pekerjaan', 'Agama'
             ),
-            'skrip' => 'dtconfig/dt_bidan', //wajib
-            'skrip_data' => array('id' => 'dt-bidan'),
+            'toolbarSkrip' => 'toolbar/bumil',
+            'toolbarVar' => array(
+                'role' => myRole()
+            ),
+            'skrip' => 'dtconfig/dt_bumil', //wajib
+            'skrip_data' => array('id' => 'dt-bumil'),
             'options' => array(
-                'source' => 'bidan/list',
+                'source' => 'bumil/list',
                 'search' => 'false',
                 'select' => 'multi', //false, true, multi
                 'checkbox' => 'true',
@@ -103,20 +107,23 @@ class Kader extends Controller{
                 'auto-refresh' => 'false',
                 'deselect-on-refresh' => 'true',
             ),
+            'modal' => array(
+                'size' => 'modal-lg',
+            ),
             'form' => array(
-                'id' => 'form-bidan',
+                'id' => 'form-bumil',
                 'path' => 'forms/tambah_bumil',
-                'nama' => 'Form Bidan',
-                'skrip' => 'forms/form_bidan',
-                'posturl' => 'bidan/save',
-                'deleteurl' => 'bidan/delete',
+                'nama' => 'Form bumil',
+                'skrip' => 'forms/form_bumil',
+                'posturl' => 'bumil/save',
+                'deleteurl' => 'bumil/delete',
                 'buttons' => array(
                     [ "type" => 'reset', "data" => 'data-dismiss="modal"', "text" => 'Batal', "id" => "batal", "class" => "btn btn btn-warning" ],
                     [ "type" => 'submit', "text" => 'Simpan', "id" => "simpan", "class" => "btn btn btn-primary" ]
                 )
             ),
             'data_panel' => array(
-                'nama' => 'dt-bidan',
+                'nama' => 'dt-bumil',
                 'perpage' => 10,
                 'pages' => array(1, 2, 10),
                 'hilangkan_display_length' => true,
@@ -124,6 +131,7 @@ class Kader extends Controller{
                     array(
                         'tipe' => 'buttonset',
                         'tombol' => array(
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Tambah', 'icon' => 'icon-plus simple-icon-paper-plane', 'class' => 'btn-outline-primary tool-add tetap'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Update', 'icon' => 'icon-plus simple-icon-pencil', 'class' => 'btn-outline-warning tool-edit tetap'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Hapus', 'icon' => 'icon-delete simple-icon-trash', 'class' => 'btn-outline-danger tool-delete tetap'),
@@ -134,13 +142,13 @@ class Kader extends Controller{
         ), true);
 
         $data = [
-            'contentHtml' => array($tabelBidan),
+            'contentHtml' => array($tabel, '<div class="mt-4" id="detail-riwayat"></div>'),
             'sidebar' => 'components/sidebar.dore',
             'navbar' => 'components/navbar.dore',
             'sidebarConf' => config_sidebar(myRole(), 1)
         ];
 
-        $this->setPageTitle('Data Bidan');
+        $this->setPageTitle('Data Ibu Hamil');
 
         $this->addBodyAttributes(['class' => 'menu-default show-spinner']);
         $this->addResourceGroup('main', 'dore', 'datatables', 'form');

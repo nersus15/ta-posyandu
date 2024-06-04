@@ -1,7 +1,7 @@
 <form id="<?= $formid ?>" action="<?= base_url('bumil/periksa') ?>" method="POST">
     <input type="hidden" name="ibu" value="<?= $ibu ?>">
     <input type="hidden" name="id" value="<?php $ambil_data('id') ?>">
-    <input type="hidden" id="method" name="_http_method" value="POST">
+    <input type="hidden" id="method" name="_http_method" value="<?= $isEdit ? 'update' : 'POST' ?>">
     <div class="row">
         <div class="col-sm-12">
             <div class="form-group">

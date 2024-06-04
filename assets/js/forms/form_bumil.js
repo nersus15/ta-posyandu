@@ -49,6 +49,8 @@ $(document).ready(function(){
         }else if(form_data.mode == 'baru'){
             components.method.val('POST');
         }
+        $("input[name='ingat_ttl']:checked").trigger('change');
+
     }
 
 });

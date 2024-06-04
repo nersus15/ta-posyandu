@@ -17,6 +17,9 @@ html {
       max-width: 800px !important;
     }
   }
+  .modal-md {
+    max-width: 	500px !important;
+  }
   
   /* Hide everything under body tag */
   body.show-spinner > *{
