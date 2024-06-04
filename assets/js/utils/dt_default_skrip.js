@@ -2,7 +2,6 @@ $(document).ready(function(){
     var form = <?= json_encode($form) ?>;
     var dtid = "<?= $dtid?>";
     var modal = <?= json_encode(isset($modal) ? $modal : []) ?>;
-    console.log(form);
     var defaultCnfigToast = {
         title: 'Submit Feedback',
         message: 'Submit Successfull',

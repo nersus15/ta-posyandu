@@ -51,7 +51,7 @@ $(document).ready(function(){
         }
 
         $("input[name='ingat_ttl']:checked").trigger('change');
-
+        
     }
 
 });

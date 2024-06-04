@@ -234,5 +234,74 @@ class Kader extends Controller{
         $this->render();
     }
 
-    function lansia(){}
+    function lansia(){
+        $tabel = $this->addViews('components/datatables.responsive', array(
+            'dtTitle' => 'Data Lansia',
+            'dtid' => 'dt-lansia',
+            'head' => array(
+                '', 'Nama', 'Alamat', 'Tanggal Lahir', 'NIK'
+            ),
+            'skrip' => 'dtconfig/dt_lansia', //wajib
+            'toolbarSkrip' => 'toolbar/lansia',
+            'skrip_data' => array('id' => 'dt-lansia'),
+            'options' => array(
+                'source' => 'lansia/list/',
+                'search' => 'false',
+                'select' => 'multi', //false, true, multi
+                'checkbox' => 'true',
+                'change' => 'false',
+                'dom' => 'rtip',
+                'responsive' => 'true',
+                'auto-refresh' => 'false',
+                'deselect-on-refresh' => 'true',
+            ),
+            'modal' => array(
+                'size' => 'modal-lg'
+            ),
+            'form' => array(
+                'id' => 'form-lansia',
+                'path' => 'forms/tambah_lansia',
+                'nama' => 'Form Lansia',
+                'skrip' => 'forms/form_lansia',
+                'posturl' => 'lansia/save',
+                'deleteurl' => 'lansia/delete',
+                'buttons' => array(
+                    [ "type" => 'reset', "data" => 'data-dismiss="modal"', "text" => 'Batal', "id" => "batal", "class" => "btn btn btn-warning" ],
+                    [ "type" => 'submit', "text" => 'Simpan', "id" => "simpan", "class" => "btn btn btn-primary" ]
+                )
+            ),
+            'data_panel' => array(
+                'nama' => 'dt-lansia',
+                'perpage' => 10,
+                'pages' => array(1, 2, 10),
+                'hilangkan_display_length' => true,
+                'toolbar' => array(
+                    array(
+                        'tipe' => 'buttonset',
+                        'tombol' => array(
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap'),
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Tambah', 'icon' => 'icon-plus simple-icon-paper-plane', 'class' => 'btn-outline-primary tool-add tetap'),
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Update', 'icon' => 'icon-plus simple-icon-pencil', 'class' => 'btn-outline-warning tool-edit tetap'),
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Hapus', 'icon' => 'icon-delete simple-icon-trash', 'class' => 'btn-outline-danger tool-delete tetap'),
+                        )
+                    ),
+                ),
+            )
+        ), true);
+
+        $data = [
+            'contentHtml' => array($tabel, '<div class="mt-4" id="detail-riwayat"></div>'),
+            'sidebar' => 'components/sidebar.dore',
+            'navbar' => 'components/navbar.dore',
+            'sidebarConf' => config_sidebar(myRole(), 3)
+        ];
+
+        $this->setPageTitle('Data Lansia');
+
+        $this->addBodyAttributes(['class' => 'menu-default show-spinner']);
+        $this->addResourceGroup('main', 'dore', 'datatables', 'form');
+        $this->addViews('templates/dore', $data);
+
+        $this->render();
+    }
 }

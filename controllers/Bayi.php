@@ -66,7 +66,7 @@ class Bayi extends Controller{
             'tanggal_lahir' => array(
                 [
                     'rule' => 'required',
-                    'message' => 'Harus menyertakan Nama Lengkap'
+                    'message' => 'Harus menyertakan Tanggal Lahir'
                 ],
                 [
                     'rule' => 'regex',
@@ -253,6 +253,9 @@ class Bayi extends Controller{
 
         unset($input['bulan'], $input['tahun']);
 
+        if(empty($input['nama_pemeriksa']))
+            $input['nama_pemeriksa'] = sessiondata('login', 'nama_lengkap');
+        
         if($isEdit){
             $id = $input['id'];
             $this->db->where('id', $id)->update($input, 'kunjungan_anak');
@@ -269,11 +272,8 @@ class Bayi extends Controller{
 
             unset($input['id']);
             $input['pencatat'] = sessiondata('login', 'username');
-            if(empty($input['nama_pemeriksa']))
-                $input['nama_pemeriksa'] = sessiondata('login', 'nama_lengkap');
 
             $this->db->insert($input, 'kunjungan_anak');
-
 
             $pemeriksaan = $this->_getlist($input['anak']);
             response(['data' => $pemeriksaan, 'message' => "Berhasil mencatat pemeriksaan anak"], 201);

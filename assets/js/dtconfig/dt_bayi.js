@@ -36,7 +36,7 @@ configTabel["<?= $id ?>"] = [
             var ttl = row.ttl;
             var estimasi = row.estimasi_ttl;
 
-            return ttl + (estimasi ? '<span class ="bedge bedge-pill bedge-sm bg-info">Estimasi</span>' : '');
+            return ttl + (estimasi ? '<span class ="badge badge-pill badge-sm bg-info">Estimasi</span>' : '');
         }
     },
     {

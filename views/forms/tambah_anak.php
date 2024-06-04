@@ -21,11 +21,11 @@
             <label for="ttl">Ingat Tanggal lahir <span class="symbol-required"></span></label>
             <div class="row ">
                 <div class="form-check ml-2">
-                    <input id="ingat" value="1" class="form-check-input" type="radio" <?= $ambil_data('ingat_ttl', 1, true) == '1' ? 'checked' : '' ?> name="ingat_ttl">
+                    <input id="ingat" value="1" class="form-check-input" type="radio" <?= $ambil_data('ttl_estimasi', 0, true) == '0' ? 'checked' : '' ?> name="ingat_ttl">
                     <label for="ingat" class="form-check-label">Ingat</label>
                 </div>
                 <div class="form-check ml-2">
-                    <input id="tidak_ingat" value="0" class="form-check-input" type="radio" <?= $ambil_data('ingat_ttl', 1, true) == '0' ? 'checked' : '' ?> name="ingat_ttl">
+                    <input id="tidak_ingat" value="0" class="form-check-input" type="radio" <?= $ambil_data('ttl_estimasi', 0, true) == '1' ? 'checked' : '' ?> name="ingat_ttl">
                     <label for="tidak_ingat" class="form-check-label">Tidak ingat</label>
                 </div>
             </div>
@@ -37,7 +37,7 @@
         </div>
         <div style="display: none;" class="form-group">
             <label for="umur">Umur (dalam hari) <span class="symbol-required"></span></label>
-            <input type="text" value="<?php $ambil_data('umur') ?>" data-rule-required="true" name="umur" id="umur" class="form-control">
+            <input type="text" value="<?php $ambil_data('umur') ?>" data-rule-required="true" data-rule-digits="true" name="umur" id="umur" class="form-control">
         </div>
         <div class="form-group">
             <label for="">Nama Ibu <span class="symbol-required"></span></label>
