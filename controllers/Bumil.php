@@ -219,6 +219,61 @@ class Bumil extends Controller{
         }
     }
 
+    function kunjungan($id){
+        $idbumil = substr($id, 0, 8);
+        $id = substr($id, 8);
+
+       
+        $ibu = $this->db->select('*')
+            ->from('bumil')
+            ->where('bumil.id', $idbumil)->row();
+
+
+        // response($data);
+        if(!empty($ibu) && $ibu !== false){
+            $data = $ibu;
+
+            $kunjungan = $this->db->select('*')
+            ->from('kunjungan_bumil')
+            ->where('kunjungan_bumil.id', $id)->row();
+
+            if(!empty($kunjungan) && $kunjungan !== false){
+
+                $ptetugas = $this->db->select('*')->from('users')->where('username', $kunjungan['pencatat'])->row();
+                if(!empty($ptetugas) && $ptetugas !== false){
+                    $kunjungan['petugas'] = $ptetugas;
+                }else{
+                    $kunjungan['petugas'] = [];
+                }
+                $data['kunjungan'] = $kunjungan;
+            }else{
+                $data['kunjungan'] = [];
+            }
+            // response($data);
+            $hariIni = date_create($ibu['createdAt']);
+            $ttl = date_create($ibu['tanggal_lahir']);        
+            $diff = $hariIni->diff($ttl);
+            $tahun = $diff->format('%y');
+
+            $data['umur'] = intval($tahun);
+        }else{
+            response("Data tidak ditemukan", 404);
+        }
+
+        $this->setPageTitle('Detail Pemeriksaan Ibu Hamil | ' . $data['nama']);
+        $data = [
+            'pageName' => 'Detail Pemeriksaan Ibu  <b>' . $data['nama'] . '</b>',
+            'content' => 'details/kunjungan_ibu',
+            'data_content' => $data,
+            'sidebarConf' => config_sidebar(myRole(), 1)
+        ];
+        $this->addBodyAttributes(['class' => 'menu-default show-spinner']);
+        $this->addResourceGroup('main', 'dore','form');
+        $this->addViews('templates/dore', $data);
+
+        $this->render();
+    }
+
     function deletepemeriksaan(){
         $id = $_POST['id'];
         $idbumil = $_POST['idbumil'];
