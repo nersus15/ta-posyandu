@@ -170,6 +170,7 @@ class Bumil extends Controller{
         if(!httpmethod('post') && !httpmethod('update'))
             response("Ilegal Method", 403);
 
+        $input = $_POST;
         $ruleValidator = [
             'tgl_periksa' => array(
                 [
@@ -184,7 +185,6 @@ class Bumil extends Controller{
             ),
 
         ];
-        $input = $_POST;
       
         $isEdit = $this->getFromMiddleware('isEdit');
         $this->validateInput($input, $ruleValidator);

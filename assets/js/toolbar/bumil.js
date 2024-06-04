@@ -255,6 +255,7 @@ $(document).ready(function () {
                         res = JSON.parse(res);
 
                     defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss');
+                    defaultCnfigToast.wrapper = 'form';
                     defaultCnfigToast.message = res.message;
                     setTimeout(function () {
                         $("#pemeriksaan-bumil").modal('hide');
@@ -278,6 +279,7 @@ $(document).ready(function () {
                         defaultCnfigToast.message = "Sumbit Failed";
 
                     defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss')
+                    defaultCnfigToast.wrapper = 'form';
                     makeToast(defaultCnfigToast);
 
                 },
@@ -342,19 +344,19 @@ $(document).ready(function () {
 
 
                 cl += '<tr>' +
-                    '<td>' + row.createdAt + '</td>'+
+                    '<td>' + row.tanggal_periksa + '</td>'+
                     '<td>' + row.tahun + '</td>'+
                     '<td>' + daftarBulan[row.bulan - 1] + '</td>' +
                     '<td>' + row.nama_pemeriksa + '</td>';
 
                 cl+= '<td>' + (bulan + ', ' + hari) +'</td>' +
                     '<td>' + row.gravida +'</td>' +
-                    '<td>' + row.bj +'</td>' +
-                    '<td>' + row.bb +'</td>' +
-                    '<td>' + row.tb +'</td>' +
-                    '<td>' + row.fundus +'</td>' +
-                    '<td>' + row.lila +'</td>' +
-                    '<td>' + row.hb +'</td>' ;
+                    '<td>' + (row.bj || '-') +'</td>' +
+                    '<td>' + (row.bb || '-') +'</td>' +
+                    '<td>' + (row.tb || '-') +'</td>' +
+                    '<td>' + (row.fundus || '-') +'</td>' +
+                    '<td>' + (row.lila || '-') +'</td>' +
+                    '<td>' + (row.hb || '-') +'</td>' ;
                 cl += '<td>' + icon + '</td>';
                 cl += '</tr>'
             })
@@ -362,16 +364,24 @@ $(document).ready(function () {
             data.forEach(row => {
                 icon = '';
                 icon += '<i style="font-size: 12px;cursor:pointer" data-kunjungan="' + row.id + '" data-bumil="' + id + '" class="text-warning ml-2 edit-kunjungan-bumil fas fa-pencil-alt" aria-hidden="true"></i>';
-    
                 icon += '<i style="font-size: 12px;cursor:pointer" data-bumil="' + id + '" data-kunjungan="' + row.id + '" class="text-danger ml-2 hapus-kunjungan-bumil fas fa-trash-alt" aria-hidden="true"></i>';
+
+                var obstetrik = 'Gravida: ' + row['gravida'] + '<br> Partus: ' + row['paritas'] + ' <br>Abortus: ' + row['abortus'] + ' <br>Hidup: ' + row['hidup'];
+
                 cl += '<tr>' +
-                    '<td>' + row.createdAt + '</td>'+
+                    '<td>' + row.tgl_periksa + '</td>'+
                     '<td>' + row.tahun + '</td>'+
-                    '<td>' + daftarBulan[row.bulan - 1] + '</td>';
+                    '<td>' + daftarBulan[row.bulan - 1] + '</td>' +
                     '<td>' + row.nama_pemeriksa + '</td>';
-    
-                
-    
+
+
+                cl+= '<td>' + obstetrik +'</td>' +
+                    '<td>' + (row.hpht || '-') +'</td>' +
+                    '<td>' + (row.hpl || '-') +'</td>' +
+                    '<td>' + (row.persalinan_sebelumnya || '-') +'</td>' +
+                    '<td>' + (row.bb ? row.bb + 'Kg' : '') +'</td>' +
+                    '<td>' + (row.tb ? row.tb + 'cm' : '') +'</td>' +
+                    '<td>' + (row.buku_kia == 1 ? 'Memiliki' : 'Tidak Memiliki') +'</td>' ;
     
                 cl += '<td>' + icon + '</td>';
                 cl += '</tr>'

@@ -83,27 +83,21 @@ class Bidan extends Controller{
     }
 
 
-    function bayi($umur = 'semua'){
-        $mapUmur = array(
-            'semua' => 'Semua',
-            '05' => 'Umur 0-5 Bulan',
-            '611' => 'Umur 6-11 Bulan',
-            '1223' => 'Umur 12-23 Bulan',
-            '2459' => 'Umur 24-59 Bulan',
-        );
+    function bumil(){
         $tabel = $this->addViews('components/datatables.responsive', array(
-            'dtTitle' => 'Data Bayi (<small>' . $mapUmur[$umur] . '</small>)',
-            'dtid' => 'dt-bayi',
+            'dtTitle' => 'Data Ibu Hamil',
+            'dtid' => 'dt-bumil',
             'head' => array(
-                '', 'Nama', 'Umur', 'L/P', 'BBL', 'AKB', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
+                '', 'Nama', 'Nama Suami', 'Tanggal Lahir', 'Alamat Domisili', 'Alamat', 'Pendidikan', 'Pekerjaan', 'Agama'
             ),
-            'modal' => [
-                'size' => 'modal-lg',
-            ],
-            'skrip' => 'dtconfig/dt_bayi', //wajib
-            'skrip_data' => array('id' => 'dt-bayi'),
+            'toolbarSkrip' => 'toolbar/bumil',
+            'toolbarVar' => array(
+                'role' => myRole()
+            ),
+            'skrip' => 'dtconfig/dt_bumil', //wajib
+            'skrip_data' => array('id' => 'dt-bumil'),
             'options' => array(
-                'source' => 'bayi/list/' . $umur,
+                'source' => 'bumil/list',
                 'search' => 'false',
                 'select' => 'multi', //false, true, multi
                 'checkbox' => 'true',
@@ -113,16 +107,23 @@ class Bidan extends Controller{
                 'auto-refresh' => 'false',
                 'deselect-on-refresh' => 'true',
             ),
+            'modal' => array(
+                'size' => 'modal-lg',
+            ),
             'form' => array(
-                'id' => 'form-bayi',
-                'path' => 'forms/tambah_anak',
-                'nama' => 'Form Bayi',
-                'skrip' => 'forms/form_bayi',
-                'posturl' => 'bayi/save',
-                'deleteurl' => 'bayi/delete',
+                'id' => 'form-bumil',
+                'path' => 'forms/tambah_bumil',
+                'nama' => 'Form bumil',
+                'skrip' => 'forms/form_bumil',
+                'posturl' => 'bumil/save',
+                'deleteurl' => 'bumil/delete',
+                'buttons' => array(
+                    [ "type" => 'reset', "data" => 'data-dismiss="modal"', "text" => 'Batal', "id" => "batal", "class" => "btn btn btn-warning" ],
+                    [ "type" => 'submit', "text" => 'Simpan', "id" => "simpan", "class" => "btn btn btn-primary" ]
+                )
             ),
             'data_panel' => array(
-                'nama' => 'dt-bayi',
+                'nama' => 'dt-bumil',
                 'perpage' => 10,
                 'pages' => array(1, 2, 10),
                 'hilangkan_display_length' => true,
@@ -130,6 +131,7 @@ class Bidan extends Controller{
                     array(
                         'tipe' => 'buttonset',
                         'tombol' => array(
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Tambah', 'icon' => 'icon-plus simple-icon-paper-plane', 'class' => 'btn-outline-primary tool-add tetap'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Update', 'icon' => 'icon-plus simple-icon-pencil', 'class' => 'btn-outline-warning tool-edit tetap'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Hapus', 'icon' => 'icon-delete simple-icon-trash', 'class' => 'btn-outline-danger tool-delete tetap'),
@@ -140,13 +142,13 @@ class Bidan extends Controller{
         ), true);
 
         $data = [
-            'contentHtml' => array($tabel),
+            'contentHtml' => array($tabel, '<div class="mt-4" id="detail-riwayat"></div>'),
             'sidebar' => 'components/sidebar.dore',
             'navbar' => 'components/navbar.dore',
             'sidebarConf' => config_sidebar(myRole(), 1)
         ];
 
-        $this->setPageTitle('Data Bayi - ' . $mapUmur[$umur]);
+        $this->setPageTitle('Data Ibu Hamil');
 
         $this->addBodyAttributes(['class' => 'menu-default show-spinner']);
         $this->addResourceGroup('main', 'dore', 'datatables', 'form');
