@@ -76,7 +76,7 @@ class Bidan extends Controller{
         if(empty($ids)) response("Request Invalid", 403);
 
         try {
-            $this->db->wherein('username', $ids)->delete('users');
+            $this->db->where_in('username', $ids)->delete('users');
         } catch (\Throwable $th) {
             response(['message' => 'Gagal menghapus data', 'reason' => $th->getMessage()], 500);
         }
