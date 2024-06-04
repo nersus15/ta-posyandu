@@ -344,7 +344,7 @@ $(document).ready(function () {
 
 
                 cl += '<tr>' +
-                    '<td>' + row.tanggal_periksa + '</td>'+
+                    '<td>' + row.tgl_periksa + '</td>'+
                     '<td>' + row.tahun + '</td>'+
                     '<td>' + daftarBulan[row.bulan - 1] + '</td>' +
                     '<td>' + row.nama_pemeriksa + '</td>';
