@@ -19,6 +19,7 @@ $config['middleware'] = array(
     }],
     ['controller' => 'home', 'handler' => 'haruslogin', 'params' => ['redirect' => 'auth'],  'event' => 'before'],
     ['controller' => 'data', 'handler' => 'haruslogin', 'params' => ['role' => 'admin'], 'event' => 'before'],
+    ['controller' => 'bumil', 'method' => 'kunjungan', 'handler' => 'haruslogin', 'params' => ['role' => 'bidan'], 'event' => 'before'],
 
     ['controller' => 'auth', 'method' => '', 'handler' => function(){
         if(is_login()) redirect();
