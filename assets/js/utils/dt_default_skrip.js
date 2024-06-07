@@ -24,6 +24,7 @@ $(document).ready(function(){
     var addButton = panel.find('.tool-add');
     var editButton = panel.find('.tool-edit');
     var deleteButton = panel.find('.tool-delete');
+    var exportButton = panel.find('.tool-export');
     var links = panel.find('.tool-link');
     var modalid = "modal-" + dtid;
     var skripid = '';
@@ -328,6 +329,25 @@ $(document).ready(function(){
             var url = $(this).attr('href');
             console.log(url);
             window.open(url, '_blank');
+        })
+    }
+
+    if(exportButton.length > 0){
+        exportButton.click(function(e){
+            e.preventDefault();
+            var el = document.getElementById(dtid);
+            let cloned = el.cloneNode(true);
+            document.body.appendChild(cloned);
+            cloned.classList.add('printable');
+            cloned.children[0].children[0].children[0].remove();
+
+            for (let index = 0; index < cloned.children[1].children.length; index++) {
+                cloned.children[1].children[index].children[0].remove();            
+                
+            }
+
+            print();
+            document.body.removeChild(cloned);
         })
     }
 });
