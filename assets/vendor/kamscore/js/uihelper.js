@@ -1035,8 +1035,10 @@ uihelper = function () {
             ];
         }
 
+        
+
         var options = {
-            dom: attribut.dom == undefined ? 'lfrtip' : attribut.dorm,
+            dom: attribut.dom || 'lfrtip',
             bSearch: attribut.search == undefined ? true : attribut.search,
             bLengthChange: attribut.change == undefined ? true : attribut.change,
             responsive: attribut.responsive == undefined ? true : attribut.responsive,
@@ -1052,12 +1054,34 @@ uihelper = function () {
                 var key = '_dt_s_' + id;
                 window.localStorage.removeItem(key);
                 
+                panel.find('.satu').hide();
+                panel.find('.multi').hide();
+                $('#' + id + ' thead .dt-checkboxes-cell.dt-checkboxes-select-all, #' + id + ' tbody .dt-checkboxes-cell .dt-checkboxes').change(function(){
+                    var selectedRows = dt_instance.rows({ selected: true }).data();
+                    console.log(selectedRows.length);
+                    if(selectedRows.length != 1){
+                        panel.find('.satu').hide();
+                    }else{
+                        panel.find('.satu').show();
+                    }
+        
+                    if(selectedRows.length == 0){
+                        panel.find('.multi').hide();
+                    }else{
+                        panel.find('.multi').show();
+                    }
+                });
 
             },
             createdRow: function(row, data, dataIndex ){
                 $(row).find('input.dt-checkboxes').addClass(dataIndex.toString());
             },
         };
+
+        if(attribut.btns){
+            options.buttons = JSON.parse(attribut.btns);
+        }
+
         if(attribut.ajax != false){
             options.processing = true,
             options.ajax = path + attribut.source;
@@ -1110,6 +1134,7 @@ uihelper = function () {
             }, interval);
         }
 
+        console.log("DT - " + id + ' OPTIONS ==> ', options);
         
         dt_instance.rows().data().__proto__.edit = function(newData){
             var data = this[0];
@@ -1120,7 +1145,7 @@ uihelper = function () {
             dt_instance.__proto__.api = $dt.api;
         }
         setInstance('dataTables', id, dt_instance);
-
+        
     }
     $(document).ready(function(){
         if(!$().dataTable && ! $().DataTable) return;
