@@ -1,6 +1,11 @@
 <?php 
 class Report extends Controller{
-    function lansia(){
+    function bumil(){
         
+        $tabsContent = [];
+    }
+
+    function lansia(){
+
     }
 }
