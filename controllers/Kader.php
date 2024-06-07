@@ -88,7 +88,7 @@ class Kader extends Controller{
             'dtTitle' => 'Data Ibu Hamil',
             'dtid' => 'dt-bumil',
             'head' => array(
-                '', 'Nama', 'Nama Suami', 'Tanggal Lahir', 'Alamat Domisili', 'Alamat', 'Pendidikan', 'Pekerjaan', 'Agama'
+                '','Nama Pencatat', 'Nama', 'Nama Suami', 'Tanggal Lahir', 'Alamat Domisili', 'Alamat', 'Pendidikan', 'Pekerjaan', 'Agama'
             ),
             'toolbarSkrip' => 'toolbar/bumil',
             'toolbarVar' => array(

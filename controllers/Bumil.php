@@ -12,6 +12,7 @@ class Bumil extends Controller{
         $query = $this->db->from('bumil')->join('users', 'users.username = bumil.pencatat');
         $header = array(
             'id' => array('searchable' => false),
+            'nama_pencatat' => array('searchable' => true, 'field' => 'users.nama_lengkap'),
             'no' => array('searchable' => true, 'field' => 'nomor'),
             'nama' => array('searchable' => true),
             'alamat' => array('searchable' => true, 'field' => 'bumil.alamat'),

@@ -3,6 +3,9 @@ configTabel["<?= $id ?>"] = [
         mData: null,
     },
     {
+        data: 'nama_pencatat'
+    },
+    {
         data: 'nama'
     },
     {
