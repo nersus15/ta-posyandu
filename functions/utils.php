@@ -349,3 +349,13 @@ function waktu($waktu = null, $format = MYSQL_TIMESTAMP_FORMAT)
     $waktu = empty($waktu) ? time() : $waktu;
     return date($format, $waktu);
 }
+
+function showError($title = 'Error', $message = 'Invalid Request', $code = 404, $file = 'default'){
+    $controller =& get_instance();
+
+    $controller->addResourceGroup('main', 'dore');
+    $controller->addViews('errors/' . $file, ['message' => $message, 'code' => $code]);
+    $controller->setPageTitle($title);
+    $controller->render();
+    exit;
+}
