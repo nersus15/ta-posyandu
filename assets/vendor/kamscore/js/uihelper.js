@@ -1056,27 +1056,48 @@ uihelper = function () {
                 
                 panel.find('.satu').hide();
                 panel.find('.multi').hide();
-                $('#' + id + ' thead .dt-checkboxes-cell.dt-checkboxes-select-all, #' + id + ' tbody .dt-checkboxes-cell .dt-checkboxes').change(function(){
+                $('#' + id + ' thead .dt-checkboxes-cell.dt-checkboxes-select-all').change(function(){
                     var selectedRows = dt_instance.rows({ selected: true }).data();
-                    console.log(selectedRows.length);
-                    if(selectedRows.length != 1){
-                        panel.find('.satu').hide();
-                    }else{
-                        panel.find('.satu').show();
-                    }
-        
-                    if(selectedRows.length == 0){
-                        panel.find('.multi').hide();
-                    }else{
-                        panel.find('.multi').show();
+                    showButton(selectedRows.length);
+                });
+
+                $('#' + id +' tbody tr').click(function(){
+                    if(selectRow){
+                        setTimeout(function(){
+                            var selectedRows = dt_instance.rows({ selected: true }).data();
+                            showButton(selectedRows.length);
+                        }, 100)
                     }
                 });
+
+                if(options.info){
+                    $("#"+ id +"_info").addClass('ml-4');
+                }
 
             },
             createdRow: function(row, data, dataIndex ){
                 $(row).find('input.dt-checkboxes').addClass(dataIndex.toString());
             },
         };
+
+        function showButton(selected = 0){
+            if(selected != 1){
+                panel.find('.satu').hide();
+            }else{
+                panel.find('.satu').show();
+            }
+
+            if(selected == 0){
+                panel.find('.multi').hide();
+            }else{
+                panel.find('.multi').show();
+            }
+
+            // Update Information
+            if(options.select != false && selected > 0){
+                $("#" + id + "_info .select-info .select-item").text(selected + ' row(s) selected')
+            }
+        }
 
         if(attribut.btns){
             options.buttons = JSON.parse(attribut.btns);
