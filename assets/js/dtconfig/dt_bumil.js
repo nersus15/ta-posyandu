@@ -3,7 +3,13 @@ configTabel["<?= $id ?>"] = [
         mData: null,
     },
     {
-        data: 'nama_pencatat'
+        data: 'nama_pencatat',
+        mRender: function(_, t, row){
+            var nama_pencatat = row['nama_pencatat'];
+            var role = row['role'];
+
+            return '<p><small>' + role + '</small> - ' + nama_pencatat + '</p>';
+        }
     },
     {
         data: 'nama'
