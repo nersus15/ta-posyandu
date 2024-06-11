@@ -13,6 +13,98 @@ $(document).ready(function () {
         delay: 5000
     }
 
+    panel.find('.tool-custom-export').click(function(){
+        var opsiTahun = [];
+        var tahunIni = new Date().getFullYear();
+        tahunIni = parseInt(tahunIni)
+        for (let index = tahunIni; index > (tahunIni - 10); index--) {
+            opsiTahun.push({
+                text: index,
+                key: index
+            })
+        }
+        var modalConfig = {
+            modalId: 'export-lansia',
+            wrapper: "body",
+            opt: {
+                clickToClose: false,
+                type: 'form',
+                ajax: true,
+                rules: [
+                    {
+                        name: 'noSpace',
+                        method: function (value, element) { return value.indexOf(" ") < 0; },
+                        message: "No space please",
+                        field: 'url'
+                    }
+                ],
+                sebelumSubmit: function () {
+                    showLoading();
+                },
+                submitSuccess: function (res) {
+                    endLoading();
+                    if (typeof(res) == 'string')
+                        res = JSON.parse(res);
+
+                    defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss');
+                    defaultCnfigToast.message = res.message;
+                    setTimeout(function () {
+                        $("#export-lansia").modal('hide');
+                    }, 1000);
+                    makeToast(defaultCnfigToast);
+                    window.open(path + 'uihelper/file/' + res.data);
+
+                },
+                submitError: function (res) {
+                    endLoading();
+                    if (typeof (res) == 'string')
+                        res = JSON.parse(res);
+
+                    if (res.message)
+                        defaultCnfigToast.message = res.message;
+                    else if (res.responseJSON.message)
+                        defaultCnfigToast.message = res.responseJSON.message;
+                    else
+                        defaultCnfigToast.message = "Sumbit Failed";
+
+                    defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss')
+                    makeToast(defaultCnfigToast);
+
+                },
+                open: true,
+                destroy: true,
+                modalPos: 'def',
+                saatBuka: (innerOpt) => {
+                    $('#form-export-lansia').form();
+                },
+                saatTutup: () => {
+                },
+                formOpt: {
+                    enctype: 'multipart/form-data',
+                    formId: 'form-export-lansia',
+                    formAct: path + 'report/lansia',
+                    formMethod: 'POST',
+                },
+                modalTitle: 'Export Data',
+                modalBody: {
+                    input: [
+                        {
+                            type: 'select', 
+                            name: 'tahun',
+                            label: 'Pilih Tahun',
+                            options: opsiTahun,
+                            default: null
+                        },
+                    ],
+                    buttons: [
+                        { type: 'submit', text: 'Export', id: "export", class: "btn btn btn-primary" }
+                    ]
+                },
+            }
+        };
+        generateModal(modalConfig.modalId, modalConfig.wrapper, modalConfig.opt);
+    });
+
     panel.find(".tool-custom-detail").click(function (e) {
         e.preventDefault();
         var datatable = getInstance('dataTables', dtid);
@@ -90,7 +182,7 @@ $(document).ready(function () {
             '<thead>' +
             '<tr>' +
             '<th class="middle center" rowspan="2">Tahun</th>' +
-            '<th class="middle center" colspan="12">Hasil Penimbangan BB/TB (gr/cm)</th>' +
+            '<th class="middle center" colspan="12">Hasil Penimbangan BB (gr)</th>' +
             '</tr>' +
             '<tr>' +
             '<th class="center">Jan</th>' +

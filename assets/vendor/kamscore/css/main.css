@@ -36,3 +36,11 @@
       display: none;
     }
   }
+
+  .middle{
+    vertical-align: middle;
+  }
+
+  .center{
+    text-align: center;
+  }

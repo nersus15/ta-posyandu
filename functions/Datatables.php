@@ -125,7 +125,7 @@ class Datatables {
     /**
      * @param String $tipe Array or Object
      */
-    function getData( string $tipe = 'object', $enableCache = false){
+    function getData( string $tipe = 'array', $enableCache = false){
         if(isset($_GET['start']) && isset($_GET['length'])){
             $this->setLimit($_GET['length'], $_GET['start']);
         }

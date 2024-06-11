@@ -84,6 +84,29 @@ class Uihelper extends Controller{
         }
     }
 
+    function file($fname){
+        if(!httpmethod('get') || empty($fname))
+            response("Ilegal Akses", 403);
+
+        $fpath = ROOT . '/assets/docs/pdf/' . $fname . '.pdf';
+        if(file_exists($fpath)){
+            header('Pragma: public');
+            header('Expires: 0');
+            header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+            header('Cache-Control: private', false); // required for certain browsers 
+            header('Content-Type: application/pdf');
+
+            header('Content-Disposition: attachment; filename="'. $fname . '.pdf";');
+            header('Content-Transfer-Encoding: binary');
+            header('Content-Length: ' . filesize($fpath));
+
+            readfile($fpath);
+
+            unlink($fpath);
+        }else{
+            response("File $fname.pdf Not Found", 404);
+        }
+    }
     function notifcenter(){
         response("OK");
     }

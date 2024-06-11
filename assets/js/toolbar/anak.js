@@ -82,7 +82,7 @@ $(document).ready(function () {
     });
 
     panel.find('.tool-custom-export').click(function(){
-        var opsiTahun = {};
+        var opsiTahun = [];
         var opsiKelompok = [
             {key: 'semua', text: 'Semua'},
             {key: '05', text: 'Umur 0-5 Bulan'},
@@ -93,9 +93,10 @@ $(document).ready(function () {
         var tahunIni = new Date().getFullYear();
         tahunIni = parseInt(tahunIni)
         for (let index = tahunIni; index > (tahunIni - 10); index--) {
-            opsiTahun[index] = {
-                text: index
-            }
+            opsiTahun.push({
+                text: index,
+                key: index
+            })
         }
         var modalConfig = {
             modalId: 'export-anak',
@@ -117,7 +118,7 @@ $(document).ready(function () {
                 },
                 submitSuccess: function (res) {
                     endLoading();
-                    if (typeof (res) == 'string')
+                    if (typeof(res) == 'string')
                         res = JSON.parse(res);
 
                     defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss');
@@ -126,6 +127,7 @@ $(document).ready(function () {
                         $("#export-anak").modal('hide');
                     }, 1000);
                     makeToast(defaultCnfigToast);
+                    window.open(path + 'uihelper/file/' + res.data);
 
                 },
                 submitError: function (res) {

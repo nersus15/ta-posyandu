@@ -1,6 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
 
+use MatthiasMullie\Minify\CSS;
 use MatthiasMullie\Minify\JS;
 
 
@@ -285,6 +286,29 @@ function load_script($script, $data = array(), $return = false)
         return $_script;
     else
         echo $_script;
+}
+
+function load_style($style, $data = array(), $return = false){
+    $minifier = new CSS();
+    $ext = pathinfo($style, PATHINFO_EXTENSION);
+    if (empty($ext)) $style .= '.css';
+    if (!file_exists(ROOT . '/assets/' . $style)) return null;
+
+    ob_start();
+    if (!empty($data))
+        extract($data);
+
+
+    include_once ROOT . '/assets/' . $style;
+    $_style =  ob_get_contents();
+    ob_end_clean();
+
+    $minifier->add($_style);
+    $_style = $minifier->minify();
+    if ($return)
+        return $_style;
+    else
+        echo $_style;
 }
 
 function toolbar_items($toolbar, &$items = array())
