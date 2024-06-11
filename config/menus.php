@@ -12,7 +12,12 @@ $config['menus'] = array(
         'menus' => array(
             array('text' => 'Dashboard', 'icon' => 'iconsmind-Home', 'link' => base_url('dashboard')),
             array('text' => 'Ibu Hamil', 'icon' => 'simple-icon-user-female', 'link' => base_url('kader/bumil')),
-        )
+            /* array('text' => 'Laporan', 'icon' => 'iconsmind-File-Pie', 'link' => '#report', 'sub' => array(
+                array('text' => 'Ibu Hamil', 'link' => base_url('report/bumil')),
+                array('text' => 'Bayi/Balita', 'link' => base_url('report/bayi')),
+                array('text' => 'Lansia', 'link' => base_url('report/lansia')),
+            ))
+ */        )
     ),
     'kader' => array(
         'menus' => array(
@@ -26,6 +31,11 @@ $config['menus'] = array(
                 array('text' => 'Umur 24-59 Bulan', 'link' => base_url('kader/bayi/2459')),
             )),
             array('text' => 'Lansia', 'icon' => 'iconsmind-Female', 'link' => base_url('kader/lansia')),
+            /* array('text' => 'Laporan', 'icon' => 'iconsmind-File-Pie', 'link' => '#report', 'sub' => array(
+                array('text' => 'Ibu Hamil', 'link' => base_url('report/bumil')),
+                array('text' => 'Bayi/Balita', 'link' => base_url('report/bayi')),
+                array('text' => 'Lansia', 'link' => base_url('report/lansia')),
+            )) */
         )
     )
 );

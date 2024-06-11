@@ -22,6 +22,7 @@ class qbuilder
     private $groupBy = [];
     private $orderBy = [];
     private $limitNumber = null;
+    private $offset = 0;
     private $joinClause = [];
     private $table = '';
     private $startQueryGroupSign = [];
@@ -319,9 +320,10 @@ class qbuilder
         return $this;
     }
 
-    function limit(int $number = null)
+    function limit(int $number = null, int $offset = 0)
     {
         $this->limitNumber = $number;
+        $this->offset = $offset;
         return $this;
     }
 
@@ -430,6 +432,7 @@ class qbuilder
         $this->groupBy = [];
         $this->orderBy = [];
         $this->limitNumber = null;
+        $this->offset = 0;
         $this->joinClause = [];
         $this->table = '';
         $this->startQueryGroupSign = [];
@@ -606,7 +609,7 @@ class qbuilder
             }
         } else {
             // Assemble The Query
-            $query .= $joinSyntax . $whereSyntax . " $groupBy" . " $orderBy " . (!empty($this->limitNumber) ? 'LIMIT ' . $this->limitNumber : '');
+            $query .= $joinSyntax . $whereSyntax . " $groupBy" . " $orderBy " . (!empty($this->limitNumber) ? 'LIMIT ' . $this->limitNumber . ' OFFSET ' . $this->offset : '');
         }
         if ($return) return $query;
 

@@ -30,3 +30,9 @@
   .card-no-border{
     padding: 1.75rem 0 !important;
   }
+
+  @media print {
+    body *:not(.printable, .printable *), .dont-print{
+      display: none;
+    }
+  }

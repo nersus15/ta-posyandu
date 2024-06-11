@@ -17,74 +17,6 @@ $(document).ready(function () {
         delay: 5000
     }
 
-    panel.find(".tool-custom-detail").click(function (e) {
-        e.preventDefault();
-        var datatable = getInstance('dataTables', dtid);
-        if (!datatable) return;
-
-        var rowData = datatable.rows({ selected: true }).data();
-        if (rowData.length <= 0) {
-            alert("pilih salah satu data untuk melanjutkan");
-            return;
-        }
-        else if (rowData.length > 1) {
-            alert("Hanya bisa melihat satu data dalam satu waktu");
-            return;
-        }
-        rowData = rowData[0];
-        var induk = $('#detail-riwayat');
-        induk.empty();
-
-        // Load Data Pemeriksaan
-        fetch(path + 'bumil/periksalist', {
-            method: 'POST',
-            body: JSON.stringify({
-                'id': rowData.id,
-            })
-        }).then((res) => res.json()).then(function (res) {
-            var data = res.data;
-            induk.append('<div style="overflow-x: scroll" class="card mt-4">' +
-                '<div class="card-header row">' +
-                '<span class="text-danger" id="close-detail" style="position: relative;cursor: pointer;left: 95%;top: 15px; font-size: 20px"><i class="iconsmind-Close"></i></span>' +
-                '<h1 class="card-title ml-4 mt-3 col-12">Detail Pemeriksaan ' + (rowData.nama ? rowData.nama : '') + '</h1>' +
-                '<div class="col-sm-6 ml-4">' +
-                '<button class="btn btn-primary btn-sm" type="button" id="add-pemeriksaan">Periksa Ibu Hamil</button>' +
-                '</div>' +
-                '</div>' +
-                '<div id="canvas_detail_pemeriksaan" class="card-body row">' +
-
-                '</div>' +
-
-                '</div>'
-            );
-
-            $("#add-pemeriksaan").click(function () {
-                addPemeriksan(rowData)
-            });
-            $('#close-detail').click(function () {
-                induk.empty();
-            });
-
-            var bodyEl = induk.find('.card-body');
-
-
-            if (res.type != 'succes' || !data) {
-                bodyEl.append('<div class="col-12"><h4 style="text-align: center">Something Wrong</h4></div>');
-                return;
-            } else if (data.length == 0) {
-                bodyEl.append('<div class="col-12"><h3 style="text-align: center">Belum ada data pemeriksaan</h3></div>');
-                return;
-            }
-
-            renderTable(bodyEl, data, rowData.id);
-
-        });
-
-
-
-
-    });
-
     function renderTable(bodyEl, data, idbumil) {
         bodyEl.empty();
         var rowData = data.bumil;
@@ -391,4 +323,5 @@ $(document).ready(function () {
         
         return cl;
     }
+
 });

@@ -18,7 +18,7 @@ class Lansia extends Controller{
             'estimasi_ttl' => array('searchable' => false)
         );
 
-        $this->datatables->set_resultHandler(function($data, $_, ){
+        $this->datatables->set_resultHandler(function($data, $_ ){
             $tmp = $data;
 
             foreach($data as $k => $row){
