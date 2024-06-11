@@ -373,12 +373,18 @@ class qbuilder
         return $this->db->single_object();
     }
 
-    function results()
+    function results($type = 'array')
     {
         $this->_compileQuery('results');
         $this->_runQuery('results');
 
-        return $this->db->resultSet();
+        $data = $this->db->resultSet();
+        if($type == 'object'){
+            foreach($data as $k => $v){
+                $data[$k] = (object) $v;
+            }
+        }
+        return $data;
     }
 
     function result_object()
@@ -527,7 +533,7 @@ class qbuilder
         $insertSyntax = ['', ''];
         $updateSyntax = '';
         $deleteSyntax = '';
-        if (in_array($caller, ['row', 'results', 'result_object', 'row', 'row_object'])) {
+        if (in_array($caller, ['row', 'results', 'result_object', 'row', 'row_object', 'num_rows'])) {
             $selects = empty($this->selects) ? '*' : join(', ', $this->selects);
             $query = "SELECT $selects FROM $table";
         } elseif ($caller == 'update') {
@@ -587,9 +593,16 @@ class qbuilder
             }
         }
 
-        $groupBy = join(',', $this->groupBy);
-        $orderBy = join(', ', $this->orderBy);
+        $groupBy = null;
+        $orderBy = null;
 
+        if(!empty($this->groupBy)){
+            $groupBy =  'GROUP BY ' .  join(',', $this->groupBy);
+        }
+
+        if(!empty($this->orderBy)){
+            $orderBy = 'ORDER BY ' . join(', ', $this->orderBy);
+        }
 
         if (in_array($caller, ['insert', 'update', 'delete'])) {
             if ($caller == 'insert' && !empty($this->inputs)) {
