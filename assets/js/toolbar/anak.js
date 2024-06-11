@@ -81,6 +81,111 @@ $(document).ready(function () {
 
     });
 
+    panel.find('.tool-custom-export').click(function(){
+        var opsiTahun = {};
+        var opsiKelompok = [
+            {key: 'semua', text: 'Semua'},
+            {key: '05', text: 'Umur 0-5 Bulan'},
+            {key: '611', text: 'Umur 6-11 Bulan'},
+            {key: '1223', text: 'Umur 12-23 Bulan'},
+            {key: '2459', text: 'Umur 24-59 Bulan'},
+        ];
+        var tahunIni = new Date().getFullYear();
+        tahunIni = parseInt(tahunIni)
+        for (let index = tahunIni; index > (tahunIni - 10); index--) {
+            opsiTahun[index] = {
+                text: index
+            }
+        }
+        var modalConfig = {
+            modalId: 'export-anak',
+            wrapper: "body",
+            opt: {
+                clickToClose: false,
+                type: 'form',
+                ajax: true,
+                rules: [
+                    {
+                        name: 'noSpace',
+                        method: function (value, element) { return value.indexOf(" ") < 0; },
+                        message: "No space please",
+                        field: 'url'
+                    }
+                ],
+                sebelumSubmit: function () {
+                    showLoading();
+                },
+                submitSuccess: function (res) {
+                    endLoading();
+                    if (typeof (res) == 'string')
+                        res = JSON.parse(res);
+
+                    defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss');
+                    defaultCnfigToast.message = res.message;
+                    setTimeout(function () {
+                        $("#export-anak").modal('hide');
+                    }, 1000);
+                    makeToast(defaultCnfigToast);
+
+                },
+                submitError: function (res) {
+                    endLoading();
+                    if (typeof (res) == 'string')
+                        res = JSON.parse(res);
+
+                    if (res.message)
+                        defaultCnfigToast.message = res.message;
+                    else if (res.responseJSON.message)
+                        defaultCnfigToast.message = res.responseJSON.message;
+                    else
+                        defaultCnfigToast.message = "Sumbit Failed";
+
+                    defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss')
+                    makeToast(defaultCnfigToast);
+
+                },
+                open: true,
+                destroy: true,
+                modalPos: 'def',
+                saatBuka: (innerOpt) => {
+                    $('#form-export-anak').form();
+                },
+                saatTutup: () => {
+                },
+                formOpt: {
+                    enctype: 'multipart/form-data',
+                    formId: 'form-export-anak',
+                    formAct: path + 'report/bayi',
+                    formMethod: 'POST',
+                },
+                modalTitle: 'Export Data',
+                modalBody: {
+                    input: [
+                        {
+                            type: 'select', 
+                            name: 'tahun',
+                            label: 'Pilih Tahun',
+                            options: opsiTahun,
+                            default: null
+                        },
+                        {
+                            type: 'select', 
+                            name: 'umur',
+                            label: 'Pilih Kelompok Usia',
+                            options: (opsiKelompok),
+                            default: 'semua'
+                        },
+
+                    ],
+                    buttons: [
+                        { type: 'submit', text: 'Export', id: "export", class: "btn btn btn-primary" }
+                    ]
+                },
+            }
+        };
+        generateModal(modalConfig.modalId, modalConfig.wrapper, modalConfig.opt);
+    });
+
     function renderTable(bodyEl, data, idanak) {
         bodyEl.empty();
         var rowData = data.anak;

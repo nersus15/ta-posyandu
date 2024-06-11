@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set("error_log", "./logs/log-" . date('y-m-d') . '.php');
 
 include_once './config/config.php';
+include_once './config/routes.php';
 include_once './config/middleware.php';
 require_once './core/Controller.php';
 function &get_instance()
@@ -68,8 +69,29 @@ if(!empty($urls)){
     $controllers = parseUrl();
     $class = ucfirst($controllers[0]);
     $method = count($controllers) >= 2 ? $controllers[1] : 'index';
+
+    // Cek Config Routes
+    $routes = $config['routes'];
+    $actual = str_replace(BASEURL, '', parseUrl(false));
+    foreach($routes as $path => $act){
+        if($path == $actual){
+            if(is_string($act)){
+                $acts = explode('@', $act);
+                $class = $acts[0];
+                $method = isset($acts[1]) && !empty($acts[1]) ? $acts[1] : 'index';
+            }elseif(is_callable($act)){
+                $act();
+                exit;
+            }
+            
+            break;
+        }
+
+    }
+
+
     $batas = strpos($method, '?');
-    if($batas !== false){
+    if($batas !== false && false){
         $m = substr($method, 0, $batas);
         $get = explode('&', substr($method, $batas + 1));
         $method = $m;
@@ -84,6 +106,7 @@ if(!empty($urls)){
             $_GET[$key] = $value;
         }
     }
+
     if(count($controllers) > 2) {
         unset($controllers[0], $controllers[1]);
         $params = (array) $controllers;

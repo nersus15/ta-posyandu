@@ -130,7 +130,10 @@ uihelper = function () {
     }
 
     this.generateSelect = function (el) {
-        var options = el.options ? Object.keys(el.options) : '';
+        var options = null;
+        if(el.options){
+            options = el.options;
+        }
         var id = !el.id ? el.name : el.id;
         var def = el.default ? el.default : '';
         var params = ['label', 'fgClass', 'attr', 'labelClass', 'class'];
@@ -144,18 +147,40 @@ uihelper = function () {
 
 
         if (options) {
-            options.forEach((opt, index) => {
-                let dataitem = '';
-                if (el.options[opt].data) {
-                    Object.keys(el.options[opt].data).forEach(i => {
-                        dataitem += 'data-' + i + ' ="' + el.options[opt].data[i] + '"';
-                    })
+            if(Array.isArray(options)){
+                for (let i = 0; i < options.length; i++) {
+                    const option = options[i];   
+                    const key = option.key;
+                      
+                    let dataitem = '';
+                    if (option.data) {
+                        Object.keys(option.data).forEach(i => {
+                            dataitem += 'data-' + i + ' ="' + option.data[i] + '"';
+                        })
+                    }
+                    if (def && key == def)
+                        selectOpt += '<option ' + dataitem + ' value = "' + key + '" selected> ' + option.text + '</option>';
+                    else
+                        selectOpt += '<option ' + dataitem + ' value = "' + key + '"> ' + option.text + '</option>';
                 }
-                if (def && opt == def)
-                    selectOpt += '<option ' + dataitem + ' value = "' + opt + '" selected> ' + el.options[opt].text + '</option>';
-                else
-                    selectOpt += '<option ' + dataitem + ' value = "' + opt + '"> ' + el.options[opt].text + '</option>';
-            });
+            }else{
+                for (const key in options) {
+                    if (Object.hasOwnProperty.call(options, key)) {
+                        const option = options[key];     
+                        let dataitem = '';
+                        if (option.data) {
+                            Object.keys(option.data).forEach(i => {
+                                dataitem += 'data-' + i + ' ="' + option.data[i] + '"';
+                            })
+                        }
+                        if (def && key == def)
+                            selectOpt += '<option ' + dataitem + ' value = "' + key + '" selected> ' + option.text + '</option>';
+                        else
+                            selectOpt += '<option ' + dataitem + ' value = "' + key + '"> ' + option.text + '</option>';
+                    }
+                }
+            }
+            
         }
 
         var select =
