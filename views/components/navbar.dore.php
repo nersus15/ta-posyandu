@@ -2,10 +2,24 @@
     $adaUserMenu = !isset($adaUserMenu) ? true : $adaUserMenu;
     if(isset($navbarConf) && !empty($navbarConf)) 
         extract($navbarConf);
-    $bg = isset($customBg) && $customBg && $bgtype == 'script' && isset($bg) ? $b : null;
-    $bgclass = isset($customBg) && $customBg && $bgtype == 'class' && isset($bg) ? $b : null;
+    $bgclass = null;
+    $navStyles = '';
+
+    // FIX LATTER: FORCE CHANGE NAVBAR BACKGROUND-COLOR
+    $customBg = [
+        'type' => 'script',
+        'bg' => '#E0FBE2'
+    ];
+    if(isset($customBg) && !empty($customBg)){
+        if($customBg['type'] == 'class')
+            $bgclass = $customBg['bg'];
+        else{
+            $navStyles = 'background-color:' . $customBg['bg'] . '; color: white';
+        }
+        
+    }
 ?>
-<nav style="background-color: <?php echo $bg ?>" class="navbar fixed-top <?php echo !empty($bgclass) ? 'bg-' . $bgclass : null?>">
+<nav style="<?php echo $navStyles ?>" class="navbar fixed-top <?php echo !empty($bgclass) ? 'bg-' . $bgclass : null?>">
     <div class="d-flex align-items-center navbar-left">
     <?php if (isset($adaSidebar) && $adaSidebar): ?>
         <a href="#" class="menu-button d-none d-md-block">
