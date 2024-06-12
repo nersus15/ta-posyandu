@@ -177,7 +177,7 @@ $(document).ready(function () {
                             name: 'umur',
                             label: 'Pilih Kelompok Usia',
                             options: (opsiKelompok),
-                            default: 'semua'
+                            default: segments[segments.length - 1],
                         },
 
                     ],

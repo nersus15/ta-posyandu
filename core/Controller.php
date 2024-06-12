@@ -248,8 +248,9 @@ class Controller
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>' . $this->title . '</title>
-            <script>
+            <script id="_hidden">
                 var path = "' . BASEURL  . '";
+                var segments = '. json_encode(parseUrl()) .';
             </script>' . $this->__getResource('head') . '</head>
             <body id="app-container" '. $this->bodyAttributes .' >
             <div class="c-overlay">
@@ -257,7 +258,7 @@ class Controller
             </div>';
 
 
-        $footer = $this->__getResource('body:end') . '<script> $(document).ready(function(){if($.dore) $("body").dore();}); '  . ' </script></body> </html>';
+        $footer = $this->__getResource('body:end') . '<script> $(document).ready(function(){if($.dore) $("body").dore(); $("#_hidden").empty()}); '  . ' </script></body> </html>';
         echo $head;
         foreach ($this->views as $view) {
             echo $view;
