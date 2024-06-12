@@ -1,18 +1,4 @@
 <?php
-$db = \Config\Database::connect();
-$dataWil = $db->table('wilayah')->get()->getResultArray();
-$wilayah = [
-    'desa' => [],
-    'kecamatan' => []
-];
-$session = session();
-$respnse = $session->getFlashdata('response');
-foreach ($dataWil as $w) {
-    if ($w['level'] == 3)
-        $wilayah['kecamatan'][$w['id']] = $w['nama'];
-    elseif ($w['level'] == 4)
-        $wilayah['desa'][$w['id']] = $w['nama'];
-}
 ?>
 <style>
     .custom-input {
@@ -32,8 +18,7 @@ foreach ($dataWil as $w) {
 </style>
 <div class="mt-4">
     <h3>Profile</h3>
-    <p class="text-danger"><?= $respnse ?></p>
-    <form enctype="multipart/form-data" action="<?= base_url('profile/update') ?>" method="post">
+    <form id="update-profile" enctype="multipart/form-data" action="<?= base_url('auth/updateprofile') ?>" method="post">
         <div class="row mt-4" style="row-gap: 10px;">
             <div class="col-sm-12 col-md-4">
                 <div class="profile-pic">
@@ -42,7 +27,7 @@ foreach ($dataWil as $w) {
                         <span>Change Image</span>
                     </label>
                     <input accept="image/*" name="photo" id="file" type="file" />
-                    <img style="" id="output" src="<?= assets_url('img/profile/' . $photo) ?>" alt="Poto profile">
+                    <img style="" id="output" src="<?= staticUrl('img/profile/' . $photo) ?>" alt="Poto profile">
 
                 </div>
             </div>
@@ -72,57 +57,13 @@ foreach ($dataWil as $w) {
                                 <tr>
                                     <td>No.Hp <span class="symbol-required"></span></td>
                                     <td>
-                                        <input type="text" name="hp" value="<?= $hp ?>" id="hp" class="form-control custom-input">
+                                        <input type="text" name="no_hp" value="<?= $no_hp ?>" id="hp" class="form-control custom-input">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Alamat</td>
                                     <td>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <select class="form-control" name="kecamatan" id="kecamatan">
-                                                    <?php foreach ($wilayah['kecamatan'] as $id => $kec) : ?>
-                                                        <option value="<?= $id ?>" <?= $id == substr($alamat, 0, 8) . '.0000' ? 'selected' : '' ?>><?= 'Kec. ' . $kec ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <select class="form-control" name="desa" id="desa">
-                                                    <option value="">Pilih Desa</option>
-                                                    <?php foreach ($wilayah['desa'] as $id => $desa) : ?>
-                                                        <option value="<?= $id ?>" <?= $id == $alamat ? 'selected' : '' ?>><?= 'Desa' . $desa ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Wilayah Kerja</td>
-                                    <td>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <select class="form-control" name="kecamatan_kerja" id="kecamatan_kerja">
-                                                    <?php foreach ($wilayah['kecamatan'] as $id => $kec) : ?>
-                                                        <option value="<?= $id ?>" <?= $id == substr($wilayah_kerja, 0, 8) . '.0000' ? 'selected' : '' ?>><?= 'Kec. ' . $kec ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <select class="form-control" name="desa_kerja" id="desa_kerja">
-                                                    <option value="">Pilih Desa</option>
-                                                    <?php foreach ($wilayah['desa'] as $id => $desa) : ?>
-                                                        <option value="<?= $id ?>" <?= $id == $wilayah_kerja ? 'selected' : '' ?>><?= 'Desa' . $desa ?></option>
-                                                    <?php endforeach ?>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Faskes</td>
-                                    <td>
-                                        <input minlength="8" class="form-control custom-input" type="text" readonly value="<?= $faskes ?>" name="faskes" id="faskes">
+                                        <textarea name="alamat" class="form-control" rows="5" id="alamat"><?= $alamat ?></textarea>
                                     </td>
                                 </tr>
                                 <tr>
@@ -146,11 +87,61 @@ foreach ($dataWil as $w) {
 </div>
 <script>
     $(document).ready(function() {
-        $('#kecamatan,#desa, #kecamatan_kerja,#desa_kerja').select2();
-        var loadFile = function(event) {
+        $("#file").on('change', function(event) {
             var image = document.getElementById("output");
+            console.log(event.target.files);
             image.src = URL.createObjectURL(event.target.files[0]);
-        };
-        $("#file").on('change', loadFile)
+        });
+        $("#update-profile").initFormAjax({
+        sebelumSubmit: function(){
+            showLoading();
+        },
+        submitSuccess: function(res){
+            endLoading();
+
+            if (typeof(res) == 'string')
+                res = JSON.parse(res);
+
+            makeToast({
+                title: 'Berhasil',
+                message: res.message,
+                id: 'defaut-config',
+                cara_tempel: 'after',
+                autohide: true,
+                show: true,
+                hancurkan: true,
+                wrapper: 'body',
+                delay: 5000
+            });
+
+            setTimeout(function(){
+                location.reload();
+            }, 2000);
+        },
+        submitError: function(res){
+            endLoading();
+            if (typeof (res) == 'string')
+                res = JSON.parse(res);
+
+            var message = "Sumbit Failed";
+
+            if (res.message)
+                defaultCnfigToast.message = res.message;
+            else if (res.responseJSON.message)
+                defaultCnfigToast.message = res.responseJSON.message;
+
+            makeToast({
+                title: 'Gagal',
+                message: message,
+                id: 'defaut-config',
+                cara_tempel: 'after',
+                autohide: true,
+                show: true,
+                hancurkan: true,
+                wrapper: 'body',
+                delay: 5000
+            })
+        }
+       });
     })
 </script>

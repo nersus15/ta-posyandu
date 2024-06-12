@@ -126,9 +126,11 @@ class Controller
     function add_javascript($js)
     {
         if (isset($js['pos'])) {
+            $js['group'] = false;
             $this->params['extra_js'][] = $js;
         } else {
             foreach ($js as $j) {
+                $j['group'] = false;
                 $this->params['extra_js'][] = $j;
             }
         }
@@ -186,9 +188,11 @@ class Controller
     function add_stylesheet($css)
     {
         if (isset($css['pos'])) {
+            $css['group'] = false;
             $this->params['extra_css'][] = $css;
         } else {
             foreach ($css as $c) {
+                $c['group'] = false;
                 $this->params['extra_css'][] = $c;
             }
         }
@@ -308,15 +312,36 @@ class Controller
                 }
             }
         }
+
     }
 
 
     private function __getResource($pos = 'head')
     {
-        // echo json_encode($this->params)
         $res = '';
+        $groups = [];
+        $standalone = [];
+
         if (isset($this->params['extra_js']) && !empty($this->params['extra_js'])) {
             foreach ($this->params['extra_js'] as $js) {
+                if(isset($js['group']) && !$js['group'])
+                    $standalone['js'][] = $js;
+                else
+                    $groups['js'][] = $js;
+            }
+        }
+
+        if (isset($this->params['extra_css']) && !empty($this->params['extra_css'])) {
+            foreach ($this->params['extra_css'] as $css) {
+                if(isset($css['group']) && !$css['group'])
+                    $standalone['css'][] = $css;
+                else
+                    $groups['css'][] = $css;
+            }
+        }
+
+        if (isset($groups['js']) && !empty($groups['js'])) {
+            foreach ($groups['js'] as $js) {
                 if ($js['pos'] == $pos && (!isset($js['type']) || $js['type'] == 'file')) {
                     if (strpos($js['src'], 'http') == false)
                         $js['src'] = BASEURL . ('static/' . $js['src']);
@@ -327,8 +352,32 @@ class Controller
             }
         }
 
-        if (isset($this->params['extra_css']) && !empty($this->params['extra_css'])) {
-            foreach ($this->params['extra_css'] as $css) {
+        if (isset($groups['css']) && !empty($groups['css'])) {
+            foreach ($groups['css'] as $css) {
+                if ($css['pos'] == $pos && (!isset($css['type']) || $css['type'] == 'file')) {
+                    if (strpos($css['src'], 'http') == false)
+                        $css['src'] = BASEURL .('static/' . $css['src']);
+                    $res .= '<link rel="stylesheet" href="' . $css['src'] . '"></link>';
+                } elseif ($css['pos'] == $pos && $css['type'] == 'inline') {
+                    $res .= '<style>' . $css['style'] . '</style>';
+                }
+            }
+        }
+
+        if (isset($standalone['js']) && !empty($standalone['js'])) {
+            foreach ($standalone['js'] as $js) {
+                if ($js['pos'] == $pos && (!isset($js['type']) || $js['type'] == 'file')) {
+                    if (strpos($js['src'], 'http') == false)
+                        $js['src'] = BASEURL . ('static/' . $js['src']);
+                    $res .= '<script src="' . $js['src'] . '"></script>';
+                } elseif ($js['pos'] == $pos && $js['type'] == 'inline') {
+                    $res .= '<script>' . $js['script'] . '</script>';
+                }
+            }
+        }
+
+        if (isset($standalone['css']) && !empty($standalone['css'])) {
+            foreach ($standalone['css'] as $css) {
                 if ($css['pos'] == $pos && (!isset($css['type']) || $css['type'] == 'file')) {
                     if (strpos($css['src'], 'http') == false)
                         $css['src'] = BASEURL .('static/' . $css['src']);
