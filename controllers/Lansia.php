@@ -7,14 +7,15 @@ class Lansia extends Controller{
         $this->load('Datatables', 'datatables');
         $username = sessiondata('login', 'username');
 
-        $query = $this->db->from('lansia');
+        $query = $this->db->from('lansia')->join('users', 'users.username = lansia.pencatat');
         if(is_login('kader'))
             $query->where('pencatat', $username);
 
         $header = array(
             'id' => array('searchable' => false),
             'nama' => array('searchable' => true),
-            'alamat' => array('searchable' => true),
+            'nama_pencatat' => array('searchable' => true, 'field' => 'users.nama_lengkap'),
+            'alamat' => array('searchable' => true, 'field' => 'lansia.alamat'),
             'nik' => array('searchable' => true),
             'ttl' => array('searchable' => false, 'field' => 'tanggal_lahir'),
             'estimasi_ttl' => array('searchable' => false)

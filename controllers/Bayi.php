@@ -7,7 +7,7 @@ class Bayi extends Controller{
         $this->load('Datatables', 'datatables');
         $username = sessiondata('login', 'username');
 
-        $query = $this->db->from('bayi');
+        $query = $this->db->from('bayi')->join('users', 'users.username=bayi.pencatat');
         if(is_login('kader'))
             $query->where('pencatat', $username);
 
@@ -41,15 +41,16 @@ class Bayi extends Controller{
         $header = array(
             'id' => array('searchable' => false),
             'nama' => array('searchable' => true),
-            'alamat' => array('searchable' => true),
+            'alamat' => array('searchable' => true, 'field' => 'bayi.alamat'),
             'ayah' => array('searchable' => true),
             'ibu' => array('searchable' => true),
             'ttl' => array('searchable' => false, 'field' => 'tanggal_lahir'),
             'ttl_estimasi' => array('searchable' => false),
             'pencatat' => array('searchable' => true),
+            'nama_pencatat' => array('searchable' => true, 'field' => 'users.nama_lengkap'),
             'bbl' => array('searchable' => false),
             'akb' => array('searchable' => false),
-            'createdAt' => array('searchable' => true),
+            'createdAt' => array('searchable' => true, 'field'=> 'bayi.createdAt'),
             'umur' => array('searchable' => true),
         );
 

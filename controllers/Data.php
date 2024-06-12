@@ -288,14 +288,14 @@ class Data extends Controller
             'dtTitle' => 'Data Bayi' . ($umur != 'semua' ? ' (' .$mapUmur[$umur] . ')' : ''),
             'dtid' => 'dt-bayi',
             'head' => array(
-                '', 'Nama', 'Umur', 'Jenis Kelamin', 'AKB', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
+                '', 'Nama Pencatat', 'Nama', 'Umur', 'Jenis Kelamin', 'AKB', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
             ),
             'skrip' => 'dtconfig/dt_bayi', //wajib
             'toolbarSkrip' => 'toolbar/anak',
             'toolbarVar' => array(
                 'role' => myRole()
             ),
-            'skrip_data' => array('id' => 'dt-bayi'),
+            'skrip_data' => array('id' => 'dt-bayi', 'role' => myRole()),
             'options' => array(
                 'source' => 'bayi/list/'. $umur,
                 'search' => 'false',
@@ -348,11 +348,11 @@ class Data extends Controller
             'dtTitle' => 'Data Lansia',
             'dtid' => 'dt-lansia',
             'head' => array(
-                '', 'Nama', 'Alamat', 'Tanggal Lahir', 'NIK'
+                '', 'Nama Pencatat', 'Nama', 'Alamat', 'Tanggal Lahir', 'NIK'
             ),
             'skrip' => 'dtconfig/dt_lansia', //wajib
             'toolbarSkrip' => 'toolbar/lansia',
-            'skrip_data' => array('id' => 'dt-lansia'),
+            'skrip_data' => array('id' => 'dt-lansia', 'role' => myRole()),
             'toolbarVar' => array(
                 'role' => myRole()
             ),
