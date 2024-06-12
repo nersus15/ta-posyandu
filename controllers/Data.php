@@ -208,4 +208,198 @@ class Data extends Controller
 
         $this->render();
     }
+
+    function bumil(){
+        $tabel = $this->addViews('components/datatables.responsive', array(
+            'dtTitle' => 'Data Ibu Hamil',
+            'dtid' => 'dt-bumil',
+            'head' => array(
+                '','Nama Pencatat', 'Nama', 'Nama Suami', 'Tanggal Lahir', 'Alamat Domisili', 'Alamat', 'Pendidikan', 'Pekerjaan', 'Agama'
+            ),
+            'toolbarSkrip' => 'toolbar/bumil',
+            'toolbarVar' => array(
+                'role' => myRole()
+            ),
+            'skrip' => 'dtconfig/dt_bumil', //wajib
+            'skrip_data' => array('id' => 'dt-bumil'),
+            'options' => array(
+                'source' => 'bumil/list',
+                'search' => 'false',
+                'select' => 'multi', //false, true, multi
+                'checkbox' => 'true',
+                'change' => 'false',
+                'dom' => 'rtip',
+                'responsive' => 'true',
+                'auto-refresh' => 'false',
+                'deselect-on-refresh' => 'true',
+            ),
+            'modal' => array(
+                'size' => 'modal-lg',
+            ),
+            'data_panel' => array(
+                'nama' => 'dt-bumil',
+                'perpage' => 10,
+                'pages' => array(1, 2, 10),
+                'hilangkan_display_length' => true,
+                'toolbar' => array(
+                    array(
+                        'tipe' => 'buttonset',
+                        'tombol' => array(
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Export', 'icon' => 'simple-icon-printer', 'class' => 'btn-outline-secondary tool-custom-export tetap'),
+                        )
+                    ),
+                ),
+            )
+        ), true);
+
+        $data = [
+            'contentHtml' => array($tabel, '<div class="mt-4" id="detail-riwayat"></div>'),
+            'sidebar' => 'components/sidebar.dore',
+            'navbar' => 'components/navbar.dore',
+            'sidebarConf' => config_sidebar(myRole(), 3)
+        ];
+
+        $this->setPageTitle('Data Ibu Hamil');
+
+        $this->addBodyAttributes(['class' => 'menu-default show-spinner']);
+        $this->addResourceGroup('main', 'dore', 'datatables', 'form');
+        $this->addViews('templates/dore', $data);
+
+        $this->render();
+    }
+
+    function bayi($umur = 'semua'){
+        $mapUmur = [
+            'semua' => '',
+            '05' => '0-5 Bulan',
+            '611' => '6-11 Bulan',
+            '1223' => '12-23 Bulan',
+            '2459' => '24-59 Bulan' 
+        ];
+        $index = 0;
+        foreach(array_keys($mapUmur) as $i => $k){
+            if($umur == $k){
+                $index = $i;
+                break;
+            }
+        }
+        $tabel = $this->addViews('components/datatables.responsive', array(
+            'dtTitle' => 'Data Bayi' . ($umur != 'semua' ? ' (' .$mapUmur[$umur] . ')' : ''),
+            'dtid' => 'dt-bayi',
+            'head' => array(
+                '', 'Nama', 'Umur', 'Jenis Kelamin', 'AKB', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
+            ),
+            'skrip' => 'dtconfig/dt_bayi', //wajib
+            'toolbarSkrip' => 'toolbar/anak',
+            'toolbarVar' => array(
+                'role' => myRole()
+            ),
+            'skrip_data' => array('id' => 'dt-bayi'),
+            'options' => array(
+                'source' => 'bayi/list/'. $umur,
+                'search' => 'false',
+                'select' => 'multi', //false, true, multi
+                'checkbox' => 'true',
+                'change' => 'false',
+                'dom' => 'rtip',
+                'responsive' => 'true',
+                'auto-refresh' => 'false',
+                'deselect-on-refresh' => 'true',
+            ),
+            'modal' => array(
+                'size' => 'modal-lg'
+            ),
+            'data_panel' => array(
+                'nama' => 'dt-bayi',
+                'perpage' => 10,
+                'pages' => array(1, 2, 10),
+                'hilangkan_display_length' => true,
+                'toolbar' => array(
+                    array(
+                        'tipe' => 'buttonset',
+                        'tombol' => array(
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Export', 'icon' => 'simple-icon-printer', 'class' => 'btn-outline-secondary tool-custom-export tetap'),
+                        )
+                    ),
+                ),
+            )
+        ), true);
+
+        $data = [
+            'contentHtml' => array($tabel, '<div class="mt-4" id="detail-riwayat"></div>'),
+            'sidebar' => 'components/sidebar.dore',
+            'navbar' => 'components/navbar.dore',
+            'sidebarConf' => config_sidebar(myRole(), 4, $index)
+        ];
+
+        $this->setPageTitle('Data Bayi'. $mapUmur[$umur]);
+
+        $this->addBodyAttributes(['class' => 'menu-default show-spinner']);
+        $this->addResourceGroup('main', 'dore', 'datatables', 'form');
+        $this->addViews('templates/dore', $data);
+
+        $this->render();
+    }
+
+    function lansia(){
+        $tabel = $this->addViews('components/datatables.responsive', array(
+            'dtTitle' => 'Data Lansia',
+            'dtid' => 'dt-lansia',
+            'head' => array(
+                '', 'Nama', 'Alamat', 'Tanggal Lahir', 'NIK'
+            ),
+            'skrip' => 'dtconfig/dt_lansia', //wajib
+            'toolbarSkrip' => 'toolbar/lansia',
+            'skrip_data' => array('id' => 'dt-lansia'),
+            'toolbarVar' => array(
+                'role' => myRole()
+            ),
+            'options' => array(
+                'source' => 'lansia/list/',
+                'search' => 'false',
+                'select' => 'multi', //false, true, multi
+                'checkbox' => 'true',
+                'change' => 'false',
+                'dom' => 'rtip',
+                'responsive' => 'true',
+                'auto-refresh' => 'false',
+                'deselect-on-refresh' => 'true',
+            ),
+            'modal' => array(
+                'size' => 'modal-lg'
+            ),
+            'data_panel' => array(
+                'nama' => 'dt-lansia',
+                'perpage' => 10,
+                'pages' => array(1, 2, 10),
+                'hilangkan_display_length' => true,
+                'toolbar' => array(
+                    array(
+                        'tipe' => 'buttonset',
+                        'tombol' => array(
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Export', 'icon' => 'simple-icon-printer', 'class' => 'btn-outline-secondary tool-custom-export tetap'),
+                        )
+                    ),
+                ),
+            )
+        ), true);
+
+        $data = [
+            'contentHtml' => array($tabel, '<div class="mt-4" id="detail-riwayat"></div>'),
+            'sidebar' => 'components/sidebar.dore',
+            'navbar' => 'components/navbar.dore',
+            'sidebarConf' => config_sidebar(myRole(), 5)
+        ];
+
+        $this->setPageTitle('Data Lansia');
+
+        $this->addBodyAttributes(['class' => 'menu-default show-spinner']);
+        $this->addResourceGroup('main', 'dore', 'datatables', 'form');
+        $this->addViews('templates/dore', $data);
+
+        $this->render();
+    }
 }

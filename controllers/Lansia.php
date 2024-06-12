@@ -7,7 +7,9 @@ class Lansia extends Controller{
         $this->load('Datatables', 'datatables');
         $username = sessiondata('login', 'username');
 
-        $query = $this->db->from('lansia')->where('pencatat', $username);
+        $query = $this->db->from('lansia');
+        if(is_login('kader'))
+            $query->where('pencatat', $username);
 
         $header = array(
             'id' => array('searchable' => false),

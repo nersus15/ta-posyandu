@@ -20,9 +20,14 @@ $config['middleware'] = array(
     ['controller' => 'home', 'handler' => 'permission', 'params' => ['redirect' => 'auth'],  'event' => 'before'],
     ['controller' => 'data', 'handler' => 'permission', 'params' => ['role' => 'admin'], 'event' => 'before'],
     ['controller' => 'bumil', 'method' => 'kunjungan', 'handler' => 'permission', 'params' => ['role' => 'bidan'], 'event' => 'before'],
-    ['controller' => 'report', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['bidan', 'kader']], 'event' => 'before'],
-    ['controller' => 'report', 'method' => 'bayi', 'handler' => 'permission', 'params' => ['role' => ['kader']], 'event' => 'before'],
-    ['controller' => 'report', 'method' => 'lansia', 'handler' => 'permission', 'params' => ['role' => ['kader'], 'exit' => true], 'event' => 'before'],
+  
+    ['controller' => 'kader', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['kader']], 'event' => 'before'],
+    ['controller' => 'bidan', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['bidan']], 'event' => 'before'],
+    // ['controller' => 'report', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['bidan', 'kader']], 'event' => 'before'],
+  
+    ['controller' => 'report', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['bidan', 'kader', 'admin']], 'event' => 'before'],
+    ['controller' => 'report', 'method' => 'bayi', 'handler' => 'permission', 'params' => ['role' => ['kader', 'admin']], 'event' => 'before'],
+    ['controller' => 'report', 'method' => 'lansia', 'handler' => 'permission', 'params' => ['role' => ['kader', 'admin'], 'exit' => true], 'event' => 'before'],
 
     ['controller' => 'auth', 'method' => '', 'handler' => function(){
         if(is_login()) redirect();

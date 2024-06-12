@@ -3,7 +3,7 @@ $(document).ready(function () {
     var form = <?= json_encode($form) ?>;
     var toolbar = <?= json_encode($toolbar) ?>;
     var panel = $("#displayOptions-" + dtid);
-    var role = toolbar.role
+    var role = toolbar.role;
     var daftarBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
     var defaultCnfigToast = {
         title: 'Submit Feedback',
@@ -47,7 +47,7 @@ $(document).ready(function () {
                 '<span class="text-danger" id="close-detail" style="position: relative;cursor: pointer;left: 95%;top: 15px; font-size: 20px"><i class="iconsmind-Close"></i></span>' +
                 '<h1 class="card-title ml-4 mt-3 col-12">Detail Pemeriksaan ' + (rowData.nama ? rowData.nama : '') + '</h1>' +
                 '<div class="col-sm-6 ml-4">' +
-                '<button class="btn btn-primary btn-sm" type="button" id="add-pemeriksaan">Periksa Ibu</button>' +
+                (role == 'admin' ? '' : '<button class="btn btn-primary btn-sm" type="button" id="add-pemeriksaan">Periksa Ibu</button>') +
                 '</div>' +
                 '</div>' +
                 '<div id="canvas_detail_pemeriksaan" class="card-body row">' +

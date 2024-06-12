@@ -7,7 +7,9 @@ class Bayi extends Controller{
         $this->load('Datatables', 'datatables');
         $username = sessiondata('login', 'username');
 
-        $query = $this->db->from('bayi')->where('pencatat', $username);
+        $query = $this->db->from('bayi');
+        if(is_login('kader'))
+            $query->where('pencatat', $username);
 
         $mapUmur = array(
             '05' => '0-5',

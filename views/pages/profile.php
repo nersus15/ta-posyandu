@@ -37,6 +37,12 @@
                         <table class="table table-borderless">
                             <tbody>
                                 <tr>
+                                    <td>Role</td>
+                                    <td>
+                                        <input type="text" name="role" value="<?= $role ?>" readonly id="role" class="form-control custom-input">
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td>Username</td>
                                     <td>
                                         <input type="text" name="username" value="<?= $username ?>" readonly id="username" class="form-control custom-input">

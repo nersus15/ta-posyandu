@@ -1,5 +1,9 @@
 <?php if(isset($sidebarConf) && !empty($sidebarConf)) extract($sidebarConf) ?>
-
+<style>
+    .scroll{
+        overflow-y: scroll;
+    }
+</style>
 <div class="sidebar">
     <div class="main-menu">
         <div class="scroll">
