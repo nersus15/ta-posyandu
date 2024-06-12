@@ -55,6 +55,7 @@ class Home extends Controller
             'data_content' => $dataDashboard,
             'sidebar' => 'components/sidebar.dore',
             'navbar' => 'components/navbar.dore',
+            'pageName' => 'Dashboard',
             'sidebarConf' => config_sidebar(myRole())
         );
 
@@ -73,6 +74,7 @@ class Home extends Controller
             'data_content' => sessiondata(),
             'sidebar' => 'components/sidebar.dore',
             'navbar' => 'components/navbar.dore',
+            'pageName' => 'Profile',
             'sidebarConf' => config_sidebar(myRole())
         );
 
