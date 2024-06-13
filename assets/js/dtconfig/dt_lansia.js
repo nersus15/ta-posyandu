@@ -11,6 +11,7 @@ configTabel[dtid] = [
         data: 'alamat'
     },
     {
+        data: 'ttl',
         mRender: function (_, type, row) {
             var ttl = row.ttl;
             var estimasi = row.estimasi_ttl;

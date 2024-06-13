@@ -2,30 +2,34 @@ var role = "<?= isset($role) ? $role : '' ?>";
 var dtid = "<?= $id ?>";
 configTabel[dtid] = [
     { 
+        data: '',
         mData: null,
     },
     {
+        data: 'nama',
         mRender: function (_, type, row) {
             var nama = row.nama ? row.nama : 'Belum ada nama';
             return nama;
         }
     },
     {
+        data: 'umur',
         mRender: function (_, type, row) {
             var umur = row.umur;
             return umur + ' Hari';
         }
     },
-    {
+    {   
+        data: 'kelamin',
         mRender: function (_, type, row) {
             return row.kelamin == 'L' ? 'Laki-laki' : 'Perempuan';
         }
     },
     {
-        data: 'bbl'
+        data: 'akb'
     },
     {
-        data: 'akb'
+        data: 'bbl'
     },
     {
         data: 'ibu'

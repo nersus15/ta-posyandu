@@ -18,6 +18,7 @@ configTabel["<?= $id ?>"] = [
         data: 'suami'
     },
     {
+        data: 'ttl',
         mRender: function (_, type, row) {
             var ttl = row.ttl;
             var estimasi = row.ttl_estimasi;
