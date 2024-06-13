@@ -8,13 +8,8 @@ class Datatables {
     private $search_option;
     private $all_data;
     private $filterred_data;
-    private $reCount = false;
-    private $isFilterred = false;
-    private $enableCache = false;
-    /**
-     * @var CI_DB_query_builder
-     * 
-     */
+    private $order;
+    private $columns;
     public $query;
     
     /**
@@ -25,6 +20,8 @@ class Datatables {
 
     public function __construct() {
         $this->keyword = isset($_GET['search']) && isset($_GET['search']['value']) ? $_GET['search']['value'] : null;
+        $this->order = isset($_GET['order']) ? $_GET['order'] : [];
+        $this->columns = isset($_GET['columns']) ? $_GET['columns'] : [];
     }
     public function addSelect(string $select = '*'){
         $this->selection = $select;
@@ -62,8 +59,26 @@ class Datatables {
         if(empty($this->selection))
             $this->selection = '*';
 
+        if(!empty($this->order)){
+            $columnIndex = $this->order[0]['column'];
+            $orderDirection = strtoupper($this->order[0]['dir']);
+            $column = $this->columns[$columnIndex];
+            $cname = null;
+            if(!empty($column['name']))
+                $cname = $column['name'];
+            elseif(!is_numeric($column['data']))
+                $cname = $column['data'];
+
+            if(!empty($cname)){
+                $header = $this->header[$cname];
+                $orderColumn = isset($header['field']) ? $header['field'] : $cname;
+                if(!isset($header['order']) || $header['order'])
+                    $query->order_by($orderColumn, $orderDirection);
+            }
+        }
+
         $query->select($this->selection);
-        // var_dump($query);die;
+        // var_dump($query->get_query());die;
         foreach($this->header as $key => $value){
             if(!isset($value['searchable']) || $value['searchable'] == false) continue;
 
@@ -205,7 +220,6 @@ class Datatables {
 
     function set_resultHandler($callback, $reCount = false){
         $this->resultHandler = $callback;
-        $this->reCount = $reCount;
     }
     
     /**
@@ -223,8 +237,5 @@ class Datatables {
         $this->resultHandler = null;
         $this->keyword = null;
         $this->search_option = null;
-        $this->reCount = false;
-        $this->isFilterred = false;
-        $this->enableCache = false;
     }
 }

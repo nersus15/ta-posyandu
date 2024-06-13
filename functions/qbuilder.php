@@ -21,6 +21,7 @@ class qbuilder
     private $whereClause = [];
     private $groupBy = [];
     private $orderBy = [];
+    private $orderDir = 'ASC';
     private $limitNumber = null;
     private $offset = 0;
     private $joinClause = [];
@@ -314,9 +315,13 @@ class qbuilder
         return $this;
     }
 
-    function order_by(...$columns)
+    /**
+     * @return qbuilder
+     */
+    function order_by(String $columns, $dir = 'ASC')
     {
         $this->orderBy = $columns;
+        $this->orderDir = $dir;
         return $this;
     }
 
@@ -435,8 +440,8 @@ class qbuilder
         $this->inputs = [];
         $this->selects = [];
         $this->whereClause = [];
-        $this->groupBy = [];
-        $this->orderBy = [];
+        $this->groupBy = '';
+        $this->orderBy = 'ASC';
         $this->limitNumber = null;
         $this->offset = 0;
         $this->joinClause = [];
@@ -601,7 +606,7 @@ class qbuilder
         }
 
         if(!empty($this->orderBy)){
-            $orderBy = 'ORDER BY ' . join(', ', $this->orderBy);
+            $orderBy = 'ORDER BY ' . $this->orderBy . ' ' . $this->orderDir;
         }
 
         if (in_array($caller, ['insert', 'update', 'delete'])) {
