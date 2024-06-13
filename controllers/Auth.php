@@ -80,7 +80,7 @@ class Auth extends Controller
 
             // Update sessiondata
             foreach($input as $k => $v){
-                if(!in_array($k, ['photo', 'password', 'username']))
+                if(!in_array($k, ['password', 'username']))
                     $_SESSION['login'][$k] = $v;
             }
             
