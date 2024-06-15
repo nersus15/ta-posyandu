@@ -52,8 +52,9 @@
         </div>
         <?php endif?>
     </div>
-
-
+    <div class="navbar-center">
+        <h2 class="text-primary"><a href="<?= base_url() ?>"><?= ucfirst(APPNAME) ?></a></h2>
+    </div>
     <a style="background: url('<?php echo isset($navbarLogo) ? $navbarLogo : null ?>') no-repeat;  width: 50px; height: 50px" class="navbar-logo" href="<?php echo isset($homePath) ? $homePath : null ?>">
         <span class="logo d-none d-xs-block"></span>
         <span class="logo-mobile d-block d-xs-none"></span>
@@ -69,7 +70,7 @@
                 <div class="dropdown-menu dropdown-menu-right mt-3  position-absolute" id="iconMenuDropdown">
                     <?php foreach($navbarApps as $k => $v): ?>
                         <a href="<?php echo $v['link']?>" class="icon-menu-item">
-                        <i class="text-primary" <?php echo isset($v['icon']) ? $v['icon'] : null ?>"></i>
+                        <i class="text-primary <?php echo isset($v['icon']) ? $v['icon'] : null ?>"></i>
                         <span class="text-primary"><?php echo $v['name'] ?></span>
                     </a>
                     <?php endforeach?>
