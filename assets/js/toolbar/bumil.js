@@ -458,10 +458,10 @@ $(document).ready(function () {
             data.forEach(row => {
                 icon = '';
                 if(role == 'bidan'){
-                    icon += '<i style="font-size: 12px;cursor:pointer" data-kunjungan="' + row.id + '" data-bumil="' + id + '" class="text-warning ml-2 edit-kunjungan-bumil fas fa-pencil-alt" aria-hidden="true"></i>';
-                    icon += '<i style="font-size: 12px;cursor:pointer" data-bumil="' + id + '" data-kunjungan="' + row.id + '" class="text-danger ml-2 hapus-kunjungan-bumil fas fa-trash-alt" aria-hidden="true"></i>';
+                    icon += '<i style="font-size: 20px;cursor:pointer" data-kunjungan="' + row.id + '" data-bumil="' + id + '" class="text-warning ml-2 edit-kunjungan-bumil fas fa-pencil-alt" aria-hidden="true"></i>';
+                    icon += '<i style="font-size: 20px;cursor:pointer" data-bumil="' + id + '" data-kunjungan="' + row.id + '" class="text-danger ml-2 hapus-kunjungan-bumil fas fa-trash-alt" aria-hidden="true"></i>';
                 }
-                icon += '<a target="_blank" href="'+(path + 'bumil/kunjungan/' + id + row.id)+'"><i style="font-size: 12px;" class="text-info ml-2 detail-kunjungan-bumil simple-icon-magnifier" aria-hidden="true"></i>Detail</a>';
+                icon += '<a target="_blank" href="'+(path + 'bumil/kunjungan/' + id + row.id)+'"><i style="font-size: '+ (role == 'admin' ? '20px' : '20px') +';" class="text-info ml-2 detail-kunjungan-bumil simple-icon-info" aria-hidden="true"></i></a>';
 
                 var obstetrik = 'Gravida: ' + row['gravida'] + '<br> Partus: ' + row['paritas'] + ' <br>Abortus: ' + row['abortus'] + ' <br>Hidup: ' + row['hidup'];
 
