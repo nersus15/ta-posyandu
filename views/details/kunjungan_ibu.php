@@ -82,13 +82,6 @@ $mapDonor = [
 
             <div class="col-sm-12 col-md-6">
                 <ul style="list-style: none;">
-                    <li>Posyandu: <b><?= $kunjungan['posyandu'] ?? null ?></b></li>
-                    <li>Nama Kader: <b><?= $kunjungan['petugas']['nama_lengkap'] ?></b></li>
-                    <li>Nama Dukun: <b><?= $kunjungan['dukun'] ?? null ?></b></li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <ul style="list-style: none;">
                     <li><span <?= $kartu_kesehatan == 'jamkesmas' ? 'style="border: 1px solid black; border-radius: 100%; padding: 10px"' : '' ?>>Jamkesmas</span>/<span <?= $kartu_kesehatan == 'jamsostek' ? 'style="border: 1px solid black; border-radius: 100%; padding: 10px"' : '' ?>>Jamsostek</span>/<span <?= $kartu_kesehatan == 'jamkesda' ? 'style="border: 1px solid black; border-radius: 100%; padding: 10px"' : '' ?>>Jamkesda Askes</span></li>
                     <li class="mt-3">Golongan Darah: <b><?= $golongan_darah ?></b></li>
                     <li>Telp/Hp: <b><?= $hp ?></b></li>
