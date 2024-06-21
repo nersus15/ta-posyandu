@@ -20,7 +20,7 @@ $config['menus'] = array(
     'bidan' => array(
         'menus' => array(
             array('text' => 'Dashboard', 'icon' => 'iconsmind-Home', 'link' => base_url('dashboard')),
-            array('text' => 'Ibu Hamil', 'icon' => 'simple-icon-user-female', 'link' => base_url('kader/bumil')),
+            array('text' => 'Ibu Hamil', 'icon' => 'simple-icon-user-female', 'link' => base_url('bidan/bumil')),
             /* array('text' => 'Laporan', 'icon' => 'iconsmind-File-Pie', 'link' => '#report', 'sub' => array(
                 array('text' => 'Ibu Hamil', 'link' => base_url('report/bumil')),
                 array('text' => 'Bayi/Balita', 'link' => base_url('report/bayi')),

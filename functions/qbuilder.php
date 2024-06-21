@@ -441,7 +441,8 @@ class qbuilder
         $this->selects = [];
         $this->whereClause = [];
         $this->groupBy = '';
-        $this->orderBy = 'ASC';
+        $this->orderBy = '';
+        $this->orderDir = 'ASC';
         $this->limitNumber = null;
         $this->offset = 0;
         $this->joinClause = [];
