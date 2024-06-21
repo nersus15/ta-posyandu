@@ -447,6 +447,7 @@ $(document).ready(function () {
 
                     icon += '<i style="font-size: 12px;cursor:pointer" data-lansia="' + id + '" data-kunjungan="' + idKunjungan + '" class="text-danger ml-2 hapus-kunjungan-lansia fas fa-trash-alt" aria-hidden="true"></i>';
                 }
+                if(role == 'admin') icon = '';
                 cl += '<td>' + (date.getFullYear() == tahun && i > (date.getMonth() + 1) ? '' : (value + icon)) + '</>';
             }
             cl += '</tr>'

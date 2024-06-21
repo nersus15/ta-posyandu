@@ -192,7 +192,6 @@ $(document).ready(function () {
             '<th class="middle center">Nama Pemeriksa</th>' +
             '<th class="middle center">Usia Kehamilan</th>' +
             '<th class="middle center">Hamil Ke</th>' +
-            '<th class="middle center">BJ</th>' +
             '<th class="middle center">BB</th>' +
             '<th class="middle center">TB</th>' +
             '<th class="middle center">Tinggi Fundus</th>' +
@@ -200,7 +199,7 @@ $(document).ready(function () {
             '<th class="middle center">HB</th>' +
             '<th class="middle center">Actions</th>';
 
-        if(role == 'bidan'){
+        if(role == 'bidan' || role == 'admin'){
             header = '<th class="middle center">Tanggal Periksa</th>' +
                 '<th class="middle center">Tahun</th>' +
                 '<th class="middle center">Bulan</th>' +
@@ -447,7 +446,6 @@ $(document).ready(function () {
 
                 cl+= '<td>' + (bulan + ', ' + hari) +'</td>' +
                     '<td>' + row.gravida +'</td>' +
-                    '<td>' + (row.bj || '-') +'</td>' +
                     '<td>' + (row.bb || '-') +'</td>' +
                     '<td>' + (row.tb || '-') +'</td>' +
                     '<td>' + (row.fundus || '-') +'</td>' +
@@ -459,8 +457,10 @@ $(document).ready(function () {
         }else{
             data.forEach(row => {
                 icon = '';
-                icon += '<i style="font-size: 12px;cursor:pointer" data-kunjungan="' + row.id + '" data-bumil="' + id + '" class="text-warning ml-2 edit-kunjungan-bumil fas fa-pencil-alt" aria-hidden="true"></i>';
-                icon += '<i style="font-size: 12px;cursor:pointer" data-bumil="' + id + '" data-kunjungan="' + row.id + '" class="text-danger ml-2 hapus-kunjungan-bumil fas fa-trash-alt" aria-hidden="true"></i>';
+                if(role == 'bidan'){
+                    icon += '<i style="font-size: 12px;cursor:pointer" data-kunjungan="' + row.id + '" data-bumil="' + id + '" class="text-warning ml-2 edit-kunjungan-bumil fas fa-pencil-alt" aria-hidden="true"></i>';
+                    icon += '<i style="font-size: 12px;cursor:pointer" data-bumil="' + id + '" data-kunjungan="' + row.id + '" class="text-danger ml-2 hapus-kunjungan-bumil fas fa-trash-alt" aria-hidden="true"></i>';
+                }
                 icon += '<a target="_blank" href="'+(path + 'bumil/kunjungan/' + id + row.id)+'"><i style="font-size: 12px;" class="text-info ml-2 detail-kunjungan-bumil simple-icon-magnifier" aria-hidden="true"></i>Detail</a>';
 
                 var obstetrik = 'Gravida: ' + row['gravida'] + '<br> Partus: ' + row['paritas'] + ' <br>Abortus: ' + row['abortus'] + ' <br>Hidup: ' + row['hidup'];

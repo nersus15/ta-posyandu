@@ -19,7 +19,7 @@ $config['middleware'] = array(
     }],
     ['controller' => 'home', 'handler' => 'permission', 'params' => ['redirect' => 'auth'],  'event' => 'before'],
     ['controller' => 'data', 'handler' => 'permission', 'params' => ['role' => 'admin'], 'event' => 'before'],
-    ['controller' => 'bumil', 'method' => 'kunjungan', 'handler' => 'permission', 'params' => ['role' => 'bidan'], 'event' => 'before'],
+    ['controller' => 'bumil', 'method' => 'kunjungan', 'handler' => 'permission', 'params' => ['role' => ['bidan','admin']], 'event' => 'before'],
   
     ['controller' => 'kader', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['kader']], 'event' => 'before'],
     ['controller' => 'bidan', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['bidan']], 'event' => 'before'],

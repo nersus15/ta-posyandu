@@ -471,6 +471,8 @@ $(document).ready(function () {
 
                     icon += '<i style="font-size: 12px;cursor:pointer" data-anak="' + id + '" data-kunjungan="' + idKunjungan + '" class="text-danger ml-2 hapus-kunjungan-anak fas fa-trash-alt" aria-hidden="true"></i>';
                 }
+
+                if(role == 'admin') icon = '';
                 cl += '<td>' + (date.getFullYear() == tahun && i > (date.getMonth() + 1) ? '' : (value + icon)) + '</>';
             }
             cl += '</tr>'

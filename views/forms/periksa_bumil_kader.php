@@ -40,10 +40,6 @@
                 <label for="">HB</label>
                 <input type="number" name="hb" value="<?= $ambil_data('hb', null, true) ?>" id="hb" class="form-control">
             </div>
-            <div class="form-group">
-                <label for="">BJ</label>
-                <input type="text" name="bj" value="<?= $ambil_data('bj', null, true) ?>" id="bj" class="form-control">
-            </div>
         </div>
     </div>
     <div class="col-sm-12 mt-4 mb-4">
