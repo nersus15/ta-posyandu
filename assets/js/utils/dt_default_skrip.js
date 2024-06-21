@@ -66,17 +66,14 @@ $(document).ready(function(){
                 if(typeof(res) == 'string')
                     res = JSON.parse(res);
 
-                defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss');
-                defaultCnfigToast.message = res.message;
+                var toastCnfg = {...defaultCnfigToast, time: time = moment().format('YYYY-MM-DD HH:ss'), message: res.message, wrapper: 'body'}
                 setTimeout(function(){
                     $("#" + modalid).modal('hide');
                 }, 1000);
-                defaultCnfigToast.wrapper = 'form';
 
-                console.log("Toast Opt ====>", defaultCnfigToast);
+                console.log("Toast Opt ====>", toastCnfg);
+                makeToast(toastCnfg);
 
-                makeToast(defaultCnfigToast);
-                defaultCnfigToast.wrapper = 'body';
                 var dt = getInstance('dataTables', dtid);
                 dt.ajax.reload();
 
