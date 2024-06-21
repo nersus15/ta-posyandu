@@ -71,7 +71,12 @@ $(document).ready(function(){
                 setTimeout(function(){
                     $("#" + modalid).modal('hide');
                 }, 1000);
+                defaultCnfigToast.wrapper = 'form';
+
+                console.log("Toast Opt ====>", defaultCnfigToast);
+
                 makeToast(defaultCnfigToast);
+                defaultCnfigToast.wrapper = 'body';
                 var dt = getInstance('dataTables', dtid);
                 dt.ajax.reload();
 
@@ -88,9 +93,10 @@ $(document).ready(function(){
                 else
                     defaultCnfigToast.message = "Sumbit Failed";
 
+                defaultCnfigToast.wrapper = 'form';
                 defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss')
                 makeToast(defaultCnfigToast);
-               
+                defaultCnfigToast.wrapper = 'body';
             },
             open: true,
             destroy: true,
