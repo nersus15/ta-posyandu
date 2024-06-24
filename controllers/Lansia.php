@@ -8,12 +8,13 @@ class Lansia extends Controller{
         $username = sessiondata('login', 'username');
 
         $query = $this->db->from('lansia')->join('users', 'users.username = lansia.pencatat');
-        if(is_login('kader'))
-            $query->where('pencatat', $username);
+        // if(is_login('kader'))
+        //     $query->where('pencatat', $username);
 
         $header = array(
             'id' => array('searchable' => false),
             'nama' => array('searchable' => true),
+            'role_pencatat' => array('searchable' => true, 'field' => 'users.role'),
             'nama_pencatat' => array('searchable' => true, 'field' => 'users.nama_lengkap'),
             'alamat' => array('searchable' => true, 'field' => 'lansia.alamat'),
             'nik' => array('searchable' => true),

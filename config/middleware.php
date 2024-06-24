@@ -25,9 +25,9 @@ $config['middleware'] = array(
     ['controller' => 'bidan', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['bidan']], 'event' => 'before'],
     // ['controller' => 'report', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['bidan', 'kader']], 'event' => 'before'],
   
-    ['controller' => 'report', 'method' => 'bumil', 'handler' => 'permission', 'params' => ['role' => ['bidan', 'kader', 'admin']], 'event' => 'before'],
-    ['controller' => 'report', 'method' => 'bayi', 'handler' => 'permission', 'params' => ['role' => ['kader', 'admin']], 'event' => 'before'],
-    ['controller' => 'report', 'method' => 'lansia', 'handler' => 'permission', 'params' => ['role' => ['kader', 'admin'], 'exit' => true], 'event' => 'before'],
+    ['controller' => 'report', 'method' => 'bumil', 'handler' => 'permission', 'event' => 'before'],
+    ['controller' => 'report', 'method' => 'bayi', 'handler' => 'permission', 'event' => 'before'],
+    ['controller' => 'report', 'method' => 'lansia', 'handler' => 'permission', 'params' => ['exit' => true], 'event' => 'before'],
 
     ['controller' => 'auth', 'method' => '', 'handler' => function(){
         if(is_login()) redirect();

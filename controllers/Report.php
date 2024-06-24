@@ -9,8 +9,8 @@ class Report extends Controller
         $tahun = $_POST['tahun'];
         $usia = $_POST['umur'];
         $query = $this->db->from('bayi')
-            ->like('createdAt', $tahun, 'after')
-            ->where('pencatat', sessiondata('login', 'username'));
+            ->like('createdAt', $tahun, 'after');
+            // ->where('pencatat', sessiondata('login', 'username'));
 
         $mapUmur = array(
             '05' => '0-5',

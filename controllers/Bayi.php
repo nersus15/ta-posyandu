@@ -8,8 +8,8 @@ class Bayi extends Controller{
         $username = sessiondata('login', 'username');
 
         $query = $this->db->from('bayi')->join('users', 'users.username=bayi.pencatat');
-        if(is_login('kader'))
-            $query->where('pencatat', $username);
+        // if(is_login('kader'))
+        //     $query->where('pencatat', $username);
 
         $mapUmur = array(
             '05' => '0-5',
@@ -47,6 +47,7 @@ class Bayi extends Controller{
             'ttl' => array('searchable' => false, 'field' => 'tanggal_lahir'),
             'ttl_estimasi' => array('searchable' => false),
             'pencatat' => array('searchable' => true),
+            'role_pencatat' => array('searchable' => true, 'field' => 'users.role'),
             'nama_pencatat' => array('searchable' => true, 'field' => 'users.nama_lengkap'),
             'bbl' => array('searchable' => false),
             'akb' => array('searchable' => false),

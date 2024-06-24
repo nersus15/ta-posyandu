@@ -1081,19 +1081,13 @@ uihelper = function () {
                 
                 panel.find('.satu').hide();
                 panel.find('.multi').hide();
+                console.log("Datatables Init Complete");
                 $('#' + id + ' thead .dt-checkboxes-cell.dt-checkboxes-select-all').change(function(){
                     var selectedRows = dt_instance.rows({ selected: true }).data();
                     showButton(selectedRows.length);
                 });
 
-                $('#' + id +' tbody tr').click(function(){
-                    if(selectRow){
-                        setTimeout(function(){
-                            var selectedRows = dt_instance.rows({ selected: true }).data();
-                            showButton(selectedRows.length);
-                        }, 100)
-                    }
-                });
+               
 
                 if(options.info){
                     $("#"+ id +"_info").addClass('ml-4');
@@ -1102,6 +1096,14 @@ uihelper = function () {
             },
             createdRow: function(row, data, dataIndex ){
                 $(row).find('input.dt-checkboxes').addClass(dataIndex.toString());
+                $(row).click(function(){
+                    if(selectRow){
+                        setTimeout(function(){
+                            var selectedRows = dt_instance.rows({ selected: true }).data();
+                            showButton(selectedRows.length);
+                        }, 100)
+                    }
+                });
             },
         };
 
@@ -1184,8 +1186,6 @@ uihelper = function () {
         
         dt_instance.rows().data().__proto__.edit = function(newData){
             var data = this[0];
-            this[0].jenis = 'aaffa';
-            this.setan = 'agaga';
         }
         function createProto($dt){
             dt_instance.__proto__.api = $dt.api;

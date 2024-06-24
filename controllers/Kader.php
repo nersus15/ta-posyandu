@@ -177,7 +177,7 @@ class Kader extends Controller{
             'dtTitle' => 'Data Bayi' . ($umur != 'semua' ? ' (' .$mapUmur[$umur] . ')' : ''),
             'dtid' => 'dt-bayi',
             'head' => array(
-                '', 'Nama', 'Umur', 'Jenis Kelamin', 'AKB', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
+               '', 'Nama Pencatat', 'Nama', 'Umur', 'Jenis Kelamin', 'AKB', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
             ),
             'skrip' => 'dtconfig/dt_bayi', //wajib
             'toolbarSkrip' => 'toolbar/anak',
@@ -249,7 +249,7 @@ class Kader extends Controller{
             'dtTitle' => 'Data Lansia',
             'dtid' => 'dt-lansia',
             'head' => array(
-                '', 'Nama', 'Alamat', 'Tanggal Lahir', 'NIK'
+                '', 'Nama Pencatat', 'Nama', 'Alamat', 'Tanggal Lahir', 'NIK'
             ),
             'skrip' => 'dtconfig/dt_lansia', //wajib
             'toolbarSkrip' => 'toolbar/lansia',

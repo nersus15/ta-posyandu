@@ -157,4 +157,16 @@ class Bidan extends Controller{
 
         $this->render();
     }
+
+    function lansia(){
+        require_once ROOT . '/controllers/Kader.php';
+        $kader = new Kader();
+        $kader->lansia();
+    }
+
+    function bayi($umur = 'semua'){
+        require_once ROOT . '/controllers/Kader.php';
+        $kader = new Kader();
+        $kader->bayi($umur);
+    }
 }
