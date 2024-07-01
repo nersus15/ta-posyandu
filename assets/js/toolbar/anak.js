@@ -46,7 +46,7 @@ $(document).ready(function () {
                 '<span class="text-danger" id="close-detail" style="position: relative;cursor: pointer;left: 95%;top: 15px; font-size: 20px"><i class="iconsmind-Close"></i></span>' +
                 '<h1 class="card-title ml-4 mt-3 col-12">Detail Pemeriksaan ' + (rowData.nama ? rowData.nama : '') + '</h1>' +
                 '<div class="col-sm-6 ml-4">' +
-                (role == 'admin' ? '' : '<button class="btn btn-primary btn-sm" type="button" id="add-pemeriksaan">Periksa Anak</button>') +
+                (['bidan', 'admin'].includes(role) ? '' : '<button class="btn btn-primary btn-sm" type="button" id="add-pemeriksaan">Periksa Anak</button>') +
                 '</div>' +
                 '</div>' +
                 '<div id="canvas_detail_pemeriksaan" class="card-body row">' +

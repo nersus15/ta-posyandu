@@ -5,15 +5,6 @@ configTabel[dtid] = [
         mData: null,
     },
     {
-        data: 'nama_pencatat',
-        mRender: function(_, t, row){
-            var nama_pencatat = row['nama_pencatat'];
-            var role = row['role_pencatat'];
-
-            return '<p><small>' + role + '</small> - ' + nama_pencatat + '</p>';
-        }
-    },
-    {
         data: 'nama'
     },
     {
@@ -33,5 +24,14 @@ configTabel[dtid] = [
     }
 ];
 
-// if(role == 'admin')
-//     configTabel[dtid].splice(1, 0, {data: 'nama_pencatat'});
+if(role == 'admin' || role == 'bidan'){
+    configTabel[dtid].splice(1, 0, {
+        data: 'nama_pencatat',
+        mRender: function(_, t, row){
+            var nama_pencatat = row['nama_pencatat'];
+            var role = row['role_pencatat'];
+
+            return '<p><small>' + role + '</small> - ' + nama_pencatat + '</p>';
+        }
+    });
+}

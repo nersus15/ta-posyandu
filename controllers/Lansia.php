@@ -8,8 +8,8 @@ class Lansia extends Controller{
         $username = sessiondata('login', 'username');
 
         $query = $this->db->from('lansia')->join('users', 'users.username = lansia.pencatat');
-        // if(is_login('kader'))
-        //     $query->where('pencatat', $username);
+        if(is_login('kader'))
+            $query->where('pencatat', $username);
 
         $header = array(
             'id' => array('searchable' => false),

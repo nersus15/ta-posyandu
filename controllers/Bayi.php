@@ -8,8 +8,8 @@ class Bayi extends Controller{
         $username = sessiondata('login', 'username');
 
         $query = $this->db->from('bayi')->join('users', 'users.username=bayi.pencatat');
-        // if(is_login('kader'))
-        //     $query->where('pencatat', $username);
+        if(is_login('kader'))
+            $query->where('pencatat', $username);
 
         $mapUmur = array(
             '05' => '0-5',
