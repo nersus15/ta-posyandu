@@ -95,7 +95,7 @@ class Kader extends Controller{
                 'role' => myRole()
             ),
             'skrip' => 'dtconfig/dt_bumil', //wajib
-            'skrip_data' => array('id' => 'dt-bumil'),
+            'skrip_data' => array('id' => 'dt-bumil', 'role' => myRole()),
             'options' => array(
                 'source' => 'bumil/list',
                 'search' => 'false',
@@ -131,10 +131,10 @@ class Kader extends Controller{
                     array(
                         'tipe' => 'buttonset',
                         'tombol' => array(
-                            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Tambah', 'icon' => 'icon-plus simple-icon-paper-plane', 'class' => 'btn-outline-primary tool-add tetap'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Update', 'icon' => 'icon-plus simple-icon-pencil', 'class' => 'btn-outline-warning tool-edit tetap satu'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Hapus', 'icon' => 'icon-delete simple-icon-trash', 'class' => 'btn-outline-danger tool-delete tetap multi'),
+                            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
                             array('tipe' => 'link', 'href' => '#', 'title' => 'Export', 'icon' => 'simple-icon-printer', 'class' => 'btn-outline-secondary tool-custom-export tetap'),
                         )
                     ),
@@ -160,10 +160,10 @@ class Kader extends Controller{
 
     function bayi($umur = 'semua'){
         $tombol =  array(
-            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
             array('tipe' => 'link', 'href' => '#', 'title' => 'Tambah', 'icon' => 'icon-plus simple-icon-paper-plane', 'class' => 'btn-outline-primary tool-add tetap'),
             array('tipe' => 'link', 'href' => '#', 'title' => 'Update', 'icon' => 'icon-plus simple-icon-pencil', 'class' => 'btn-outline-warning tool-edit tetap satu'),
             array('tipe' => 'link', 'href' => '#', 'title' => 'Hapus', 'icon' => 'icon-delete simple-icon-trash', 'class' => 'btn-outline-danger tool-delete tetap multi'),
+            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
             array('tipe' => 'link', 'href' => '#', 'title' => 'Export', 'icon' => 'simple-icon-printer', 'class' => 'btn-outline-secondary tool-custom-export tetap'),
         );
         
@@ -186,10 +186,8 @@ class Kader extends Controller{
         );
         if(in_array(myRole(), ['admin', 'bidan'])){
             $tombol = array(
-                array(
-                    array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
-                    array('tipe' => 'link', 'href' => '#', 'title' => 'Export', 'icon' => 'simple-icon-printer', 'class' => 'btn-outline-secondary tool-custom-export tetap'),
-                )
+                array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
+                array('tipe' => 'link', 'href' => '#', 'title' => 'Export', 'icon' => 'simple-icon-printer', 'class' => 'btn-outline-secondary tool-custom-export tetap'),
             );
             $headers = array(
                 '', 'Nama Pencatat', 'Nama', 'Umur', 'Jenis Kelamin', 'AKB', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
@@ -204,7 +202,7 @@ class Kader extends Controller{
             'toolbarVar' => array(
                 'role' => myRole()
             ),
-            'skrip_data' => array('id' => 'dt-bayi'),
+            'skrip_data' => array('id' => 'dt-bayi', 'role' => myRole()),
             'options' => array(
                 'source' => 'bayi/list/'. $umur,
                 'search' => 'false',
@@ -263,10 +261,10 @@ class Kader extends Controller{
 
     function lansia(){
         $tombol = array(
-            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
             array('tipe' => 'link', 'href' => '#', 'title' => 'Tambah', 'icon' => 'icon-plus simple-icon-paper-plane', 'class' => 'btn-outline-primary tool-add tetap'),
             array('tipe' => 'link', 'href' => '#', 'title' => 'Update', 'icon' => 'icon-plus simple-icon-pencil', 'class' => 'btn-outline-warning tool-edit tetap satu'),
             array('tipe' => 'link', 'href' => '#', 'title' => 'Hapus', 'icon' => 'icon-delete simple-icon-trash', 'class' => 'btn-outline-danger tool-delete tetap multi'),
+            array('tipe' => 'link', 'href' => '#', 'title' => 'Detail Pemeriksaan', 'icon' => 'simple-icon-magnifier', 'class' => 'btn-info tool-custom-detail tetap satu'),
             array('tipe' => 'link', 'href' => '#', 'title' => 'Export', 'icon' => 'simple-icon-printer', 'class' => 'btn-outline-secondary tool-custom-export tetap'),
         );
         $headers = array(
@@ -287,7 +285,7 @@ class Kader extends Controller{
             'head' => $headers,
             'skrip' => 'dtconfig/dt_lansia', //wajib
             'toolbarSkrip' => 'toolbar/lansia',
-            'skrip_data' => array('id' => 'dt-lansia'),
+            'skrip_data' => array('id' => 'dt-lansia', 'role' => myRole()),
             'toolbarVar' => array(
                 'role' => myRole()
             ),

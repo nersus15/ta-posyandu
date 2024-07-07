@@ -40,6 +40,7 @@ class Bayi extends Controller{
 
         $header = array(
             'id' => array('searchable' => false),
+            'kelamin' => array('searchable' => true, 'field' => 'bayi.kelamin'),
             'nama' => array('searchable' => true),
             'alamat' => array('searchable' => true, 'field' => 'bayi.alamat'),
             'ayah' => array('searchable' => true),

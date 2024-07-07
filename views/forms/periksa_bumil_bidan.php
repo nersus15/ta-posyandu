@@ -16,12 +16,7 @@
                 <input type="text" name="posyandu" value="<?= $ambil_data('posyandu', null, true) ?>" id="posyandu" class="form-control">
             </div>
         </div>
-        <div class="col-12">
-            <div class="form-group">
-                <label for="">Nama Dukun</label>
-                <input type="text" name="dukun" value="<?= $ambil_data('dukun', null, true) ?>" id="dukun" class="form-control">
-            </div>
-        </div>
+        
         <div class="col-sm-12 col-md-6">
             <h4 class="col-12">Riwayat Obstetrik</h4>
             <div class="form-group">
