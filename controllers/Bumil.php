@@ -186,7 +186,10 @@ class Bumil extends Controller{
             ),
 
         ];
-      
+        foreach($input as $k => $v){
+            if(is_null($v) || $v == '')
+                unset($input[$k]);
+        }
         $isEdit = $this->getFromMiddleware('isEdit');
         $this->validateInput($input, $ruleValidator);
 
