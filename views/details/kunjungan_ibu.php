@@ -110,7 +110,8 @@ $mapDonor = [
             <div class="col-sm-12 col-md-4">
                 <h3></h3>
                 <ul style="list-style: none;">
-                    <li>BB Sebelum Hamil: <b><?= empty($kunjungan['bb']) ? '' : $kunjungan['bb'] . ' Kg' ?></b></li>
+                    <li>BB Sebelum Hamil: <b><?= empty($kunjungan['bb_sebelum']) ? '' : $kunjungan['bb_sebelum'] . ' Kg' ?></b></li>
+                    <li>BB Sesudah Hamil: <b><?= empty($kunjungan['bb']) ? '' : $kunjungan['bb'] . ' Kg' ?></b></li>
                     <li>Tinggi Badan: <b><?= empty($kunjungan['tb']) ? '' : $kunjungan['tb'] ?></b></li>
                     <li>Buku KIA: <b><?= $kunjungan['buku_kia'] == 1 ? 'Memiliki' : 'Tidak Memiliki' ?></b></li>
 

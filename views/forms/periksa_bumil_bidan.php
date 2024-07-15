@@ -55,7 +55,11 @@
                 <input type="text" name="persalinan_sebelumnya" value="<?= $ambil_data('persalinan_sebelumnya', null, true) ?>" id="sebelum" class="form-control datepicker" data-date-format="yyyy-mm-dd" autocomplete="off">
             </div>
             <div class="form-group">
-                <label for="bb">BB Sebelum Hamil (dalam Kg)</label>
+                <label for="bb_sebelum">BB Sebelum Hamil (dalam Kg)</label>
+                <input type="text" data-rule-digits="true" value="<?= $ambil_data('bb_sebelum', null, true) ?>" name="bb_sebelum" id="bb_sebelum" class="form-control" min="10">
+            </div>
+            <div class="form-group">
+                <label for="bb">BB Sesudah Hamil (dalam Kg)</label>
                 <input type="text" data-rule-digits="true" value="<?= $ambil_data('bb', null, true) ?>" name="bb" id="bb" class="form-control" min="10">
             </div>
             <div class="form-group">

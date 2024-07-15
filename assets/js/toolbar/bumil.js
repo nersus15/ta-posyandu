@@ -208,7 +208,8 @@ $(document).ready(function () {
                 '<th class="middle center">HPHT</th>'+
                 '<th class="middle center">Taksiran <br> Persalinan</th>'+
                 '<th class="middle center">Persalinan <br> Sebelumnya</th>'+
-                '<th class="middle center">BB</th>'+
+                '<th class="middle center">BB Sesudah Hamil</th>'+
+                '<th class="middle center">BB Sebelum Hamil</th>'+
                 '<th class="middle center">TB</th>'+
                 '<th class="middle center">Buku KIA</th>'+
                 '<th class="middle center">Actions</th>';
@@ -477,6 +478,7 @@ $(document).ready(function () {
                     '<td>' + (row.hpl || '-') +'</td>' +
                     '<td>' + (row.persalinan_sebelumnya || '-') +'</td>' +
                     '<td>' + (row.bb ? row.bb + 'Kg' : '') +'</td>' +
+                    '<td>' + (row.bb_sebelum ? row.bb_sebelum + 'Kg' : '') +'</td>' +
                     '<td>' + (row.tb ? row.tb + 'cm' : '') +'</td>' +
                     '<td>' + (row.buku_kia == 1 ? 'Memiliki' : 'Tidak Memiliki') +'</td>' ;
     
