@@ -77,7 +77,6 @@ class Report extends Controller
             'Jenis Kelamin' => function($row){
                 return $row['kelamin'] == 'L' ? 'Laki-laki':'Perempuan';
             },
-            'AKB' => 'akb',
             'BBL' => 'bbl',
             'Ibu' => 'ibu',
             'Ayah' => 'ayah',
