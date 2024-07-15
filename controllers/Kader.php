@@ -190,7 +190,7 @@ class Kader extends Controller{
                 array('tipe' => 'link', 'href' => '#', 'title' => 'Export', 'icon' => 'simple-icon-printer', 'class' => 'btn-outline-secondary tool-custom-export tetap'),
             );
             $headers = array(
-                '', 'Nama Pencatat', 'Nama', 'Umur', 'Jenis Kelamin', 'AKB', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
+                '', 'Nama Pencatat', 'Nama', 'Umur', 'Jenis Kelamin', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
             );
         }
         $tabel = $this->addViews('components/datatables.responsive', array(
