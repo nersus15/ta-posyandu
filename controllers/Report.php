@@ -187,7 +187,7 @@ class Report extends Controller
             'HB' => 'hb',
         ];
 
-        if(myRole() == 'bidan'){
+        if(true){
             $maps_kunjungan = [
                 'Tanggal Periksa' => 'tgl_periksa',
                 'Tahun' => 'tahun',
