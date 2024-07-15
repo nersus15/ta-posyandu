@@ -7,7 +7,7 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="">Nama Pemeriksa <span class="symbol-required"></span></label>
-                <input type="text" name="nama_pemeriksa" required value="<?= $ambil_data('nama_pemeriksa', null, true) ?>" id="pemeriksa" class="form-control">
+                <input type="text" name="nama_pemeriksa" required value="<?= $ambil_data('nama_pemeriksa', sessiondata('login', 'nama_lengkap'), true) ?>" id="pemeriksa" class="form-control">
             </div>
         </div>
         <div class="col-12">

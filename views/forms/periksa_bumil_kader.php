@@ -10,7 +10,7 @@
             </div>
             <div class="form-group">
                 <label for="">Nama Pemeriksa</label>
-                <input type="text" name="nama_pemeriksa" value="<?= $ambil_data('nama_pemeriksa', null, true) ?>" id="pemeriksa" class="form-control">
+                <input type="text" name="nama_pemeriksa" value="<?= $ambil_data('nama_pemeriksa', sessiondata('login', 'nama_lengkap'), true) ?>" id="pemeriksa" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Usia Kehamilan (hari)</label>

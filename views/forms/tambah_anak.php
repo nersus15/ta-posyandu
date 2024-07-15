@@ -48,10 +48,6 @@
             <input type="text" id="ayah" maxlength="46" name="ayah" value="<?php $ambil_data('ayah') ?>" class="form-control ayah">
         </div>
         <div class="form-group">
-            <label for="">AKB</label>
-            <input type="number" value="<?php $ambil_data('akb') ?>" name="akb" id="akb" class="form-control">
-        </div>
-        <div class="form-group">
             <label for="alamat">Alamat <span class="symbol-required"></span></label>
             <textarea name="alamat" id="alamat" rows="5" class="form-control"><?php $ambil_data('alamat') ?></textarea>
         </div>

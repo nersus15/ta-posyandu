@@ -91,7 +91,7 @@ class Data extends Controller
             'sidebarConf' => config_sidebar(myRole(), 1)
         ];
 
-        $this->setPageTitle('Data Bidan');
+        $this->setPageTitle('Data Bidan Desa Senyiur');
 
         $this->addBodyAttributes(['class' => 'menu-default show-spinner']);
         $this->addResourceGroup('main', 'dore', 'datatables', 'form');
