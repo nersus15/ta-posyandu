@@ -26,9 +26,6 @@ configTabel[dtid] = [
         }
     },
     {
-        data: 'akb'
-    },
-    {
         data: 'bbl'
     },
     {

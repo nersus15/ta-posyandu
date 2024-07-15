@@ -182,7 +182,7 @@ class Kader extends Controller{
             }
         }
         $headers = array(
-            '', 'Nama', 'Umur', 'Jenis Kelamin', 'AKB', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
+            '', 'Nama', 'Umur', 'Jenis Kelamin', 'BBL', 'Ibu', 'Ayah', 'Tanggal Lahir', 'Alamat'
         );
         if(in_array(myRole(), ['admin', 'bidan'])){
             $tombol = array(
