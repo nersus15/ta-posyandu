@@ -179,15 +179,15 @@ class Report extends Controller
             'Nama Pemeriksa' => 'nama_pemeriksa',
             'Usia Kehamilan' => 'usia_kehamilan',
             'Hamil Ke' => 'gravida',
-            'BJ' => 'bj',
             'BB' => 'bb',
+            'BB Sebelum Hamil' => 'bb_sebelum',
             'TB' => 'tb',
             'Tinggi Fundus' => 'fundus',
             'Lingkar Lengan Atas' => 'lila',
             'HB' => 'hb',
         ];
 
-        if(true){
+        if(myRole() == 'bidan'){
             $maps_kunjungan = [
                 'Tanggal Periksa' => 'tgl_periksa',
                 'Tahun' => 'tahun',
@@ -202,7 +202,8 @@ class Report extends Controller
                 'HPHT' => 'hpht',
                 'Taksiran <br> Persalinan' => 'hpl',
                 'Persalinan <br> Sebelumnya' => 'persalinan_sebelumnya',
-                'BB' => 'bb',
+                'BB Sesudah Hamil' => 'bb',
+                'BB Sebelum Hamil' => 'bb_sebelum',
                 'TB' => 'tb',
                 'Buku KIA' => function($ibu, $row){
                     return $row['buku_kia'] == 1 ? 'Memiliki' : 'Tidak Memiliki';
