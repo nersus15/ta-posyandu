@@ -51,7 +51,6 @@ class Bayi extends Controller{
             'role_pencatat' => array('searchable' => true, 'field' => 'users.role'),
             'nama_pencatat' => array('searchable' => true, 'field' => 'users.nama_lengkap'),
             'bbl' => array('searchable' => false),
-            'akb' => array('searchable' => false),
             'createdAt' => array('searchable' => true, 'field'=> 'bayi.createdAt'),
             'umur' => array('searchable' => true),
         );
