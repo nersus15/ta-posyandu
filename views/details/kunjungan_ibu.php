@@ -46,11 +46,19 @@ $mapDonor = [
 ];
 ?>
 
+<style>
+</style>
+
 <!-- <div class="container-fluid"> -->
 <!-- SELECT2 EXAMPLE -->
-<div class="card card-default">
+<div class="<?= !isset($cetak) || !$cetak ? 'card card-default' : '' ?>">
+    <div class="card-header row" style="justify-content: flex-end; <?= isset($cetak) && $cetak ? 'display: none' : '' ?>">
+        <a target="_blank" href="<?= base_url('report/detail_kunjungan/' . $kunjungan['ibu'] . $kunjungan['id']) ?>" class="mt-4 mr-4 btn-xs btn btn-outline-primary"><i class="simple-icon-printer"></i> Cetak</a>
+    </div>
     <!-- /.card-header -->
     <div class="card-body">
+        <h2 class="mb-4" style="text-align: center;">Detail Pemeriksaan Ibu Hamil</h2>
+        <hr>
         <div class="row">
             <div class="col-12">
                 <ul style="list-style: none;">
@@ -144,10 +152,4 @@ $mapDonor = [
             </div>
         </div>
     </div>
-    <!-- /.card-body -->
-    <div class="card-footer">
-
-    </div>
 </div>
-<!-- /.card -->
-<!-- </div> -->

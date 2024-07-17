@@ -314,25 +314,95 @@ class Report extends Controller
         $this->buatPdf($html);
     }
 
+    function detail_kunjungan($id){
+        $idbumil = substr($id, 0, 8);
+        $id = substr($id, 8);
+
+       
+        $ibu = $this->db->select('*')
+            ->from('bumil')
+            ->where('bumil.id', $idbumil)->row();
+
+
+        // response($data);
+        if(!empty($ibu) && $ibu !== false){
+            $data = $ibu;
+
+            $kunjungan = $this->db->select('*')
+            ->from('kunjungan_bumil')
+            ->where('kunjungan_bumil.id', $id)->row();
+
+            if(!empty($kunjungan) && $kunjungan !== false){
+
+                $ptetugas = $this->db->select('*')->from('users')->where('username', $kunjungan['pencatat'])->row();
+                if(!empty($ptetugas) && $ptetugas !== false){
+                    $kunjungan['petugas'] = $ptetugas;
+                }else{
+                    $kunjungan['petugas'] = [];
+                }
+                $data['kunjungan'] = $kunjungan;
+            }else{
+                $data['kunjungan'] = [];
+            }
+            // response($data);
+            $hariIni = date_create($ibu['createdAt']);
+            $ttl = date_create($ibu['tanggal_lahir']);        
+            $diff = $hariIni->diff($ttl);
+            $tahun = $diff->format('%y');
+
+            $data['umur'] = intval($tahun);
+        }else{
+            response("Data tidak ditemukan", 404);
+        }
+        $data['cetak'] = true;
+
+        $params = [
+            'pageName' => 'Detail Pemeriksaan Ibu  <b>' . $data['nama'] . '</b>',
+            'content' => 'details/kunjungan_ibu',
+            'data_content' => $data,
+            'sidebarConf' => config_sidebar(myRole(), 1)
+        ];
+
+        $html =  $this->addViews('reports/detail_kunjungan', $params, true);
+        $opt = [
+            'orientasi' => 'portrait'
+        ];
+        $this->buatPdf($html, $opt, false);
+        
+    }
+
     function tes(){
         $_POST['tahun'] = 2024;
         $_POST['umur'] = 'semua';
         $this->bumil();
     }
 
-    private function buatPdf($html)
+    private function buatPdf($html, $options = [], $download = true)
     {
         $fname = random(8);
-        $fpath = ROOT . '/assets/docs/pdf/' . $fname . '.pdf';
+        if(isset($options['file_name'])) $fname = $options['file_name'];
 
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'landscape');
-        $dompdf->render();
 
-        $pdf = $dompdf->output();
-        file_put_contents($fpath, $pdf);
+        if(isset($options['orientasi'])){
+            $dompdf->setPaper('A4', $options['orientasi']);
+        }
 
-        response(['message' => 'Berhasil membuat laporan', 'data' => $fname]);
+        if($download){
+            $fpath = ROOT . '/assets/docs/pdf/' . $fname . '.pdf';
+            $dompdf->render();
+            $pdf = $dompdf->output();
+            file_put_contents($fpath, $pdf);
+    
+            response(['message' => 'Berhasil membuat laporan', 'data' => $fname]);
+        }else{
+            $dompdf->render();
+            $dompdf->stream($fname, ['Attachment' => false, 'compress' => false]);
+            exit;
+
+        }
+        
     }
 }
