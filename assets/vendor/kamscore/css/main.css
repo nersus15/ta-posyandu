@@ -38,3 +38,8 @@
   .center{
     text-align: center;
   }
+  @media print {
+    body *:not(.printable, .printable *), .dont-print{
+      display: none;
+    }
+  }
