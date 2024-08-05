@@ -137,6 +137,7 @@ class Bumil extends Controller{
         $tmp = $this->db->select('YEAR(tgl_periksa) tahun, MONTH(tgl_periksa) bulan, kunjungan_bumil.*')
             ->where('ibu', $idbumil)
             ->from('kunjungan_bumil')
+            ->order_by('tgl_periksa', 'DESC')
             ->results();
 
         $data = [

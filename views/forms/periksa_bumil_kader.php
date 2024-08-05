@@ -14,7 +14,7 @@
             </div>
             <div class="form-group">
                 <label for="">Usia Kehamilan (hari)</label>
-                <input type="number" name="usia_kehamilan" value="<?= $ambil_data('usia_hamil', null, true) ?>" id="usia_hamil" class="form-control">
+                <input type="number" name="usia_kehamilan" value="<?= $ambil_data('usia_kehamilan', null, true) ?>" id="usia_hamil" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Hamil Ke</label>
@@ -31,14 +31,6 @@
             <div class="form-group">
                 <label for="">Lingkar Lengan Atas (cm)</label>
                 <input type="number" name="lila" value="<?= $ambil_data('lila', null, true) ?>" id="lila" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="">Tinggi Fundus (cm)</label>
-                <input type="number" name="fundus" value="<?= $ambil_data('fundus', null, true) ?>" id="fundus" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="">HB</label>
-                <input type="number" name="hb" value="<?= $ambil_data('hb', null, true) ?>" id="hb" class="form-control">
             </div>
         </div>
     </div>

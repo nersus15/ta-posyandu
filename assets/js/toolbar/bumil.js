@@ -46,8 +46,9 @@ $(document).ready(function () {
                 '<div class="card-header row">' +
                 '<span class="text-danger" id="close-detail" style="position: relative;cursor: pointer;left: 95%;top: 15px; font-size: 20px"><i class="iconsmind-Close"></i></span>' +
                 '<h1 class="card-title ml-4 mt-3 col-12">Detail Pemeriksaan ' + (rowData.nama ? rowData.nama : '') + '</h1>' +
-                '<div class="col-sm-6 ml-4">' +
+                '<div class="row col-sm-6 ml-4">' +
                 (role == 'admin' ? '' : '<button class="btn btn-primary btn-sm" type="button" id="add-pemeriksaan">Periksa Ibu</button>') +
+                    '<button class="ml-4 btn btn-secondary btn-sm" type="button" id="export-single" data-id="'+ rowData.id +'">Cetak</button>' +
                 '</div>' +
                 '</div>' +
                 '<div id="canvas_detail_pemeriksaan" class="card-body row">' +
@@ -58,12 +59,39 @@ $(document).ready(function () {
             );
 
             $("#add-pemeriksaan").click(function () {
-                addPemeriksan(rowData)
+                var cached = null;
+                if(data.pemeriksaan && data.pemeriksaan.length > 0)
+                    cached = data.pemeriksaan[0];
+                if(cached){
+                    delete cached['bb'];
+                    delete cached['tb'];
+                    delete cached['lila'];
+                    delete cached['usia_kehamilan'];
+                    addPemeriksan(rowData, cached, false)
+                }else
+                    addPemeriksan(rowData)
             });
             $('#close-detail').click(function () {
                 induk.empty();
             });
 
+            $("#export-single").click(function(){
+                var id = $(this).data('id');
+                showLoading();
+                $.post(path + 'report/bumil/' + id, function(res){
+                    endLoading();
+                    if (typeof(res) == 'string')
+                        res = JSON.parse(res);
+
+                    defaultCnfigToast.time = moment().format('YYYY-MM-DD HH:ss');
+                    defaultCnfigToast.message = res.message;
+                    setTimeout(function () {
+                        $("#export-anak").modal('hide');
+                    }, 1000);
+                    makeToast(defaultCnfigToast);
+                    window.open(path + 'uihelper/file/' + res.data);
+                });
+            });
             var bodyEl = induk.find('.card-body');
 
 
@@ -170,6 +198,13 @@ $(document).ready(function () {
                             options: opsiTahun,
                             default: null
                         },
+                        {
+                            type: 'select', 
+                            name: 'bulan',
+                            label: 'Pilih Tahun',
+                            options: daftarBulan.map(function(v, i){return {key: i.toString(), text: v}}),
+                            default: new Date().getMonth()
+                        }
 
                     ],
                     buttons: [
@@ -194,9 +229,7 @@ $(document).ready(function () {
             '<th class="middle center">Hamil Ke</th>' +
             '<th class="middle center">BB</th>' +
             '<th class="middle center">TB</th>' +
-            '<th class="middle center">Tinggi Fundus</th>' +
             '<th class="middle center">Lingkar Lengan Atas</th>' +
-            '<th class="middle center">HB</th>' +
             '<th class="middle center">Actions</th>';
 
         if(role == 'bidan' || role == 'admin'){
@@ -311,10 +344,14 @@ $(document).ready(function () {
         });
     }
 
-    function addPemeriksan(bumil, cached = {}) {
+    function addPemeriksan(bumil, cached = {}, isEdit = undefined) {
         var opsiTahun = {};
         var opsiBulan = {};
         var tahunIni = new Date().getFullYear();
+
+        if(isEdit == undefined){
+            isEdit = Object.keys(cached).length > 0;
+        }
         tahunIni = parseInt(tahunIni)
         for (let index = tahunIni; index > (tahunIni - 10); index--) {
             opsiTahun[index] = {
@@ -401,7 +438,7 @@ $(document).ready(function () {
                 },
             }
         };
-        var url = path + 'uihelper/form/?f=forms/periksa_bumil_'+role+'&sv=' + JSON.stringify({formid: 'periksa-bumil', isEdit: Object.keys(cached).length > 0, ibu: bumil.id});
+        var url = path + 'uihelper/form/?f=forms/periksa_bumil_'+role+'&sv=' + JSON.stringify({formid: 'periksa-bumil', isEdit: isEdit, ibu: bumil.id});
 
         if(Object.keys(cached).length > 0){
             url += '&ed=' + JSON.stringify(cached);
@@ -449,9 +486,7 @@ $(document).ready(function () {
                     '<td>' + row.gravida +'</td>' +
                     '<td>' + (row.bb || '-') +'</td>' +
                     '<td>' + (row.tb || '-') +'</td>' +
-                    '<td>' + (row.fundus || '-') +'</td>' +
-                    '<td>' + (row.lila || '-') +'</td>' +
-                    '<td>' + (row.hb || '-') +'</td>' ;
+                    '<td>' + (row.lila || '-') +'</td>';
                 cl += '<td>' + icon + '</td>';
                 cl += '</tr>'
             })

@@ -140,14 +140,24 @@ class Report extends Controller
         $html = $this->addViews('reports/all', $dataHtml, true);
         $this->buatPdf($html);
     }
-    function bumil()
+    function bumil($id = null)
     {
-        $tahun = $_POST['tahun'];
         $dataBumil = $this->db
             ->select('bumil.*, users.nama_lengkap nama_pencatat')
             ->from('bumil')
-            ->join('users', 'users.username = bumil.pencatat')
-            ->like('bumil.createdAt', $tahun, 'after')->results();
+            ->join('users', 'users.username = bumil.pencatat');
+
+        if(empty($id)){
+            $tahun = $_POST['tahun'];
+            $bulan = $_POST['bulan'];
+            $dataBumil->like('bumil.createdAt', $tahun, 'after')
+                ->where('MONTH(bumil.createdAt)', $bulan + 1);
+        }else{
+            $dataBumil->where('bumil.id', $id);
+        }
+
+        $dataBumil = $dataBumil->results();
+
         $data = [];
 
         foreach ($dataBumil as $r) {
@@ -182,9 +192,7 @@ class Report extends Controller
             'BB' => 'bb',
             'BB Sebelum Hamil' => 'bb_sebelum',
             'TB' => 'tb',
-            'Tinggi Fundus' => 'fundus',
             'Lingkar Lengan Atas' => 'lila',
-            'HB' => 'hb',
         ];
 
         if(myRole() == 'bidan' || myRole() == 'admin'){
