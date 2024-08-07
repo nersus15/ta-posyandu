@@ -67,6 +67,9 @@ $(document).ready(function () {
                     delete cached['tb'];
                     delete cached['lila'];
                     delete cached['usia_kehamilan'];
+
+
+                    cached['tgl_periksa'] = waktu(null, 'YYYY-MM-DD');
                     addPemeriksan(rowData, cached, false)
                 }else
                     addPemeriksan(rowData)
