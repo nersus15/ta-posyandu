@@ -69,7 +69,7 @@ $headers = array_keys($maps);
     </div>
 
     <?php foreach ($data as $row) : ?>
-        <h2>Data Kunjungan <b><?= $row['nama'] ?></b></h2>
+        <h2>Data Pemeriksaan <b><?= $row['nama'] ?></b></h2>
         <hr>
         <div class="table-responsive container-fluid dt-bootstrap4">
             <table class="dataTable table tabeleditor table-nomargin table-condensed table-no-topborder table-bordered- table-striped- table-hover dataTable no-footer dtr-inline dt-checkboxes-select">
