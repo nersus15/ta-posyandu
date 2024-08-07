@@ -204,7 +204,7 @@ $(document).ready(function () {
                         {
                             type: 'select', 
                             name: 'bulan',
-                            label: 'Pilih Tahun',
+                            label: 'Pilih Bulan',
                             options: daftarBulan.map(function(v, i){return {key: i.toString(), text: v}}),
                             default: new Date().getMonth()
                         }
