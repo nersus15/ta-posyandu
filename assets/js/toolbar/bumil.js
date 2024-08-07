@@ -4,7 +4,7 @@ $(document).ready(function () {
     var toolbar = <?= json_encode($toolbar) ?>;
     var panel = $("#displayOptions-" + dtid);
     var role = toolbar.role;
-    var daftarBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+    var daftarBulan = ['Semua', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
     var defaultCnfigToast = {
         title: 'Submit Feedback',
         message: 'Submit Successfull',

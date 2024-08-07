@@ -150,8 +150,10 @@ class Report extends Controller
         if(empty($id)){
             $tahun = $_POST['tahun'];
             $bulan = $_POST['bulan'];
-            $dataBumil->like('bumil.createdAt', $tahun, 'after')
-                ->where('MONTH(bumil.createdAt)', $bulan + 1);
+            $dataBumil->like('bumil.createdAt', $tahun, 'after');
+
+            if($bulan > 0)
+                $dataBumil->where('MONTH(bumil.createdAt)', $bulan);
         }else{
             $dataBumil->where('bumil.id', $id);
         }
