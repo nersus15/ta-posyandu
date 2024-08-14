@@ -22,6 +22,14 @@ function staticUrl($path = null)
 {
     return base_url('static/' . (empty($path) ? '' : $path));
 }
+function ImgToBase64($file){
+    $path = assets_url($file);
+    $type = pathinfo($path, PATHINFO_EXTENSION);
+    $data = file_get_contents($path);
+    $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+    return $base64;
+}
+
 function parseUrl($segment = true)
 {
     $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -117,6 +125,12 @@ function base_url($path = null)
 function assets_url($path = null)
 {
     return ROOT . '/assets/' . (empty($path) ? '' : $path);
+}
+function getCurrentDirectory($dir = null){
+    return getcwd() . '/' . $dir;
+}
+function getPath($file){
+    return substr(ROOT, 1) . '/'. $file;
 }
 function include_view($path, $data = null)
 {

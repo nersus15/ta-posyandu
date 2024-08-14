@@ -1,6 +1,7 @@
 <?php
 
 use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class Report extends Controller
 {
@@ -227,6 +228,7 @@ class Report extends Controller
             'maps_kunjungan' => $maps_kunjungan
         ];
         $html = $this->addViews('reports/all', $dataHtml, true);
+        // echo $html;die;
         $this->buatPdf($html);
     }
 
@@ -390,6 +392,7 @@ class Report extends Controller
     private function buatPdf($html, $options = [], $download = true)
     {
         $fname = random(8);
+        $cnfg = $options;
         if(isset($options['file_name'])) $fname = $options['file_name'];
 
         $dompdf = new Dompdf();
@@ -399,6 +402,14 @@ class Report extends Controller
         if(isset($options['orientasi'])){
             $dompdf->setPaper('A4', $options['orientasi']);
         }
+       
+        $dompdfOptions = new Options();
+        $dompdfOptions->setIsRemoteEnabled(true);
+        $dompdfOptions->setChroot(getcwd());
+        $dompdfOptions->setIsHtml5ParserEnabled(true);
+
+        $dompdf->setOptions($dompdfOptions);
+
 
         if($download){
             $fpath = ROOT . '/assets/docs/pdf/' . $fname . '.pdf';
@@ -414,5 +425,60 @@ class Report extends Controller
 
         }
         
+    }
+    function bidan(){
+        require_once ROOT . '/controllers/Bidan.php';
+        $bidan = new Bidan();
+        $data = $bidan->list(1);
+
+        $header = [
+            'No' => '*increment',
+            'Username' => 'id', 
+            'Nama' => 'nama', 
+            'Alamat' => 'alamat', 
+            'Nomor Hp' => 'hp', 
+            'Email' => 'email'
+        ];
+
+        $tabel = $this->addViews('components/tabel', ['header' => $header, 'data' => $data->data], true);
+        $params = [
+            'pageName' => 'Data bidan',
+            'contentHtml' => $tabel,
+            'data_content' => $data,
+        ];
+
+        $html =  $this->addViews('reports/detail_kunjungan', $params, true);
+        $opt = [
+            'orientasi' => 'portrait'
+        ];
+        $this->buatPdf($html, $opt, true);
+    }
+
+    function kader(){
+        require_once ROOT . '/controllers/Kader.php';
+        $kader = new Kader();
+        $data = $kader->list(1);
+
+        $header = [
+            'No' => '*increment',
+            'Username' => 'id', 
+            'Nama' => 'nama', 
+            'Alamat' => 'alamat', 
+            'Nomor Hp' => 'hp', 
+            'Email' => 'email'
+        ];
+
+        $tabel = $this->addViews('components/tabel', ['header' => $header, 'data' => $data->data], true);
+        $params = [
+            'pageName' => 'Data kader',
+            'contentHtml' => $tabel,
+            'data_content' => $data,
+        ];
+
+        $html =  $this->addViews('reports/detail_kunjungan', $params, true);
+        $opt = [
+            'orientasi' => 'portrait'
+        ];
+        $this->buatPdf($html, $opt, true);
     }
 }

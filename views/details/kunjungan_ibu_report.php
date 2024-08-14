@@ -57,37 +57,44 @@ $mapDonor = [
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <?php if(!isset($cetak) || !$cetak) : ?>
-            <h2 class="mb-4" style="text-align: center;">Detail Pemeriksaan Ibu Hamil</h2>
-            <hr>
-        <?php endif ?>
-        <div class="row">
-            <div class="col-12">
-                <ul style="list-style: none;">
-                    <!-- <li>Puskesmas: <b><?php // $kunjungan['petugas']['faskes'] 
-                                            ?></b></li> -->
-                    <li>No. Ibu: <b><?= $nomor ?></b></li>
-                    <li>Nama Lengkap: <b><?= $nama ?></b></li>
-                    <li>Nama Suami: <b><?= $nama_suami ?></b></li>
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <ul style="list-style: none;">
-                    <li>Tanggal Lahir: <b><?= $tanggal_lahir ?></b></li>
-                    <li>Alamat Domisili: <b><?= $domisili ?></b></li>
-                    <li>Kabupaten: <b><?= 'Lombok Timur' ?></b></li>
-                    <li>Prov: <b><?= 'Nusa Tenggara Barat' ?></b></li>
+        <table>
+            <tr>
+                <td>
+                    <ul style="list-style: none;">
+                        <!-- <li>Puskesmas: <b><?php // $kunjungan['petugas']['faskes'] 
+                                                ?></b></li> -->
+                        <li>No. Ibu: <b><?= $nomor ?></b></li>
+                        <li>Nama Lengkap: <b><?= $nama ?></b></li>
+                        <li>Nama Suami: <b><?= $nama_suami ?></b></li>
+                    </ul>
+                </td>
+                <td>
+                    <ul style="list-style: none;">
+                        <li>Tanggal Lahir: <b><?= $tanggal_lahir ?></b></li>
+                        <li>Alamat Domisili: <b><?= $domisili ?></b></li>
+                        <li>Kabupaten: <b><?= 'Lombok Timur' ?></b></li>
+                        <li>Prov: <b><?= 'Nusa Tenggara Barat' ?></b></li>
 
-                </ul>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <ul style="list-style: none;">
+                    </ul>
+                </td>
+                <td>
+                    <ul style="list-style: none;">
                     <li>Umur: <b><?= (!empty($umur) ? $umur . ' Tahun' : '') ?></b></li>
                     <li>Agama: <b><?= $agama ?></b></li>
                     <li>Pendidikan: <b><?= $pendidikan ?></b></li>
                     <li>Pekerjaan: <b><?= $pekerjaan ?></b></li>
                     <li>Tgl Register: <b><?= substr($createdAt, 0, 10) ?></b></li>
                 </ul>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                
+            </div>
+            <div class="col-sm-12 col-md-6">
+                
             </div>
 
             <div class="col-sm-12 col-md-6">

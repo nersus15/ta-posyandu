@@ -4,7 +4,7 @@ class Kader extends Controller{
     /** @var Datatables */
     var $datatables;
 
-    function list(){
+    function list($return = 0){
         $this->load('Datatables', 'datatables');
 
         $query = $this->db->from('users')->where('role', 'kader');
@@ -18,8 +18,10 @@ class Kader extends Controller{
         );
         $this->datatables->setHeader($header);
         $this->datatables->setQuery($query);
+        $data = $this->datatables->getData();
+        if($return == 1) return $data;
 
-        response($this->datatables->getData());
+        response($data);
     }
 
     function save(){

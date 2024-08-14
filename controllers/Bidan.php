@@ -4,7 +4,7 @@ class Bidan extends Controller{
     /** @var Datatables */
     var $datatables;
 
-    function list(){
+    function list($return = 0){
         $this->load('Datatables', 'datatables');
 
         $query = $this->db->from('users')->where('role', 'bidan');
@@ -17,8 +17,11 @@ class Bidan extends Controller{
         );
         $this->datatables->setHeader($header);
         $this->datatables->setQuery($query);
-
-        response($this->datatables->getData());
+        $data = $this->datatables->getData();
+        if($return == 1)
+            return $data;
+        
+        response($data);
     }
 
     function save(){

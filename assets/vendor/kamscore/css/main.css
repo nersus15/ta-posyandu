@@ -38,8 +38,20 @@
   .center{
     text-align: center;
   }
+  /* .printable, .printable *{
+    display: none;
+  } */
   @media print {
     body *:not(.printable, .printable *), .dont-print{
-      display: none;
+      display: none !important;
+    }
+    .separator{
+      display: block !important;
+    }
+    .printable{
+      opacity: 1;
+    }
+    body *{
+      background-color: white !important;
     }
   }

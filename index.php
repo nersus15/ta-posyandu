@@ -58,7 +58,10 @@ if(!empty($urls) && $urls[0] == 'static'){
     }
 
     header('Content-type: ' . $ctype);
-    if(!file_exists(ROOT . '/assets' . $path)) exit;
+    if(!file_exists(ROOT . '/assets' . $path)) {
+        http_response_code(404);
+        exit;
+    }
 
     echo file_get_contents(ROOT . '/assets' . $path);
     exit;
